@@ -1,9 +1,12 @@
 :root {
     font-size: 62.5%; /* 10px */
 
-    --bg1: #268e8c;
+    /* --bg1: #268e8c;
     --bg2: #34b8bb;
-    --bg3: #2f638c;
+    --bg3: #2f638c; */
+    --bg1: #525441;
+    --bg2: #958a7a;
+    --bg3: #686152;
 
     --gray: #5d6473;
     --darkred: #9f0102;
@@ -140,9 +143,13 @@ footer {
     width: 5.6rem;
     transition: all ease-in-out .3s;
     cursor: pointer;
-    /* filter: brightness(70%); */
+    filter: brightness(80%);
 }
 .menu_icon:hover {
+    width: 7.0rem;
+}
+.menu_icon.active {
+    filter: brightness(100%);
     width: 7.0rem;
 }
 

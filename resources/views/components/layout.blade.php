@@ -25,9 +25,22 @@
     <div class="container">
         <nav class="sideMenu">
             <ul>
-                <li><img class="menu_icon" src="assets/icons/open-book.png"></li>
-                <li><img class="menu_icon" src="assets/icons/i-ching.png"></li>
-                <li><img class="menu_icon" src="assets/icons/pencil.png"></li>
+                <li>
+                    <a href="{{route('learn')}}">
+                        <img class="menu_icon {{ $page == "learn" ? "active" : "" }}" src="assets/icons/open-book.png" >
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('play')}}">
+                        <img class="menu_icon {{ $page == "play" ? "active" : "" }}" src="assets/icons/i-ching.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('asks')}}">
+                        <img class="menu_icon {{ $page == "asks" ? "active" : "" }}" src="assets/icons/pencil.png">
+                    </a>
+                </li>
+
             </ul>
         </nav>
         <main>
