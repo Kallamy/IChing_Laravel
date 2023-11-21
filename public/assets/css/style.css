@@ -140,10 +140,14 @@ footer {
     width: 5.6rem;
     transition: all ease-in-out .3s;
     cursor: pointer;
-    /* filter: brightness(70%); */
+    filter: brightness(80%);
 }
 .menu_icon:hover {
     width: 7.0rem;
+}
+.menu_icon.active {
+    width: 7.0rem;
+    filter: brightness(100%);
 }
 
 main {
