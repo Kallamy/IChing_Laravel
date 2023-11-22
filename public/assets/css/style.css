@@ -176,4 +176,304 @@ section#asks {
     background-color: var(--bg3);
 }
 
+/* INTERACTIVE FRAME  */
 
+.frameArea {
+    width: 1000px;
+    /* margin: auto; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    /* margin-left: 17rem; */
+    /* margin-right: 0.62rem; */
+}
+
+.frame {
+    box-sizing: content-box;
+    margin: auto;
+    overflow: hidden;
+    width: 30rem;
+    height: 30rem;
+    background-image: url("../images/paperBG.jpg");
+    background-size: cover;
+
+    border: 0.93rem var(--darkred) solid ;
+    border-image-source: url("../images/Chinese_border.png");
+    border-image-slice: 26;
+    border-image-repeat: stretch;
+    border-image-width: 2;
+    border-image-outset: 1;
+
+    position: relative;
+    z-index: 1;
+
+}
+
+.slidesArea {
+    /* display: none; */
+    width: 70rem;
+    height: 100%;
+    background-color:  transparent;
+    position: absolute;
+}
+.smooth {
+    transition: margin-left 1s ease-in-out;
+}
+
+.separator {
+    background: transparent;
+    float: left;
+    width: 3rem;
+    height: 25rem;
+}
+
+.slide {
+    display: inline-block;
+    width: 33rem;
+    height: 33rem;
+    background-color: transparent;
+    float: left;
+}
+
+/* Controllers  */
+.controllersArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 4.37rem;
+    margin-top: 20.75rem;
+}
+.nextHexagram,
+.prevHexagram
+{
+    display: block;
+    z-index: 9;
+    cursor: pointer;
+    font-family: Hind;
+    font-weight: bold;
+    width: 437.5rem;
+    background: rgba(255, 255, 255, 0.4);
+    text-align: right;
+    font-size: 1rem;
+    letter-spacing: 1.3px;
+    padding: 0.62rem 1rem;
+    text-decoration: underline;
+    box-shadow: 0px 0px 0.80px;
+    margin-right: 0.43rem;
+    padding-right: 0.43rem;
+    margin-top: 10.5rem;
+    font-weight: bold;
+}
+.prevHexagram {
+    left: 1.25rem;
+    text-align: left;
+    margin-left: 0.43rem;
+    padding-left: 0.43rem;
+
+}
+.arrow {
+    font-size: 40px;
+    margin-top: 70px;
+    text-decoration: none;
+}
+
+/* Info  */
+.infoArea {
+    width: 43.75rem;
+    height: 1.25rem;
+    display: flex;
+    margin-top: -3rem; /* 0.62rem */
+    gap: 0px;
+}
+
+/* yin-yang  */
+.yinyangArea1,
+.yinyangArea2{
+    display: none;
+    width: 100%;
+    opacity: 0;
+}
+.yinyangArea1.show,
+.yinyangArea2.show{
+    display: block;
+    opacity: 90%;
+}
+.yinyangArea1 img,
+.yinyangArea2 img {
+    margin-top: -86%;
+    width: 100%;
+    animation: rotation 1s infinite linear;
+}
+
+/* Hexagrams  */
+.hexagramArea {
+    height: 150%;
+    background: transparent;
+    width: 12.5rem;
+    padding: 0.62rem;
+    padding-top: 0rem;
+    margin-left: 1.4rem;
+}
+
+.linesArea {
+    width: 100%;
+}
+.lineArea {
+    background: transparent;
+    margin: auto;
+    width: 10rem;
+    height: 1rem;
+    margin-top: 0.6rem;
+    display: flex;
+    gap: 2.6rem;
+}
+.line {
+    background:black;
+    width: 100%;
+    height: 100%;
+}
+.lineArea:hover .line{
+    background: darkslategrey;
+    cursor: pointer;
+}
+
+.emptyLine {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+.lineNumber {
+    visibility: hidden;
+    font-size: 0.93rem;
+    color: #333;
+    font-family: Kaushan;
+    font-weight: bold;
+    float: left;
+    width: 0.125rem;
+    font-weight: bold;
+    margin-top: 0px; /* 0px */
+    margin-left: -0.93rem;
+}
+.lineArea:hover .lineNumber {
+    visibility: visible;
+    display: block;
+}
+
+.identification {
+    margin-left: 3.9rem;
+    height: 3.12rem;
+    margin-top: 1rem;
+}
+.hexagramNumber1,
+.hexagramNumber2 {
+    display: inline-block;
+    background-color: white;
+    font-size: 0.93rem;
+    margin-left: 4.5rem;
+    margin-top:  -2rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    border: 0.12rem solid #333;
+    text-align: center;
+    line-height: 1.12rem;
+}
+
+.chineseTitle1,
+.chineseTitle2 {
+    width: 100%;
+    /* margin-bottom: 1%; */
+    margin-left: -17px;
+    margin-top: 2rem;
+    background: transparent;
+    height: 3.12rem;
+    text-align: center;
+    line-height:  1.9rem;
+    font-size: 1.5rem;
+    font-family: Kaushan Script;
+    transition: opacity  ease-in-out 0.8s;
+    font-weight: bold;
+}
+.hexagramTitle1,
+.hexagramTitle2 {
+    width: 100%;
+    margin-bottom: 7%;
+    margin-left: -17px;
+    margin-top: 0rem;
+    background: transparent;
+    height: 3.12rem;
+    text-align: center;
+    line-height:  1.9rem;
+    font-size: 2.0rem;
+    font-family: Kaushan Script;
+    transition: opacity  ease-in-out 0.8s;
+    font-weight: bold;
+}
+.charactere1,
+.charactere2
+ {
+    display: inline-block;
+    font-size: 2.9rem;
+    font-family: 'Ma Shan Zheng';
+    text-align: center;
+    margin-top: -2rem;
+    margin-left: 3rem;
+    transition: opacity  ease-in-out 1s;
+    height: 2.5rem;
+    line-height: 3.12rem;
+    align-items: center;
+}
+
+.fade {
+    opacity: 0;
+}
+
+.infoArea {
+    margin-left: 1.6rem;
+    margin-top: -1rem;
+}
+#info {
+    width: 6.2rem;
+    padding: 0;
+    display: block;
+    font-family: Simonetta;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+}
+#info span {
+    margin-left: 0.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+#info .ut1,
+#info .ut2
+{
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+    transition: opacity  ease-in-out 1s;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 0.2rem;
+    font-weight: bold;
+}
+#info .bt1,
+#info .bt2
+{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    transition: opacity  ease-in-out 1s;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 0.2rem;
+    font-weight: bold;
+}
+
+.yinyangArea1, .yinyangArea2 {
+    display: none;
+}
