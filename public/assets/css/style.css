@@ -393,7 +393,7 @@ section#asks {
     height: 3.12rem;
     text-align: center;
     line-height:  1.9rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: Kaushan Script;
     transition: opacity  ease-in-out 0.8s;
     font-weight: bold;
@@ -417,10 +417,10 @@ section#asks {
 .charactere2
  {
     display: inline-block;
-    font-size: 2.9rem;
+    font-size: 2.6rem;
     font-family: 'Ma Shan Zheng';
     text-align: center;
-    margin-top: -2rem;
+    margin-top: -3rem;
     margin-left: 3rem;
     transition: opacity  ease-in-out 1s;
     height: 2.5rem;

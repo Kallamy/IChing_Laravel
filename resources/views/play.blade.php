@@ -7,8 +7,8 @@
             chineseName="{{$hexagram['chineseName']}}"
             number="{{$hexagram['number']}}"
             symbol="{{$hexagram['symbol']}}"
-            upperTrigram="{{$hexagram['upperTrigram']}}"
-            bottomTrigram="{{$hexagram['bottomTrigram']}}"
+            upperTrigram="{{$hexagram['upper_trigram']}}"
+            bottomTrigram="{{$hexagram['bottom_trigram']}}"
 
             />
         </div>
