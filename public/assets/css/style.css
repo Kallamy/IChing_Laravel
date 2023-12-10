@@ -5,7 +5,8 @@
     --bg2: #34b8bb;
     --bg3: #2f638c;
 
-    --gray: #5d6473;
+    --gray: #495057;
+    --drakgray: #343a40;
     --darkred: #9f0102;
     --red: #ff0114;
     --cleargreen: #0e9594;
@@ -13,6 +14,11 @@
     --clearblue: #227c9d;
     --blue: #3a86ff;
     --yellow: #f7c118;
+
+    --consult-color: #384540;
+
+    --fade-time : 1.5s;
+
 }
 
 * {
@@ -178,21 +184,25 @@ section#asks {
 
 /* INTERACTIVE FRAME  */
 
+.interactiveArea {
+    display:flex;
+    justify-content: center;
+}
+
 .frameArea {
     width: 1000px;
     /* margin: auto; */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 6rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
-    /* margin-left: 17rem; */
     /* margin-right: 0.62rem; */
 }
 
 .frame {
     box-sizing: content-box;
-    margin: auto;
+    margin-right: 2rem;
     overflow: hidden;
     width: 30rem;
     height: 30rem;
@@ -217,6 +227,7 @@ section#asks {
     height: 100%;
     background-color:  transparent;
     position: absolute;
+    margin-top: -1rem;
 }
 .smooth {
     transition: margin-left 1s ease-in-out;
@@ -372,15 +383,17 @@ section#asks {
 .hexagramNumber2 {
     display: inline-block;
     background-color: white;
-    font-size: 0.93rem;
+    font-family: Hind;
+    font-size: 1.2rem;
+    font-weight: bold;
     margin-left: 4.5rem;
-    margin-top:  -2rem;
-    width: 1.25rem;
-    height: 1.25rem;
+    margin-bottom:  3.2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     border: 0.12rem solid #333;
     text-align: center;
-    line-height: 1.12rem;
+    line-height: 1.7rem;
 }
 
 .chineseTitle1,
@@ -395,7 +408,7 @@ section#asks {
     line-height:  1.9rem;
     font-size: 1.7rem;
     font-family: Kaushan Script;
-    transition: opacity  ease-in-out 0.8s;
+    transition: opacity  ease-in-out var(--fade-time);
     font-weight: bold;
 }
 .hexagramTitle1,
@@ -410,7 +423,7 @@ section#asks {
     line-height:  1.9rem;
     font-size: 2.0rem;
     font-family: Kaushan Script;
-    transition: opacity  ease-in-out 0.8s;
+    transition: opacity  ease-in-out var(--fade-time);
     font-weight: bold;
 }
 .charactere1,
@@ -422,7 +435,7 @@ section#asks {
     text-align: center;
     margin-top: -3rem;
     margin-left: 3rem;
-    transition: opacity  ease-in-out 1s;
+    transition: opacity  ease-in-out var(--fade-time);
     height: 2.5rem;
     line-height: 3.12rem;
     align-items: center;
@@ -456,7 +469,7 @@ section#asks {
 {
     font-size: 1.4rem;
     margin-bottom: 1.25rem;
-    transition: opacity  ease-in-out 1s;
+    transition: opacity  ease-in-out var(--fade-time);
     text-align: center;
     font-weight: bold;
     margin-left: 0.2rem;
@@ -467,11 +480,195 @@ section#asks {
 {
     font-size: 1.5rem;
     margin-top: 1rem;
-    transition: opacity  ease-in-out 1s;
+    transition: opacity  ease-in-out var(--fade-time);
     text-align: center;
     font-weight: bold;
     margin-left: 0.2rem;
     font-weight: bold;
+}
+
+.chineseLine {
+    width: 12.0rem;
+    height: 2.0rem;
+    display: block;
+    margin-top: 1rem;
+}
+/* Invert Buttons */
+.buttonsArea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem 3rem 3rem 1rem;
+    border-radius: 5px;
+    margin-right: 0rem;
+    margin-left: 0rem;
+    background-color: rgba(255, 255, 255, .3);
+}
+.changeSelector {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: .6rem;
+}
+
+.invertButton {
+    width: 3.9rem;
+    height: 3.9rem;
+    background-color: var(--red);
+    border: 0.23rem outset var(--bg2);
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: azure;
+    border-radius: 0.5rem;
+    padding: 0.31rem 0.31rem;
+    z-index: 999;
+    margin-top: 0.31rem;
+
+}
+.invertButton:hover {
+    filter: brightness(120%);
+    font-weight: bold;
+    border: 0.23rem outset #068b76;
+}
+
+.invertButton:hover + .yinyangIcon {
+    visibility: visible;
+    opacity: 100;
+}
+
+.invertButton:not( :hover ) + .yinyangIcon {
+    visibility: visible;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+.yinyangIcon {
+    Transform: translateY(15px);
+}
+
+/* Template */
+.templateArea {
+    position: absolute;
+    background-color: aliceblue;
+    transform: rotate(180deg);
+    width: 5.3rem;
+    height: 5.3rem;
+    padding: 5px;
+    margin-top: 0.7rem;
+    margin-left: 1rem;
+    box-shadow: 0 0 0.31rem;
+}
+.templateArea img {
+    -webkit-user-drag: none;
+    display: block;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+/* HINT AREA */
+.hintArea {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 25px;
+    margin-top: 0.44rem;
+    margin-bottom: 0.44rem;
+    font-size: 1.5rem;
+}
+
+/* ABOUT AREA*/
+.about-button {
+    position: absolute;
+    left: 25rem;
+    top: 1rem;
+    background-color: var(--blue);
+    color: azure;
+    width: 1.7rem;
+    height: 1.7rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+    z-index: 9;
+}
+.aboutArea {
+    display: none;
+    position: absolute;
+    text-align: justify;
+    background-color: #01497c;
+    color: mediumturquoise;
+    padding: 1rem;
+    padding-right: 1.25rem;
+    z-index: 100;
+    width: 97%;
+    height: 100%;
+
+}
+.aboutContainer {
+    margin-top: -1rem;
+    position: absolute;
+    top: 50%;
+    padding: 0.4rem;
+    padding-right: 2.5rem;
+    transform: translateY(-50%);
+    background-color: transparent;
+}
+#aboutQuote {
+    margin: 0.4rem;
+    /*font-family: 'Times New Roman', Times, serif;*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: .92rem;
+    margin-bottom: 0.7rem;
+}
+.about-title,
+.about-content {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+.about-title {
+    margin: 0.19rem;
+
+    color: hsl(52, 99%, 62%);
+    font-size: .92rem;
+    font-weight: bold;
+    margin-top: 0.33rem;
+    text-indent: -0.30rem;
+}
+.about-content {
+    text-indent: -0.2rem;
+    font-size: .92rem;
+    margin: 0;
+    margin-left: 0.61rem;
+    color: #48bfe3;
+}
+
+.about-content b {
+    font-weight: 900;
+}
+
+.trigram-name {
+    color: red;
+}
+.closeButton {
+    position: absolute;
+    top: 2%;
+    right: 10%;
+    font-size: 1.6rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #9f0102;
+}
+.consultArea {
+    display: block;
+    margin: auto;
+    width: 125rem;
+    height: 300px;
+    border-radius: 5px;
+    padding: 2rem;
+    background: var(--consult-color);
+    color: white;
+    text-align: center;
 }
 
 .yinyangArea1, .yinyangArea2 {

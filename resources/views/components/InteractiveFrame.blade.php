@@ -2,18 +2,18 @@
     {{-- <button type="button" onClick="getAbout()" class="about-button">?</button> --}}
     <div class="slidesArea smooth">
         <div class="slide">
-            <div class="chineseTitle1">{{$chineseName}}</div>
+            <div class="chineseTitle1"></div>
             <div class="identification">
-                <div class="hexagramNumber1">{{$number}}</div>
-                <div class="charactere1">{{$symbol}}</div>
+                <div class="hexagramNumber1"></div>
+                <div class="charactere1"></div>
             </div>
-            <div class="hexagramTitle1">{{$title}}</div>
+            <div class="hexagramTitle1"></div>
 
             <div class="infoArea">
                 <div id="info">
-                    <div class="ut1">{{$upperTrigram}}</div>
+                    <div class="ut1"></div>
                     <span>sobre</span>
-                    <div class="bt1">{{$bottomTrigram}}</div>
+                    <div class="bt1"></div>
                 </div>
 
                 <div class="hexagramArea" id="firstHexagram" data-index="0">
@@ -33,7 +33,7 @@
                         <div class="lineArea" data-pos="5"><div class="line"><span class="lineNumber">5</span></div></div>
                         <div class="lineArea" data-pos="4"><div class="line"><span class="lineNumber">4</span></div></div>
                         <div class="lineArea" data-pos="3"><div class="line"><span class="lineNumber">3</span></div><div class="line"></div></div>
-                        <div class="lineArea" data-pos="3"><div class="line"><span class="lineNumber">2</span></div><div class="line"></div></div>
+                        <div class="lineArea" data-pos="2"><div class="line"><span class="lineNumber">2</span></div><div class="line"></div></div>
                         <div class="lineArea" data-pos="1"><div class="line"><span class="lineNumber">1</span></div></div>
                     </div>
                     <div class="yinyangArea1">
@@ -45,16 +45,17 @@
         </div>
         <div class="separator"></div>
         <div class="slide">
+            <div class="chineseTitle2"></div>
             <div class="identification">
-                <div class="hexagramNumber2">21</div>
-                <div class="charactere2">乾</div>
+                <div class="hexagramNumber2"></div>
+                <div class="charactere2"></div>
             </div>
-            <div class="hexagramTitle2">Nome do hexagrama</div>
+            <div class="hexagramTitle2"></div>
             <div class="infoArea">
                 <div id="info">
-                    <div class="ut2">Trigrma 1</div>
+                    <div class="ut2"></div>
                     <span>sobre</span>
-                    <div class="bt2">Trigrama 2</div>
+                    <div class="bt2"></div>
                 </div>
 
                 <div class="hexagramArea" id="secondHexagram" data-index="1">
@@ -89,6 +90,6 @@
     </div>
 
     <div class="controllersArea">
-        <a class="prevHexagram">prev</a>
-        <a class="nextHexagram" >next</a>
+        <a class="prevHexagram"><</a>
+        <a class="nextHexagram" >></a>
     </div>
