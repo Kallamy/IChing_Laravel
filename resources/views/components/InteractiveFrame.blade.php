@@ -1,13 +1,15 @@
 <div class="frame">
-    {{-- <button type="button" onClick="getAbout()" class="about-button">?</button> --}}
+    <button type="button" onClick="getAbout()" class="about-button">?</button>
     <div class="slidesArea smooth">
         <div class="slide">
-            <div class="chineseTitle1"></div>
-            <div class="identification">
-                <div class="hexagramNumber1"></div>
-                <div class="charactere1"></div>
+            <div class="hexagramHeader">
+                <div class="chineseTitle1"></div>
+                <div class="identification">
+                    <div class="hexagramNumber1"></div>
+                    <div class="charactere1"></div>
+                </div>
+                <div class="hexagramTitle1"></div>
             </div>
-            <div class="hexagramTitle1"></div>
 
             <div class="infoArea">
                 <div id="info">
@@ -45,12 +47,15 @@
         </div>
         <div class="separator"></div>
         <div class="slide">
-            <div class="chineseTitle2"></div>
-            <div class="identification">
-                <div class="hexagramNumber2"></div>
-                <div class="charactere2"></div>
+            <div class="hexagramHeader">
+                <div class="chineseTitle2"></div>
+                <div class="identification">
+                    <div class="hexagramNumber2"></div>
+                    <div class="charactere2"></div>
+                </div>
+                <div class="hexagramTitle2"></div>
             </div>
-            <div class="hexagramTitle2"></div>
+
             <div class="infoArea">
                 <div id="info">
                     <div class="ut2"></div>
@@ -87,6 +92,19 @@
         <div class="templateLine"></div>
         <div class="templateLine"></div>
         <div class="templateLine"></div>
+    </div>
+
+    <div class="aboutArea">
+        <div class="closeButton">✖</div>
+        <div class="aboutContainer">
+            <blockquote id="aboutQuote"> Peace. The small departs, The great approaches. <br> Good fortune. Success.</blockquote>
+            <div id="aboutTrigrams"><p class="about-title">Formed by the trigrams:</p><p class="about-content">Wind over Heaven</p></div>
+            <div id="aboutGeneral"><p class="about-title">General:</p><p class="about-content">Although times are harmonious you should not take them for granted. Try to understand why the harmony is there.</p></div>
+            <div id="aboutLove"><p class="about-title">Love:</p><p class="about-content">Your relationship should be treated to respect and kindness.</p></div>
+            <div id="aboutBusiness"><p class="about-title">business:</p><p class="about-content">Your current success should be analyzed to see how it came about.</p></div>
+            <div id="aboutPersonal"><p class="about-title">Personal:</p><p class="about-content">Do a good deed.</p></div>
+            <div id="aboutOverview"><p class="about-title">Overview:</p><p class="about-content">T'ai relates to harmony. Everything should currently be going well. Dont take it for granted though. Examine all the aspects of your life and see how that harmony come about. Nothing is permanent of course, and this is no less so for T'ai. Enjoy the peace and harmony arround you. T'ai is a very auspicious hexagram and indicates a successful time of life.</p></div>
+        </div>
     </div>
 
     <div class="controllersArea">

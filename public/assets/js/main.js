@@ -55,7 +55,6 @@ function lineChange(e) {
             }
         } else {
             for( let i = 0; i < 2; i++ ) {
-                console.log(pos);
                 if(hexagrams[i].lines[pos] == true) {
                     hexagrams[i].lines[pos] = false;
                 } else {
@@ -130,6 +129,7 @@ getInfo();
 
 // Function to fill values of the hexagrams attributes
 function getInfo() {
+
     if(document.querySelector('.hexagramNumber1').innerHTML != hexagrams[0].getNumber()) {
         document.querySelector('.hexagramNumber1').classList.add('fade');
     }
@@ -144,6 +144,9 @@ function getInfo() {
     }
     if(document.querySelector('.charactere1').innerHTML != hexagrams[0].getCharactere()) {
         document.querySelector('.charactere1').classList.add('fade');
+    }
+    if(document.querySelector('.charactere2').innerHTML != hexagrams[1].getCharactere()) {
+        document.querySelector('.charactere2').classList.add('fade');
     }
     if(document.querySelector('#info .ut1').innerHTML != hexagrams[0].getTrigram("upper")) {
         document.querySelector('#info .ut1').classList.add('fade');
@@ -160,13 +163,13 @@ function getInfo() {
     // wait some time to set innerHTML of the elements with the attributes values
     setTimeout(()=>{
         document.querySelector('.hexagramNumber1').innerHTML = hexagrams[0].getNumber();
-        document.querySelector('.hexagramNumber2').innerHTML = hexagrams[0].getNumber();
+        document.querySelector('.hexagramNumber2').innerHTML = hexagrams[1].getNumber();
         document.querySelector('.chineseTitle1').innerHTML = hexagrams[0].getHexagram('chinese');
         document.querySelector('.chineseTitle2').innerHTML = hexagrams[1].getHexagram('chinese');
         document.querySelector('.hexagramTitle1').innerHTML = hexagrams[0].getHexagram('title');
         document.querySelector('.hexagramTitle2').innerHTML = hexagrams[1].getHexagram('title');
         document.querySelector('.charactere1').innerHTML = hexagrams[0].getCharactere();
-        document.querySelector('.charactere2').innerHTML = hexagrams[0].getCharactere();
+        document.querySelector('.charactere2').innerHTML = hexagrams[1].getCharactere();
         document.querySelector('#info .ut1').innerHTML = hexagrams[0].getTrigram("upper");
         document.querySelector('#info .bt1').innerHTML = hexagrams[0].getTrigram("bottom");
         document.querySelector('#info .ut2').innerHTML = hexagrams[1].getTrigram("upper");
@@ -187,15 +190,26 @@ function getInfo() {
             document.querySelector('.charactere2').classList.remove('fade');
             document.querySelector('.hexagramNumber1').classList.remove('fade');
             document.querySelector('.hexagramNumber2').classList.remove('fade');
-        }
+        } else {
+            document.querySelector('.hexagramNumber1').innerHTML = "";
+            document.querySelector('.hexagramNumber2').innerHTML = "";
+            document.querySelector('.chineseTitle1').innerHTML = "";
+            document.querySelector('.chineseTitle2').innerHTML = "";
+            document.querySelector('.hexagramTitle1').innerHTML = "";
+            document.querySelector('.hexagramTitle2').innerHTML = "";
+            document.querySelector('.charactere1').innerHTML = "";
+            document.querySelector('.charactere2').innerHTML = "";
+            }
         // fill next and prev controllers
         if(isConsulting) {
             document.querySelector('.nextHexagram').innerHTML = ">";
             document.querySelector('.prevHexagram').innerHTML = "<";
         } else {
-            document.querySelector('.nextHexagram').innerHTML = hexagrams[1].name + "  >";
-            document.querySelector('.prevHexagram').innerHTML = "<  " + hexagrams[0].name;
+            document.querySelector('.nextHexagram').innerHTML = hexagrams[1].getHexagram('title')+" >";
+            document.querySelector('.prevHexagram').innerHTML = "< " + hexagrams[0].getHexagram('title');
         }
+
+
     }, 950)
 }
 
@@ -208,6 +222,7 @@ invertButtons[2].addEventListener("click", () => invertPositions());
 function invertLines() {
     let inversedLines1 = []
     let inversedLines2 = []
+
 
     if(canInvert == true) {
         if(changeSelector.checked === true) {
@@ -234,12 +249,14 @@ function invertLines() {
         YingYangShow();
         canInvert = false;
 
+        hexagrams[0].setInfo();
+        hexagrams[1].setInfo();
         setTimeout(()=>{
-            // hexagrams[0].draw();
             updateHexagram();
             canInvert = true;
         }, yinyangDuration / 2)
     }
+    canInvert = true;
     getInfo();
 }
 
@@ -261,6 +278,8 @@ function invertTrigrams() {
         YingYangShow();
         canInvert = false;
 
+        hexagrams[0].setInfo();
+        hexagrams[1].setInfo();
         setTimeout(()=>{
             updateHexagram();
             canInvert = true;
@@ -282,7 +301,8 @@ function invertPositions() {
 
         YingYangShow();
         canInvert = false;
-
+        hexagrams[0].setInfo();
+        hexagrams[1].setInfo();
         setTimeout(()=>{
             updateHexagram();
             canInvert = true;
@@ -358,4 +378,53 @@ function drawTemplate() {
     }
 }
 
+// Function to get the texts about the hexagrams and write on screen
+function getAbout() {
+    // show about area
+    aboutArea = document.querySelector(".aboutArea")
+    aboutArea.style.visibility = "visible";
 
+    // set variables as empty
+    sentence = "";
+    general = "";
+    love = "";
+    business = "";
+    personal  = "";
+    overview = "";
+
+    // select the source according to the current language
+    aboutLang = [];
+    // if(lang == "en") {
+    //     aboutLang = about.en;
+    // } else if(lang == "pt-br") {
+    //     aboutLang = about.pt;
+    // }
+
+    // fill the variables with the values of the object about
+    aboutLang.forEach(a => {
+        if(hexagrams[currentHexagram].number == a.id) {
+            sentence = a.sentence;
+            general = a.general;
+            love = a.love;
+            business = a.business;
+            personal  = a.personal;
+            overview = a.overview;
+        }
+    })
+
+    // write the texts on the screen
+    // document.querySelector("#aboutQuote").innerHTML = sentence;
+    // document.querySelector("#aboutTrigrams").innerHTML = <p class="about-title">:<span class="about-content "></span>${hexagrams[currentHexagram].upperTrigram + "sobre"} ` + hexagrams[currentHexagram].bottomTrigram</p>
+    // document.querySelector("#aboutGeneral").innerHTML = `<p class="about-title">${(lang == "pt-br") ? ("Geral") : ((lang == "en") ? ("General") : (""))}:<span class="about-content">${general}</span>`
+    // document.querySelector("#aboutLove").innerHTML = `<p class="about-title">${(lang == "pt-br") ? ("Amor") : ((lang == "en") ? ("Love") : (""))}:<span class="about-content">${love}</span>`
+    // document.querySelector("#aboutBusiness").innerHTML = `<p class="about-title">${(lang == "pt-br") ? ("Negócios") : ((lang == "en") ? ("Business") : (""))}:<span class="about-content">${business}</span>`
+    // document.querySelector("#aboutPersonal").innerHTML = `<p class="about-title">${(lang == "pt-br") ? ("Pessoal") : ((lang == "en") ? ("General") : (""))}:<span class="about-content">${personal}</span>`
+    // document.querySelector("#aboutOverview").innerHTML = `<p class="about-title">${(lang == "pt-br") ? ("Visão geral") : ((lang == "en") ? ("Overview") : (""))}:<span class="about-content">${overview}</span>`
+
+    aboutArea.style.display = 'block';
+    aboutArea.addEventListener('click', () => {
+        aboutArea.style.display = 'none';
+    });
+
+
+}

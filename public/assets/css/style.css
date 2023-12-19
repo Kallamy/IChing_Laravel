@@ -18,7 +18,7 @@
     --consult-color: #384540;
 
     --fade-time : 1.5s;
-
+    font-size: 55%;
 }
 
 * {
@@ -33,6 +33,22 @@
 body {
     background-color: #127475;
     overflow: hidden;
+}
+
+.btn {
+    padding: 2.0rem 3.0rem;
+    border-radius: 1.0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 2rem;
+    transition: all .3s ease-in-out;
+    border: 0;
+    cursor: pointer;
+}
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* HEADER  */
@@ -488,8 +504,8 @@ section#asks {
 }
 
 .chineseLine {
-    width: 12.0rem;
-    height: 2.0rem;
+    width: 10.8rem;
+    height: 1.90rem;
     display: block;
     margin-top: 1rem;
 }
@@ -659,18 +675,185 @@ section#asks {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #9f0102;
 }
+
+/* CONSULT AREA */
 .consultArea {
     display: block;
-    margin: auto;
+    text-align: left;
     width: 125rem;
     height: 300px;
     border-radius: 5px;
     padding: 2rem;
-    background: var(--consult-color);
+    margin-top: 3rem;
+    background: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
 }
 
+.consultArea span {
+    text-align: center;
+}
+
+.consultLines {
+ margin-top: -1rem;
+ visibility: hidden;
+}
+
+.consultLines span {
+    display: block;
+    text-align: left;
+    font-size: 1.3rem;
+}
+
+
 .yinyangArea1, .yinyangArea2 {
     display: none;
+}
+
+.consultButton {
+    margin: auto;
+    margin-top: 0.62rem;
+    margin-right: 90px;
+    display: flex;
+    width: 4.37rem;
+    height: 3.12rem;
+    padding: 10px;
+    background-color: var(--green);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    border: 0.3rem groove var(--cleargreen);
+}
+.consultButton:hover {
+    filter: brightness(120%)
+}
+
+/* GAME AREA */
+.startArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.questionArea {
+   display: none;
+   flex-direction: column;
+}
+.questionArea input {
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.gameArea {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Table Area */
+.tableArea {
+    width: 56.25rem;
+    height: 7rem;
+
+    background-color:burlywood;
+    background-image: url(../images/woodBG.jpg);
+    border: 3px solid saddlebrown;
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* CONCLUSION AREA */
+.conclusionArea {
+    display: none;
+    /* justify-content: space-around; */
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 1rem;
+}
+
+.consultMessage {
+    float: left;
+    font-size: 1.9rem;
+    color: white;
+}
+.consultLines {
+    text-align: left;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.messageArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10rem;
+    height: 5.6rem;
+    margin-left: 10rem;
+}
+
+.consultResult, .consultUnfolding {
+    float: left;
+    margin-bottom: 1rem;
+}
+
+/* Coins Button */
+.coinsButton {
+    width: 240px;
+    height: 30px;
+    margin-left: 10px;
+    color: #283618;
+    background-color: #ccd5ae;
+    padding: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 0.3rem outset  #ffcb69;
+    border-radius: 10px;
+}
+.coinsButton:active {
+    border: 0.3rem inset  #ffcb69;
+}
+
+.coin {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    transform-style: preserve-3d;
+
+
+}
+
+.yinFace, .yangFace {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.yinFace {
+    background-image: url("../coins/yinCoin.png");
+    background-size: cover;
+}
+.yangFace {
+    backface-visibility: hidden;
+    background-image:  url("../coins/yangCoin.png");
+    background-size: cover;
+}
+
+.coin.yin {
+   transform: rotateY(180deg);
+}
+.coin.yang {
+
+}
+
+.exitButton {
+    margin-right: 300px;
 }
