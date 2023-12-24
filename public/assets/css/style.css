@@ -18,7 +18,7 @@
     --consult-color: #384540;
 
     --fade-time : 1.5s;
-    font-size: 55%;
+    font-size: 50%;
 }
 
 * {
@@ -30,9 +30,13 @@
     padding: 0;
 }
 
+img {
+    user-select: none;
+}
+
 body {
     background-color: #127475;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .btn {
@@ -48,7 +52,7 @@ body {
     cursor: pointer;
 }
 .btn:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 /* HEADER  */
@@ -121,10 +125,12 @@ footer {
     text-align: center;
     line-height: 4.37rem;
     font-size: 1.7rem;
+    z-index: 9;
 }
 
 .container {
     display: flex;
+    width: 100%;
     height: 100vh;
     flex-direction: row;
     background-color: gray;
@@ -134,7 +140,6 @@ footer {
 
 /* SIDE MENU  */
 .sideMenu {
-    display: block;
     display:flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +158,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: #9f0102; */
     text-decoration: none;
     height: 15.0rem;
     width: 9.0rem;
@@ -170,6 +174,27 @@ footer {
 .menu_icon.active {
     width: 7.0rem;
     filter: brightness(100%);
+}
+/* MOBILE MENU */
+.mobileMenu {
+    display: none;
+    float: left;
+    flex-direction: colum;
+    align-items: center;
+    background-color: var(--gray);
+    position: absolute;
+    width: 100%;
+    height: 15rem;
+    bottom: 5rem;
+}
+.mobileMenu a {
+    float: left;
+    margin-left: 10rem;
+    margin-top: 2rem;
+}
+.mobileMenu ul li {
+    list-style-type: none;
+
 }
 
 main {
@@ -193,10 +218,125 @@ section#learn {
 }
 section#play {
     background-color: var(--bg2);
+    padding: 0;
 }
 section#asks {
     background-color: var(--bg3);
 }
+
+
+/* LEARN  */
+.learnMenu {
+    display: flex;
+    justify-content: center;
+    margin-top: -2rem;
+}
+.learnMenu ul{
+    display: flex;
+    gap: 2rem;
+}
+.learnMenu ul li{
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-bottom: 6px solid rgba(0, 0, 0, 0.3);
+    list-style-type: none;
+
+}
+.learnMenu ul li.active{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-bottom: 6px solid var(--red);
+}
+.learnMenu ul li:hover{
+    border-bottom: 6px solid var(--red);
+}
+.learnMenu ul a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.learnContainer {
+    padding-top: 2rem;
+    padding-left: 2rem;
+    width: 85%;
+    text-align: justify;
+    text-indent: .5cm;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.learnContainer img {
+    margin-top: 2rem;
+}
+
+#trigramsTable {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin-top: 3rem;
+    border: 2px solid #000;
+    font-size: 1.4rem;
+}
+#trigramsTable th {
+    border: 2px solid #000;
+    padding: 1rem;
+    background: #ffcb69;
+
+
+    text-align: center;
+}
+tr:hover {
+    background: #fff;
+
+}
+#trigramsTable td {
+    border: 2px solid #000;
+    padding: .5rem;
+    background: beige;
+    text-align: left;
+    min-width: 13rem;
+    height: 3rem;
+}
+#trigramsTable td:first-child {
+    background: burlywood;
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+
+.hexagramsContainer {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(8, 6.4rem);
+    grid-template-rows: repeat(8, 6.4rem);
+    grid-auto-flow: row;
+
+    /* grid-gap: 0;
+    row-gap: 0; */
+}
+.hexagramItem {
+    display: flex;
+    flex-direction: column;
+    width: 6.4rem;
+    height: 6.4rem;
+    font-size: .9rem;
+    font-weight: bold;
+    background: blanchedalmond;
+    border: 2px solid black;
+    text-indent: 0;
+    line-height: .8rem;
+    text-align: center;
+}
+.hexagramItem div {
+    font-weight: bold;
+    margin-top: .09rem;
+}
+.hexagramSymbol {
+    font-size: 2.6rem;
+    line-height: 3rem;
+    /* font-weight: bold; */
+}
+
 
 /* INTERACTIVE FRAME  */
 
@@ -211,8 +351,8 @@ section#asks {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 9rem;
+    margin-bottom: 1rem;
     /* margin-right: 0.62rem; */
 }
 
@@ -582,7 +722,7 @@ section#asks {
     -webkit-user-drag: none;
     display: block;
     width: 100%;
-    margin-bottom: 3px;
+    margin-bottom: 0.3rem;
 }
 
 /* HINT AREA */
@@ -678,13 +818,15 @@ section#asks {
 
 /* CONSULT AREA */
 .consultArea {
+    /* margin: auto; */
     display: block;
     text-align: left;
-    width: 125rem;
+    width: 90%;
     height: 300px;
     border-radius: 5px;
     padding: 2rem;
-    margin-top: 3rem;
+    margin-top: 5rem;
+    margin-left: 2rem;
     background: rgba(0, 0, 0, 0.6);
     color: white;
     text-align: center;
@@ -743,6 +885,7 @@ section#asks {
 .questionArea input {
     padding: 2rem;
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .gameArea {
@@ -757,7 +900,7 @@ section#asks {
 
 /* Table Area */
 .tableArea {
-    width: 56.25rem;
+    width: 50.25rem;
     height: 7rem;
 
     background-color:burlywood;
@@ -790,6 +933,7 @@ section#asks {
 }
 
 .messageArea {
+    /* background: #f7c118; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -806,16 +950,17 @@ section#asks {
 
 /* Coins Button */
 .coinsButton {
-    width: 240px;
-    height: 30px;
-    margin-left: 10px;
+    width: 20.0rem;
+    height: 10rem;
+    height: 3.0rem;
+    margin-left: 1.0rem;
     color: #283618;
     background-color: #ccd5ae;
-    padding: 15px;
+    padding: 1.5rem;
     font-size: 1.4rem;
     font-weight: bold;
     border: 0.3rem outset  #ffcb69;
-    border-radius: 10px;
+    border-radius: 1.0rem;
 }
 .coinsButton:active {
     border: 0.3rem inset  #ffcb69;
@@ -856,4 +1001,93 @@ section#asks {
 
 .exitButton {
     margin-right: 300px;
+}
+
+/* Media Queries */
+
+@media (max-width: 319px) {
+    :root {
+        font-size: 43%;
+    }
+}
+
+@media (max-width: 426px) {
+    :root {
+        font-size: 45%;
+    }
+    .mobileMenu {
+        display: block;
+    }
+    section#play {
+        /* background-color: #333 */
+    }
+    .sideMenu {
+        display: none;
+    }
+    .btn {
+        font-size: 1.5rem;
+    }
+    .btn img {
+        width: 3.6rem;
+    }
+    .consultArea {
+        width: 100%;
+        margin-left: -2rem;
+        padding: 2rem;
+    }
+    .messageArea {
+        margin: auto;
+        width: 140%;
+        flex: 1;
+    }
+    .consultMessage {
+        /* display: block;
+        width: 150%;
+        flex: 1; */
+        font-size: 1.7rem;
+    }
+    .conclusionArea {
+        margin-top: 5rem;
+    }
+
+    .tableArea {
+        width: 30rem;
+    }
+
+    section#learn {
+        padding-left: 1rem;
+    }
+    .learnMenu ul li{
+
+        font-size: 1.4rem;
+
+    }
+
+    .learnContainer p {
+        font-size: 1.4rem;
+    }
+    .learnContainer {
+        width: 90%;
+    }
+    .learnContainer img {
+        width: 50%;
+    }
+
+    #trigramsTable {
+        font-size: 1.1rem;
+    }
+    #trigramsTable td:first-child{
+        font-size: 1.8igramsrem;
+    }
+
+    .hexagramsContainer {
+        grid-template-columns: repeat(8, 5.6rem);
+        grid-template-rows: repeat(8, 5.6rem);
+    }
+    .hexagramItem {
+        width: 5.6rem;
+        height: 5.6rem;
+        font-size: .8rem;
+    }
+
 }

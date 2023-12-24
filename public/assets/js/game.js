@@ -18,6 +18,8 @@ function showQuestion() {
     document.querySelector('.questionArea').style.display = 'flex';
     document.querySelector('.conclusionArea').style.display = 'none';
     document.querySelector('.consultLines').style.visibility = 'hidden';
+    document.querySelector('#questionInput').value = "";
+
 }
 // Function to show game
 function showGame() {

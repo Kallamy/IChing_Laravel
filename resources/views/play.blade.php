@@ -21,11 +21,11 @@
         </div>
         <div class="consultArea">
             <div class="messageArea">
-                <span class="consultMessage">
+                <div class="consultMessage">
                     <span class="consultResult"></span>
                     <br>
                     <span class="consultResult"></span>
-                </span>
+                </div>
                 <div class="consultLines">
                     <span><strong>Linhas Móveis:</strong></span>
                     <span class="consultLine"></span>
@@ -42,7 +42,7 @@
 
             </div>
             <div class="questionArea">
-                <input type="text" placeholder="Me fale sobre...">
+                <input id="questionInput" type="text" placeholder="Me fale sobre...">
                 <x-Button onclick="showGame()">Consultar<img width="40.0rem" src="assets/icons/i-ching.png"></x-Button>
             </div>
             <div class="gameArea">
