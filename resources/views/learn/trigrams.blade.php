@@ -7,48 +7,75 @@
             <th>Trigrama</th>
             <th>Nome</th>
             <th>Simbolismo</th>
+            <th>Família</th>
+            <th>Corpo Humano</th>
+            <th>Animal</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td><strong>☰</strong></td>
             <td>Ch'ien</td>
-            <td>Céu, força criativa, pai, masculino, positivo, forte, ativo</td>
+            <td>Céu, força criativa, masculino, positivo, forte, ativo</td>
+            <td>Pai</td>
+            <td>Cabeça</td>
+            <td>Cavalo</td>
         </tr>
         <tr>
             <td><strong>☷</strong></td>
             <td>K'un</td>
-            <td>Terra, receptividade, mãe, feminino, negativo, fraco, passivo</td>
+            <td>Terra, receptividade, feminino, negativo, fraco, passivo</td>
+            <td>Mãe</td>
+            <td>Abdómen</td>
+            <td>Vaca</td>
         </tr>
         <tr>
             <td><strong>☳</strong></td>
             <td>Chên</td>
-            <td>Trovão, movimento, primeiro filho, primogênito, início, impulso</td>
+            <td>Trovão, movimento, primogênito, início, impulso</td>
+            <td>Irmão mais velho</td>
+            <td>Pé</td>
+            <td>Dragão</td>
         </tr>
         <tr>
             <td><strong>☵</strong></td>
             <td>K'an</td>
             <td>Água, perigo, escuridão, abismo, profundidade, fluidez</td>
+            <td>Filho do meio</td>
+            <td>Ouvido</td>
+            <td>Porco</td>
         </tr>
         <tr>
             <td><strong>☴</strong></td>
             <td>Sun</td>
             <td>Vento, madeira, flexibilidade, penetração, perseverança, progresso</td>
+            <td>Filha mais velha</td>
+            <td>Coxas</td>
+            <td>Gato</td>
         </tr>
         <tr>
             <td><strong>☲</strong></td>
             <td>Li</td>
             <td>Fogo, luz, claridade, sol, iluminação, consciência</td>
+            <td>Filha do meio</td>
+            <td>Olhos</td>
+            <td>Pavão</td>
         </tr>
         <tr>
             <td><strong>☶</strong></td>
             <td>Kên</td>
             <td>Montanha, imobilidade, estabilidade, firmeza, resistência, inércia</td>
+            <td>Filho mais novo</td>
+            <td>Mão</td>
+            <td>Cão</td>
         </tr>
         <tr>
             <td><strong>☱</strong></td>
             <td>Tui</td>
             <td>Lago, alegira, prazer, harmonia</td>
+            <td>Filha mais nova</td>
+            <td>Boca e lábios</td>
+            <td>Ovelha</td>
         </tr>
     </tbody>
 </table>

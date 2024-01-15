@@ -40,16 +40,19 @@ body {
 }
 
 .btn {
-    padding: 2.0rem 3.0rem;
+    padding: 1.0rem 1.0rem;
     border-radius: 1.0rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: .5rem;
     font-size: 2rem;
     transition: all .3s ease-in-out;
     border: 0;
     cursor: pointer;
+}
+.btn img {
+   width: 4rem;
 }
 .btn:hover {
     transform: scale(1.02);
@@ -57,7 +60,7 @@ body {
 
 /* HEADER  */
 header {
-    position: block;
+    position: absolute;
     display: flex;
     width: 100%;
     top: 0;
@@ -184,7 +187,7 @@ footer {
     background-color: var(--gray);
     position: absolute;
     width: 100%;
-    height: 15rem;
+    height: 12rem;
     bottom: 5rem;
 }
 .mobileMenu a {
@@ -211,13 +214,14 @@ section {
     color: #000;
     font-size: 1.8rem;
     padding: 4.0rem;
+    padding-top: 12rem;
 }
 
 section#learn {
     background-color: var(--bg1);
 }
 section#play {
-    background-color: var(--bg2);
+    background-color: #738E72;
     padding: 0;
 }
 section#asks {
@@ -237,20 +241,20 @@ section#asks {
 }
 .learnMenu ul li{
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.7rem;
     padding: 1rem;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.3);
-    border-bottom: 6px solid rgba(0, 0, 0, 0.3);
+    border-bottom: .6rem solid rgba(0, 0, 0, 0.3);
     list-style-type: none;
 
 }
 .learnMenu ul li.active{
     background-color: rgba(0, 0, 0, 0.4);
-    border-bottom: 6px solid var(--red);
+    border-bottom: .6rem solid var(--red);
 }
 .learnMenu ul li:hover{
-    border-bottom: 6px solid var(--red);
+    border-bottom: .6rem solid var(--red);
 }
 .learnMenu ul a{
     color: #fff;
@@ -263,22 +267,24 @@ section#asks {
     width: 85%;
     text-align: justify;
     text-indent: .5cm;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 .learnContainer img {
     margin-top: 2rem;
+    width: 60rem;
 }
 
 #trigramsTable {
     border-collapse: collapse;
     border-spacing: 0px;
     margin-top: 3rem;
-    border: 2px solid #000;
-    font-size: 1.4rem;
+    border: .2rem solid #000;
+    font-size: 1.2rem;
+    padding-left: 1rem;
 }
 #trigramsTable th {
-    border: 2px solid #000;
+    border: .2rem solid #000;
     padding: 1rem;
     background: #ffcb69;
 
@@ -290,16 +296,21 @@ tr:hover {
 
 }
 #trigramsTable td {
-    border: 2px solid #000;
+    border: .2rem solid #000;
     padding: .5rem;
     background: beige;
     text-align: left;
-    min-width: 13rem;
+    min-width: 3rem;
     height: 3rem;
 }
 #trigramsTable td:first-child {
     background: burlywood;
+    width: 3rem;
     font-size: 2.4rem;
+    text-align: center;
+}
+#trigramsTable td:nth-child(2) {
+    width: 5rem;
     text-align: center;
 }
 
@@ -307,12 +318,20 @@ tr:hover {
 .hexagramsContainer {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(8, 6.4rem);
-    grid-template-rows: repeat(8, 6.4rem);
-    grid-auto-flow: row;
+    grid-template-columns: repeat(9, 6.4rem);
+    grid-template-rows: repeat(9, 6.4rem);
+    /* grid-auto-flow: row; */
 
     /* grid-gap: 0;
     row-gap: 0; */
+}
+.hexagramIndex {
+    display: flex;
+    align-items: center;
+    background: #ccd5ae;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid black;
 }
 .hexagramItem {
     display: flex;
@@ -322,9 +341,9 @@ tr:hover {
     font-size: .9rem;
     font-weight: bold;
     background: blanchedalmond;
-    border: 2px solid black;
+    border: .2rem solid black;
     text-indent: 0;
-    line-height: .8rem;
+    line-height: .9rem;
     text-align: center;
 }
 .hexagramItem div {
@@ -333,7 +352,7 @@ tr:hover {
 }
 .hexagramSymbol {
     font-size: 2.6rem;
-    line-height: 3rem;
+    line-height: 2.2rem;
     /* font-weight: bold; */
 }
 
@@ -346,12 +365,12 @@ tr:hover {
 }
 
 .frameArea {
-    width: 1000px;
+    width: 100rem;
     /* margin: auto; */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 9rem;
+    margin-top: 16rem;
     margin-bottom: 1rem;
     /* margin-right: 0.62rem; */
 }
@@ -360,8 +379,8 @@ tr:hover {
     box-sizing: content-box;
     margin-right: 2rem;
     overflow: hidden;
-    width: 30rem;
-    height: 30rem;
+    width: 34rem;
+    height: 34rem;
     background-image: url("../images/paperBG.jpg");
     background-size: cover;
 
@@ -371,7 +390,7 @@ tr:hover {
     border-image-repeat: stretch;
     border-image-width: 2;
     border-image-outset: 1;
-
+    /* box-shadow: inset 0 0 5px var(--darkred) ; */
     position: relative;
     z-index: 1;
 
@@ -423,28 +442,28 @@ tr:hover {
     font-family: Hind;
     font-weight: bold;
     width: 437.5rem;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.5);
     text-align: right;
-    font-size: 1rem;
-    letter-spacing: 1.3px;
-    padding: 0.62rem 1rem;
+    font-size: 1.1rem;
+    letter-spacing: .13rem;
+    padding: 1rem 1.5rem;
     text-decoration: underline;
-    box-shadow: 0px 0px 0.80px;
-    margin-right: 0.43rem;
-    padding-right: 0.43rem;
-    margin-top: 10.5rem;
+    box-shadow: 0 0 .8rem;
+    margin-right: 0.6rem;
+    padding-right: 0.6rem;
+    margin-top: 17.5rem;
     font-weight: bold;
 }
 .prevHexagram {
     left: 1.25rem;
     text-align: left;
-    margin-left: 0.43rem;
-    padding-left: 0.43rem;
+    margin-left: 0.6rem;
+    padding-left: 0.6rem;
 
 }
 .arrow {
-    font-size: 40px;
-    margin-top: 70px;
+    font-size: 4rem;
+    margin-top: 7rem;
     text-decoration: none;
 }
 
@@ -483,7 +502,7 @@ tr:hover {
     width: 12.5rem;
     padding: 0.62rem;
     padding-top: 0rem;
-    margin-left: 1.4rem;
+    margin-left: 1.5rem;
 }
 
 .linesArea {
@@ -503,7 +522,7 @@ tr:hover {
     width: 100%;
     height: 100%;
 }
-.lineArea:hover .line{
+.lineArea.active:hover .line{
     background: darkslategrey;
     cursor: pointer;
 }
@@ -540,29 +559,29 @@ tr:hover {
     display: inline-block;
     background-color: white;
     font-family: Hind;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    margin-left: 4.5rem;
+    margin-left: 6rem;
     margin-bottom:  3.2rem;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 50%;
     border: 0.12rem solid #333;
     text-align: center;
-    line-height: 1.7rem;
+    line-height: 2.3rem;
 }
 
 .chineseTitle1,
 .chineseTitle2 {
     width: 100%;
     /* margin-bottom: 1%; */
-    margin-left: -17px;
+    margin-left: 0rem;
     margin-top: 2rem;
     background: transparent;
     height: 3.12rem;
     text-align: center;
     line-height:  1.9rem;
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-family: Kaushan Script;
     transition: opacity  ease-in-out var(--fade-time);
     font-weight: bold;
@@ -571,13 +590,13 @@ tr:hover {
 .hexagramTitle2 {
     width: 100%;
     margin-bottom: 7%;
-    margin-left: -17px;
-    margin-top: 0rem;
+    margin-left: 0rem;
+    margin-top: 1rem;
     background: transparent;
     height: 3.12rem;
     text-align: center;
     line-height:  1.9rem;
-    font-size: 2.0rem;
+    font-size: 2.3rem;
     font-family: Kaushan Script;
     transition: opacity  ease-in-out var(--fade-time);
     font-weight: bold;
@@ -586,11 +605,11 @@ tr:hover {
 .charactere2
  {
     display: inline-block;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     font-family: 'Ma Shan Zheng';
     text-align: center;
     margin-top: -3rem;
-    margin-left: 3rem;
+    margin-left: 3.2rem;
     transition: opacity  ease-in-out var(--fade-time);
     height: 2.5rem;
     line-height: 3.12rem;
@@ -602,8 +621,8 @@ tr:hover {
 }
 
 .infoArea {
-    margin-left: 1.6rem;
-    margin-top: -1rem;
+    margin-left: 3rem;
+    margin-top: 2rem;
 }
 #info {
     width: 6.2rem;
@@ -623,7 +642,7 @@ tr:hover {
 #info .ut1,
 #info .ut2
 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-bottom: 1.25rem;
     transition: opacity  ease-in-out var(--fade-time);
     text-align: center;
@@ -657,7 +676,7 @@ tr:hover {
     justify-content: center;
     gap: 1rem;
     padding: 3rem 3rem 3rem 1rem;
-    border-radius: 5px;
+    border-radius: .5rem;
     margin-right: 0rem;
     margin-left: 0rem;
     background-color: rgba(255, 255, 255, .3);
@@ -672,12 +691,12 @@ tr:hover {
 }
 
 .invertButton {
-    width: 3.9rem;
-    height: 3.9rem;
+    width: 5rem;
+    height: 5rem;
     background-color: var(--red);
     border: 0.23rem outset var(--bg2);
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: azure;
     border-radius: 0.5rem;
@@ -703,7 +722,7 @@ tr:hover {
     transition: opacity .3s ease-in-out;
 }
 .yinyangIcon {
-    Transform: translateY(15px);
+    Transform: translateY(1.5rem);
 }
 
 /* Template */
@@ -711,9 +730,9 @@ tr:hover {
     position: absolute;
     background-color: aliceblue;
     transform: rotate(180deg);
-    width: 5.3rem;
-    height: 5.3rem;
-    padding: 5px;
+    width: 6rem;
+    height: 6rem;
+    padding: .5rem;
     margin-top: 0.7rem;
     margin-left: 1rem;
     box-shadow: 0 0 0.31rem;
@@ -728,7 +747,7 @@ tr:hover {
 /* HINT AREA */
 .hintArea {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin-left: 25px;
+    margin-left: 2.5rem;
     margin-top: 0.44rem;
     margin-bottom: 0.44rem;
     font-size: 1.5rem;
@@ -737,28 +756,28 @@ tr:hover {
 /* ABOUT AREA*/
 .about-button {
     position: absolute;
-    left: 25rem;
-    top: 1rem;
+    left: 30.5rem;
+    top: .48rem;
     background-color: var(--blue);
     color: azure;
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 2.5rem;
+    height: 2.5rem;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     z-index: 9;
 }
 .aboutArea {
-    display: none;
+    visibility: hidden;
     position: absolute;
     text-align: justify;
     background-color: #01497c;
     color: mediumturquoise;
-    padding: 1rem;
+    padding: 1.1rem;
     padding-right: 1.25rem;
     z-index: 100;
     width: 97%;
     height: 100%;
-
+    transition: all linear 2s;
 }
 .aboutContainer {
     margin-top: -1rem;
@@ -775,7 +794,7 @@ tr:hover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     color: white;
-    font-size: .92rem;
+    font-size: 1.05rem;
     margin-bottom: 0.7rem;
 }
 .about-title,
@@ -787,17 +806,17 @@ tr:hover {
     margin: 0.19rem;
 
     color: hsl(52, 99%, 62%);
-    font-size: .92rem;
+    font-size: 1.05rem;
     font-weight: bold;
     margin-top: 0.33rem;
     text-indent: -0.30rem;
 }
 .about-content {
     text-indent: -0.2rem;
-    font-size: .92rem;
+    font-size: 1.05rem;
     margin: 0;
     margin-left: 0.61rem;
-    color: #48bfe3;
+    color: #6adff5;
 }
 
 .about-content b {
@@ -816,16 +835,24 @@ tr:hover {
     color: #9f0102;
 }
 
+.hintMessage {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 2rem;
+    margin-right: 16rem;
+}
 /* CONSULT AREA */
 .consultArea {
     /* margin: auto; */
     display: block;
     text-align: left;
     width: 90%;
-    height: 300px;
-    border-radius: 5px;
+    height: 30.0rem;
+    border-radius: .5rem;
     padding: 2rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
     margin-left: 2rem;
     background: rgba(0, 0, 0, 0.6);
     color: white;
@@ -837,7 +864,8 @@ tr:hover {
 }
 
 .consultLines {
- margin-top: -1rem;
+ margin-top: -1.5rem;
+ align-self: flex-start;
  visibility: hidden;
 }
 
@@ -846,7 +874,18 @@ tr:hover {
     text-align: left;
     font-size: 1.3rem;
 }
+.consultLine {
 
+    font-size: .5rem;
+    color:red;
+}
+
+.originalTextArea {
+    display: none;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-left: -22.5rem;
+}
 
 .yinyangArea1, .yinyangArea2 {
     display: none;
@@ -855,11 +894,11 @@ tr:hover {
 .consultButton {
     margin: auto;
     margin-top: 0.62rem;
-    margin-right: 90px;
+    margin-right: 9.0rem;
     display: flex;
     width: 4.37rem;
     height: 3.12rem;
-    padding: 10px;
+    padding: 1rem;
     background-color: var(--green);
     color: white;
     font-size: 1rem;
@@ -889,10 +928,10 @@ tr:hover {
 }
 
 .gameArea {
-    width: 400px;
-    height: 100px;
+    width: 40rem;
+    height: 10rem;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 2rem;
     display: none;
     justify-content: space-between;
     align-items: center;
@@ -905,7 +944,7 @@ tr:hover {
 
     background-color:burlywood;
     background-image: url(../images/woodBG.jpg);
-    border: 3px solid saddlebrown;
+    border: .3rem solid saddlebrown;
     display: flex;
 
     justify-content: space-around;
@@ -917,7 +956,7 @@ tr:hover {
     display: none;
     /* justify-content: space-around; */
     justify-content: center;
-    gap: 3rem;
+    gap: 1rem;
     margin-top: 1rem;
 }
 
@@ -934,14 +973,24 @@ tr:hover {
 
 .messageArea {
     /* background: #f7c118; */
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    gap: 10rem;
+    align-items: center;
+    gap: 1.5rem;
     height: 5.6rem;
-    margin-left: 10rem;
+    margin-left: 3rem;
 }
+.messageArea.conclusion {
+    margin-left: -4.5rem;
+}
+
+.originalTextButton {
+    margin-left: 50rem;
+}
+
+
 
 .consultResult, .consultUnfolding {
     float: left;
@@ -1000,14 +1049,14 @@ tr:hover {
 }
 
 .exitButton {
-    margin-right: 300px;
+    margin-right: 30rem;
 }
 
 /* Media Queries */
 
-@media (max-width: 319px) {
+@media (max-width: 346px) {
     :root {
-        font-size: 43%;
+        font-size: 40%;
     }
 }
 
@@ -1036,18 +1085,30 @@ tr:hover {
         padding: 2rem;
     }
     .messageArea {
-        margin: auto;
+        /* margin: auto; */
         width: 140%;
-        flex: 1;
+        flex: 2;
+        margin-left: -5rem;
+    }
+    .messageArea.conclusion {
+        margin-left: -9.5rem;
     }
     .consultMessage {
         /* display: block;
         width: 150%;
         flex: 1; */
-        font-size: 1.7rem;
+        font-size: 1.4rem;
+        justify-content: flex-start;
     }
     .conclusionArea {
-        margin-top: 5rem;
+        margin-top: 1rem;
+    }
+    .consultLines span {
+        font-size: 1.2rem;
+    }
+
+    .originalTextArea {
+        margin-left: -5rem;
     }
 
     .tableArea {
@@ -1064,7 +1125,7 @@ tr:hover {
     }
 
     .learnContainer p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     .learnContainer {
         width: 90%;
@@ -1074,20 +1135,24 @@ tr:hover {
     }
 
     #trigramsTable {
-        font-size: 1.1rem;
+        font-size: .9rem;
     }
     #trigramsTable td:first-child{
-        font-size: 1.8igramsrem;
+        font-size: 1.8rem;
     }
 
     .hexagramsContainer {
-        grid-template-columns: repeat(8, 5.6rem);
-        grid-template-rows: repeat(8, 5.6rem);
+        grid-template-columns: repeat(9, 5.6rem);
+        grid-template-rows: repeat(9, 5.6rem);
     }
     .hexagramItem {
         width: 5.6rem;
         height: 5.6rem;
-        font-size: .8rem;
+        font-size: .7rem;
+    }
+    .hexagramSymbol {
+        font-size: 2rem;
+        line-height: 2rem;
     }
 
 }
