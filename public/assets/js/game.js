@@ -18,21 +18,24 @@ function showQuestion() {
     document.querySelector('.questionArea').style.display = 'flex';
     document.querySelector('.conclusionArea').style.display = 'none';
     document.querySelector('.consultLines').style.visibility = 'hidden';
+    document.querySelector('.originalTextArea').style.display = "none";
     document.querySelector('#questionInput').value = "";
-
+    document.querySelector('.messageArea').classList.remove('conclusion');
 }
 // Function to show game
 function showGame() {
     // show and hide blocks
     document.querySelector('.consultArea').style.display = 'block';
+    document.querySelector('.hintMessage').style.visibility = 'hidden';
     document.querySelector('.questionArea').style.display = 'none';
+    document.querySelector(".aboutArea").style.visibility = 'hidden';
 
     document.querySelector('.gameArea').style.display = 'flex';
     document.querySelector('.startArea').style.display = 'none';
     document.querySelector('.conclusionArea').style.display = 'none';
     document.querySelector('.buttonsArea').style.visibility = 'hidden';
     document.querySelector('.consultLines').style.visibility = 'hidden';
-
+    document.querySelector(".about-button").style.display = 'none';
     // document.querySelector('.consultButton').style.visibility = 'hidden';
     // document.querySelector('.aboutArea').style.display = 'none';
     // document.querySelector('.about-button').style.display ='none';
@@ -44,6 +47,7 @@ function showGame() {
     // clear template
     clearTemplate();
     isConsulting = true;
+    canPlay = false;
 
     // set all lines null
     for( let i = 0; i < 2; i++ ) {
@@ -68,6 +72,10 @@ function showGame() {
 
         document.querySelector('.coinsButton').innerText = "Jogar moedas";
 
+
+        document.querySelectorAll('.lineArea').forEach(line => {
+            line.classList.remove('active')
+        })
 
 
     }
@@ -121,6 +129,7 @@ function flipCoins() {
     if(playCount <= 6) {
         // consultMessage.innerHTML += "<div class='consultSentence'>Esvazie a mente.</div>";
         let consultSentence = document.querySelector('.consultSentence')
+        console.log(hexagrams[0].lines);
 
         // play the sound of coins when toss
         if(playCount < 6) {
@@ -177,19 +186,25 @@ function flipCoins() {
         // play success sound
         successSound.currentTime = 0;
         successSound.play();
+        isConsulting = false;
+        hexagrams[currentHexagram].setInfo();
+        updateHexagram();
+        document.querySelector('.nextHexagram').innerHTML = ">";
+        document.querySelector('.prevHexagram').innerHTML = "<";
 
+        let hexagramResult = null;
 
         hexagrams[0].setInfo();
         hexagrams[1].setInfo();
-        updateHexagram();
 
-        let hexagramResult = null;
         document.querySelector('.gameArea').style.display = 'none';
         document.querySelector(".conclusionArea").style.display = "flex";
+        document.querySelector(".originalTextArea").style.display = "flex";
 
         document.querySelector('.consultLines').style.visibility = 'visible';
 
-        // writeMovingLines();
+        document.querySelector('.messageArea').classList.add('conclusion');
+        writeMovingLines();
 
         hexagramHeaders[0].style.opacity = 1;
         hexagramHeaders[1].style.opacity = 1;
@@ -210,7 +225,6 @@ function flipCoins() {
 
       //  document.querySelector(".gameArea").style.display = "none";
 
-        isConsulting = false;
 
         // document.querySelector('.hexagramTitle1').innerHTML = "";
         // document.querySelector('.hexagramTitle2').innerHTML = "";
@@ -229,13 +243,12 @@ function flipCoins() {
         document.querySelector('.nextHexagram').innerHTML = cutTitle(hexagrams[1].getHexagram()) + "  >";
         document.querySelector('.prevHexagram').innerHTML = "<  " + cutTitle(hexagrams[0].getHexagram());
 
-        // show buttons area
-        document.querySelector('.buttonsArea').style.visibility = 'visible';
         // hide game area
         // document.querySelector('.consultButton').style.visibility = 'hidden';
         // show about button
 
         document.querySelector('.about-button').style.display ='block';
+
 
         }
         lastClick = t;
@@ -308,66 +321,78 @@ function clearTemplate() {
 // Exit game function
 function exitGame() {
     // hide and show blocks
-
     consultMessage.innerHTML = "";
-    //document.querySelector('.consultArea').style.display = 'block';
+    canPlay = true;
+
+    document.querySelectorAll('.lineArea').forEach(line => {
+        line.classList.add('active')
+    })
+
+    document.querySelector('.hintMessage').style.visibility = 'visible';
+    document.querySelector('.originalTextArea').style.display = 'none';
     document.querySelector('.startArea').style.display = 'flex';
     document.querySelector('.gameArea').style.display = 'none';
     document.querySelector('.conclusionArea').style.display = 'none';
     document.querySelector('.consultLines').style.visibility = 'hidden';
     document.querySelector('.buttonsArea').style.visibility = 'visible';
+    // show buttons area
     document.querySelector('.consultButton').style.visibility = 'visible';
     document.querySelector('.about-button').style.display ='block';
     document.querySelector('.hintArea').style.display ='block';
+
+
     document.querySelector('.aboutIChing').style.display ='block';
+    document.querySelector('.messageArea').style.marginLeft = '9.5rem';
+
+    document.querySelector('.messageArea').classList.toggle('conclusion');
 }
 
-// function writeMovingLines() {
-//     console.log("Linhas móveis")
-//     let consultLines = document.querySelectorAll('.consultLine');
-//    document.querySelector('.consultLines').innerHTML = `<span>Linhas Móveis</span>`;
-//    movingLines = [];
-//     for(let i = 0; i <= consultLines.length; i++) {
-//         let stringNumber = ""
-//         switch(i) {
-//             case 0:
-//                 stringNumber = "primeira";
-//                 break;
-//             case 1:
-//                 stringNumber = "segunda";
-//                 break;
-//             case 2:
-//                 stringNumber = "terceira";
-//                 break;
-//             case 3:
-//                 stringNumber = "quarta";
-//                 break;
-//             case 4:
-//                 stringNumber = "quinta";
-//                 break;
-//             case 5:
-//                 stringNumber = "sexta";
-//                 break;
-//         }
+function writeMovingLines() {
+   document.querySelector('.consultLines').innerHTML = `<span><strong>Linhas Móveis:</strong></span>`;
+   movingLines = [];
+    for(let i = 0; i <= 6 - 1; i++) {
+        let stringNumber = "";
+        console.log("Ola");
 
-//         if(hexagrams[0].lines[i] == true && hexagrams[1].lines[i] == false) {
-//             movingLines.push('Seis na ' + stringNumber + ' posição.');
-//             console.log("entrou no seis")
-//         }
-//         if(hexagrams[0].lines[i] == false && hexagrams[1].lines[i] == true) {
-//             movingLines.push('Nove na ' + stringNumber + ' posição.');
-//             console.log("entrou no nove")
-//         }
+        switch(i) {
+            case 0:
+                stringNumber = "primeira";
+                break;
+            case 1:
+                stringNumber = "segunda";
+                break;
+            case 2:
+                stringNumber = "terceira";
+                break;
+            case 3:
+                stringNumber = "quarta";
+                break;
+            case 4:
+                stringNumber = "quinta";
+                break;
+            case 5:
+                stringNumber = "sexta";
+                break;
+        }
+        if(hexagrams[0].lines[i] == true && hexagrams[1].lines[i] == false) {
+            movingLines.push('Nove na ' + stringNumber + ' posição.');
+        }
+        if(hexagrams[0].lines[i] == false && hexagrams[1].lines[i] == true) {
+            movingLines.push('Seis na ' + stringNumber + ' posição.');
+        }
+    }
 
-//         if(movingLines[i] !== undefined) {
-//             document.querySelector('.consultLines').innerHTML += `<span>${movingLines[i]}</span>`
-//             //consultLines[i].innerHtml = movingLines[i];
-//         }
-//         console.log(movingLines);
-//         console.log(consultLines);
+    for(let i = 0; i <= 5 - 1; i++) {
+        if(movingLines[i] !== undefined) {
+            document.querySelector('.consultLines').innerHTML += `<span>${movingLines[i]}</span>`;
+        }
+    }
 
-//     }
-// }
+    if(movingLines.length == 0) {
+        document.querySelector('.consultLines').innerHTML = `<span><strong>Nenhuma linha móvel</strong></span>`;
+    }
+    console.log(movingLines)
+}
 
 
 // document.querySelector('.coinsButton').addEventListener('click', () => {

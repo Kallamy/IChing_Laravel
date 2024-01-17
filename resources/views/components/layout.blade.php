@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Iching View</title>
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Hind:wght@300&family=Kaushan+Script&family=Ma+Shan+Zheng&family=Simonetta&display=swap" rel="stylesheet">
@@ -16,6 +17,7 @@
         #wrapper.paisagem { -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); background-color: lightgreen; }
         #wrapper.retrato { background-color: lightblue; }
     </style>
+
 </head>
 <body>
     <header>
@@ -74,14 +76,10 @@
         By Yuri Mallak
     </footer>
     <script>
-        window.addEventListener('orientationchange', function(){     // funciona com addEventListener('resize', ...) também!
-            if(window.innerHeight > window.innerWidth) document.getElementById('wrapper').className = 'retrato';
-            else document.getElementById('wrapper').className = 'paisagem';
-        });
-
-        window.addEventListener('load', function(){
-            document.getElementById('wrapper').className = 'retrato';
-        });
     </script>
+    <script src={{asset('assets/js/classes/pairs.js')}}></script>
+    <script src={{asset('assets/js/classes/Hexagram.js')}}></script>
+    <script src={{asset('assets/js/main.js')}}></script>
+    <script src={{asset('assets/js/game.js')}}></script>
 </body>
 </html>

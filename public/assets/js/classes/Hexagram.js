@@ -20,53 +20,50 @@ class Hexagram {
         false
     ];
 
-    lineAreas = null
+    lineAreas = null;
 
-    setInfo() {
-        this.upperTrigram = this.getTrigram("upper");
-        this.bottomTrigram = this.getTrigram("bottom");
-        this.title = this.getHexagram();
-        this.name = this.getHexagram('title');
-        this.chineseTitle = this.getHexagram('chinese');
-        this.charactere = this.getCharactere();
-        this.number = this.getNumber();
+    update() {
+        this.setInfo()
+        if(canPlay) {
+            if(document.querySelector('.hexagramNumber1').innerHTML != this.number) {
+                document.querySelector('.hexagramNumber1').classList.add('fade');
+            }
+            if(document.querySelector('.hexagramNumber2').innerHTML != this.number) {
+                document.querySelector('.hexagramNumber2').classList.add('fade');
+            }
+            if(document.querySelector('.chineseTitle1').innerHTML != this.chineseTitle) {
+                document.querySelector('.chineseTitle1').classList.add('fade');
+            }
+            if(document.querySelector('.chineseTitle2').innerHTML != this.chineseTitle) {
+                document.querySelector('.chineseTitle2').classList.add('fade');
+            }
+            if(document.querySelector('.hexagramTitle1').innerHTML != this.title) {
+                document.querySelector('.hexagramTitle1').classList.add('fade');
+            }
+            if(document.querySelector('.hexagramTitle2').innerHTML != this.title) {
+                document.querySelector('.hexagramTitle2').classList.add('fade');
+            }
+            if(document.querySelector('.charactere1').innerHTML != this.charactere) {
+                document.querySelector('.charactere1').classList.add('fade');
+            }
+            if(document.querySelector('.charactere2').innerHTML != this.charactere) {
+                document.querySelector('.charactere2').classList.add('fade');
+            }
+            if(document.querySelector('#info .ut1').innerHTML != this.upperTrigram) {
+                document.querySelector('#info .ut1').classList.add('fade');
+            }
+            if(document.querySelector('#info .ut2').innerHTML != this.upperTrigram) {
+                document.querySelector('#info .ut2').classList.add('fade');
+            }
+            if(document.querySelector('#info .bt1').innerHTML != this.bottomTrigram) {
+                document.querySelector('#info .bt1').classList.add('fade');
+            }
+            if(document.querySelector('#info .bt2').innerHTML != this.bottomTrigram) {
+                    console.log(document.querySelector('#info .bt2').innerHTML, this.bottomTrigram)
+                document.querySelector('#info .bt2').classList.add('fade');
+            }
+        }
 
-        if(document.querySelector('.hexagramNumber1').innerHTML != this.number) {
-            document.querySelector('.hexagramNumber1').classList.add('fade');
-        }
-        if(document.querySelector('.hexagramNumber2').innerHTML != this.number) {
-            document.querySelector('.hexagramNumber2').classList.add('fade');
-        }
-        if(document.querySelector('.chineseTitle1').innerHTML != this.chineseTitle) {
-            document.querySelector('.chineseTitle1').classList.add('fade');
-        }
-        if(document.querySelector('.chineseTitle2').innerHTML != this.chineseTitle) {
-            document.querySelector('.chineseTitle2').classList.add('fade');
-        }
-        if(document.querySelector('.hexagramTitle1').innerHTML != this.title) {
-            document.querySelector('.hexagramTitle1').classList.add('fade');
-        }
-        if(document.querySelector('.hexagramTitle2').innerHTML != this.title) {
-            document.querySelector('.hexagramTitle2').classList.add('fade');
-        }
-        if(document.querySelector('.charactere1').innerHTML != this.charactere) {
-            document.querySelector('.charactere1').classList.add('fade');
-        }
-        if(document.querySelector('.charactere2').innerHTML != this.charactere) {
-            document.querySelector('.charactere2').classList.add('fade');
-        }
-        if(document.querySelector('#info .ut1').innerHTML != this.upperTrigram) {
-            document.querySelector('#info .ut1').classList.add('fade');
-        }
-        if(document.querySelector('#info .ut2').innerHTML != this.upperTrigram) {
-            document.querySelector('#info .ut2').classList.add('fade');
-        }
-        if(document.querySelector('#info .bt1').innerHTML != this.bottomTrigram) {
-            document.querySelector('#info .bt1').classList.add('fade');
-        }
-        if(document.querySelector('#info .bt2').innerHTML != this.bottomTrigram) {
-            document.querySelector('#info .bt2').classList.add('fade');
-        }
         // wait some time to set innerHTML of the elements with the attributes values
         setTimeout(()=>{
             document.querySelector('.hexagramNumber1').innerHTML = this.number;
@@ -107,6 +104,16 @@ class Hexagram {
                 document.querySelector('.prevHexagram').innerHTML = "<  " + this.name;
             }
         }, 950)
+    }
+    setInfo() {
+        this.upperTrigram = this.getTrigram("upper");
+        this.bottomTrigram = this.getTrigram("bottom");
+        this.title = this.getHexagram();
+        this.name = this.getHexagram('title');
+        this.chineseTitle = this.getHexagram('chinese');
+        this.charactere = this.getCharactere();
+        this.number = this.getNumber();
+
     }
 
     getHexagram(value) {

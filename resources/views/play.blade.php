@@ -19,6 +19,7 @@
             </div>
         </div>
         </div>
+        <span class="hintMessage">Clique nas linhas para fazer mutações</span>
         <div class="consultArea">
             <div class="messageArea">
                 <div class="consultMessage">
@@ -28,13 +29,8 @@
                 </div>
                 <div class="consultLines">
                     <span><strong>Linhas Móveis:</strong></span>
-                    <span class="consultLine"></span>
-                    <span class="consultLine"></span>
-                    <span class="consultLine"></span>
-                    <span class="consultLine"></span>
-                    <span class="consultLine"></span>
-                    <span class="consultLine"></span>
                 </div>
+
             </div>
 
             <div class="startArea">
@@ -53,9 +49,12 @@
                 </div>
                 <button class="coinsButton" onClick="flipCoins()">Jogar Moedas</button>
             </div>
+            <div class="originalTextArea">
+                <x-Button class="originalTextButton" onclick="">Texto original<img width="40.0rem" src="assets/icons/open-book.png"></x-Button>
+            </div>
             <div class="conclusionArea">
                 <x-Button onclick="showQuestion()">Consultar novamente <img width="40.0rem" src="assets/icons/i-ching.png"></x-Button>
-                <x-Button onclick="">Salvar consulta<img width="40.0rem" src="assets/icons/pencil.png"></x-Button>
+                <x-Button onclick="">Registrar consulta<img width="40.0rem" src="assets/icons/pencil.png"></x-Button>
                 <x-Button onclick="exitGame()">Sair</x-Button>
 
             </div>
@@ -64,8 +63,5 @@
 
         </div>
     </section>
-    <script src={{asset('assets/js/classes/pairs.js')}}></script>
-    <script src={{asset('assets/js/classes/Hexagram.js')}}></script>
-    <script src={{asset('assets/js/main.js')}}></script>
-    <script src={{asset('assets/js/game.js')}}></script>
+
 </x-layout>

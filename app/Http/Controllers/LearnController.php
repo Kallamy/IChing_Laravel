@@ -22,7 +22,7 @@ class LearnController extends Controller
     }
     public function hexagrams() {
         $data = [];
-        $data['hexagrams'] = Hexagram::all();
+        // $data['hexagrams'] = Hexagram::all();
         $content = view('learn.hexagrams');
 
         return view('learn', compact('content'));
