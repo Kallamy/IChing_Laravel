@@ -14,7 +14,7 @@
             <div class="infoArea">
                 <div id="info">
                     <div class="ut1"></div>
-                    <span>sobre</span>
+                    <span>@lang('messages.overLabel')</span>
                     <div class="bt1"></div>
                 </div>
 
@@ -59,7 +59,7 @@
             <div class="infoArea">
                 <div id="info">
                     <div class="ut2"></div>
-                    <span>sobre</span>
+                    <span>@lang('messages.overLabel')</span>
                     <div class="bt2"></div>
                 </div>
 

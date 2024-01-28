@@ -7,7 +7,6 @@ var coinsSound = new Audio("../../assets/sounds/coin.mp3");
 var successSound = new Audio("../../assets/sounds/success.mp3");
 let consultMessage = document.querySelector(".consultMessage");
 let consultResult = document.querySelectorAll(".consultResult");
-
 let movingLines = [];
 
 const hexagramHeaders = document.querySelectorAll('.hexagramHeader');
@@ -61,8 +60,7 @@ function showGame() {
 
     // set consult message in english or in portuguese
 
-     consultMessage.innerHTML = "<strong>Concentre-se no que quer saber e jogue as moedas seis vezes</strong> <div class='consultSentence'>Jogue as moedas para tirar a primeira linha.</div>";
-
+    consultMessage.innerHTML = "<strong>Concentre-se no que quer saber e jogue as moedas seis vezes</strong> <div class='consultSentence'>Jogue as moedas para tirar a primeira linha.</div>";
 
     // document.querySelector(".conclusionArea").style.display = "none";
     // document.querySelector(".gameArea").style.display = "flex";
@@ -391,6 +389,7 @@ function writeMovingLines() {
     if(movingLines.length == 0) {
         document.querySelector('.consultLines').innerHTML = `<span><strong>Nenhuma linha móvel</strong></span>`;
     }
+
     console.log(movingLines)
 }
 

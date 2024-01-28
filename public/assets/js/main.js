@@ -24,7 +24,6 @@ hexagrams[1].lineAreas = linesArea[1].querySelectorAll(".lineArea")
 drawTemplate();
 updateHexagram();
 
-
 // Add click event on each line
 document.querySelectorAll('.lineArea').forEach(line => {
 
