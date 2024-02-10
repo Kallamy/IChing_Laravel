@@ -2,7 +2,7 @@
     font-size: 62.5%; /* 10px */
 
     --bg1: #268e8c;
-    --bg2: #34b8bb;
+    --bg2: #979fcc;
     --bg3: #2f638c;
 
     --gray: #495057;
@@ -222,7 +222,7 @@ section#learn {
     background-color: var(--bg1);
 }
 section#play {
-    background-color: #758faa;
+    background-color: var(--bg2);
     padding: 0;
 }
 section#asks {
