@@ -1,11 +1,11 @@
 :root {
-    font-size: 62.5%; /* 10px */
+    font-size: 61.5%; /* 10px */
 
     --bg1: #268e8c;
     --bg2: #979fcc;
     --bg3: #2f638c;
 
-    --gray: #495057;
+    --gray: #46484b;
     --drakgray: #343a40;
     --darkred: #9f0102;
     --red: #ff0114;
@@ -166,7 +166,11 @@ footer {
     height: 15.0rem;
     width: 9.0rem;
 }
+.sideMenu ul li a {
+    width: 9rem;
+}
 .menu_icon {
+    transform-origin: center center;
     width: 5.6rem;
     transition: all ease-in-out .3s;
     cursor: pointer;
@@ -192,10 +196,14 @@ footer {
     height: 12rem;
     bottom: 5rem;
 }
+.mobileMenu .menu_icon {
+    transform-origin: center center;
+}
 .mobileMenu a {
     float: left;
     margin-left: 10rem;
     margin-top: 2rem;
+    width: 6rem;
 }
 .mobileMenu ul li {
     list-style-type: none;
@@ -218,12 +226,18 @@ section {
     padding-top: 12rem;
 }
 
+section#play .content {
+    /* this is to fix merge margin bug on .questionBar */
+    overflow: auto;
+}
+
 section#learn {
     background-color: var(--bg1);
 }
 section#play {
     background-color: var(--bg2);
     padding: 0;
+    padding-left: 3rem;
 }
 section#asks {
     background-color: var(--bg3);
@@ -234,7 +248,7 @@ section#asks {
 .learnMenu {
     display: flex;
     justify-content: center;
-    margin-top: -2rem;
+    margin-top: -3rem;
 }
 .learnMenu ul{
     display: flex;
@@ -242,7 +256,7 @@ section#asks {
 }
 .learnMenu ul li{
     text-decoration: none;
-    font-size: 1.7rem;
+    font-size: 2.1rem;
     padding: 1rem;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.3);
@@ -269,57 +283,118 @@ section#asks {
     width: 85%;
     text-align: justify;
     text-indent: .5cm;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-weight: bold;
+    line-height: 2.4rem;
 }
 .learnContainer img {
     margin-top: 2rem;
-    width: 60rem;
+    width: 30rem;
+}
+.learnContainer p {
+    margin-bottom: 2rem;
 }
 
 #trigramsTable {
-    border-collapse: collapse;
-    border-spacing: 0px;
-    margin-top: 3rem;
+    /* border-spacing: 0px; */
+    margin: auto;
+    margin-top: 4rem;
     border: .2rem solid #000;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding-left: 1rem;
+    border-collapse: collapse;
 }
+
 #trigramsTable th {
     border: .2rem solid #000;
     padding: 1rem;
     background: #ffcb69;
     text-align: center;
 }
-tr:hover {
-    background: #fff;
 
-}
 #trigramsTable td {
     border: .2rem solid #000;
-    padding: .5rem;
-    background: beige;
+    padding: .8rem;
     text-align: left;
     min-width: 3rem;
-    height: 3rem;
+    height: 2rem;
 }
+
 #trigramsTable td:first-child {
     background: burlywood;
     width: 3rem;
     font-size: 2.4rem;
     text-align: center;
 }
-#trigramsTable td:nth-child(2) {
-    width: 5rem;
-    text-align: center;
+
+#trigramsTable tr:nth-child(even) td:first-child {
+    filter: brightness(80%);
 }
 
+#trigramsTable tr:nth-child(odd) {
+    background: rgb(233, 232, 232);
+}
+
+#trigramsTable tr:nth-child(even) {
+    background: darkgray;
+}
+
+#trigramsTable tbody tr:hover {
+    border: .2rem solid #000;
+    filter: brightness(107%);
+}
+
+.hexagramsArea {
+    display: none;
+    padding-top: 6rem;
+    /* margin: auto; */
+    background-color: var(--bg1);
+    position: relative;
+    width: 140rem;
+    height: 77rem;
+    top: -9rem;
+    left: -2rem;
+    margin-top: -8rem;
+    margin-left: -10rem;
+
+}
+
+#show-all-hexagrams-link {
+    color: white;
+    text-decoration: none;
+}
+
+.hexagramsInfo {
+    display: flex;
+    width: 40rem;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: -41rem;
+    margin-left: 1rem;
+    gap: 5rem;
+    font-weight: bold;
+    /* background-color: #9f0102; */
+}
+
+#go-back-link {
+    display: block;
+    margin-top: -4rem;
+    margin-right: 3rem;
+    align-self: flex-end;
+    left: 3rem;
+    color: white;
+    text-decoration: none;
+
+}
 
 .hexagramsContainer {
-    margin-top: 2rem;
+    /* margin-top: 1rem; */
+    margin-left: 44rem;
+    margin-top: 5rem;
     display: grid;
-    grid-template-columns: repeat(9, 6.4rem);
-    grid-template-rows: repeat(9, 6.4rem);
+    grid-template-columns: repeat(9, 7.6rem);
+    grid-template-rows: repeat(9, 7.6rem);
     /* grid-auto-flow: row; */
 
     /* grid-gap: 0;
@@ -328,34 +403,45 @@ tr:hover {
 .hexagramIndex {
     display: flex;
     align-items: center;
+    width: 7.6rem;
+    height: 7.6rem;
     background: #ccd5ae;
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: bold;
-    border: 1px solid black;
+    border: .27rem solid black;
 }
 .hexagramItem {
     display: flex;
     flex-direction: column;
-    width: 6.4rem;
-    height: 6.4rem;
-    font-size: .9rem;
+    width: 7.6rem;
+    height: 7.6rem;
+    font-size: 1.1rem;
     font-weight: bold;
     background: blanchedalmond;
     border: .2rem solid black;
     text-indent: 0;
-    line-height: .9rem;
+    line-height: 1rem;
     text-align: center;
+    overflow: hidden;
+}
+.hexagramItem.repeated {
+    width: 100%;
+    height: 100%;
+    background: moccasin;
+}
+.hexagramItem:hover {
+    background: seashell;
+    cursor: pointer;
 }
 .hexagramItem div {
     font-weight: bold;
     margin-top: .09rem;
 }
 .hexagramSymbol {
-    font-size: 2.6rem;
-    line-height: 2.2rem;
+    font-size: 3rem;
+    line-height: 3.1rem;
     /* font-weight: bold; */
 }
-
 
 /* INTERACTIVE FRAME  */
 
@@ -370,7 +456,7 @@ tr:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 16rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     /* margin-right: 0.62rem; */
 }
@@ -445,7 +531,7 @@ tr:hover {
     width: 437.5rem;
     background: rgba(255, 255, 255, 0.5);
     text-align: right;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     letter-spacing: .13rem;
     padding: 1rem 1.5rem;
     text-decoration: underline;
@@ -493,7 +579,7 @@ tr:hover {
 .yinyangArea2 img {
     margin-top: -86%;
     width: 100%;
-    animation: rotation 1s infinite linear;
+    animation: rotation 2s infinite linear;
 }
 
 /* Hexagrams  */
@@ -577,7 +663,7 @@ tr:hover {
     width: 100%;
     /* margin-bottom: 1%; */
     margin-left: 0rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     background: transparent;
     height: 3.12rem;
     text-align: center;
@@ -609,7 +695,7 @@ tr:hover {
     font-size: 2.8rem;
     font-family: 'Ma Shan Zheng';
     text-align: center;
-    margin-top: -3rem;
+    margin-top: -2.3rem;
     margin-left: 3.2rem;
     transition: opacity  ease-in-out var(--fade-time);
     height: 2.5rem;
@@ -739,7 +825,7 @@ tr:hover {
     width: 6rem;
     height: 6rem;
     padding: .5rem;
-    margin-top: 0.7rem;
+    margin-top: 0.9rem;
     margin-left: 1rem;
     box-shadow: 0 0 0.31rem;
 }
@@ -777,19 +863,18 @@ tr:hover {
     position: absolute;
     text-align: justify;
     background-color: #01497c;
-    color: mediumturquoise;
-    padding: 1.1rem;
-    padding-right: 1.25rem;
+    padding: .5rem;
+    /* padding-right: .9rem; */
     z-index: 100;
-    width: 97%;
-    height: 100%;
+    width: 103%;
+    height: 103%;
     transition: all linear 2s;
 }
 .aboutContainer {
     margin-top: -1rem;
     position: absolute;
     top: 50%;
-    padding: 0.4rem;
+    padding: 0.2rem;
     padding-right: 2.5rem;
     transform: translateY(-50%);
     background-color: transparent;
@@ -800,8 +885,8 @@ tr:hover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
     color: white;
-    font-size: 1.05rem;
-    margin-bottom: 0.7rem;
+    font-size: 1.09rem;
+    margin-bottom: 0.35rem;
 }
 .about-title,
 .about-content {
@@ -812,19 +897,23 @@ tr:hover {
     margin: 0.19rem;
 
     color: hsl(52, 99%, 62%);
-    font-size: 1.05rem;
+    font-size: 1.09rem;
     font-weight: bold;
-    margin-top: 0.33rem;
+    margin-top: 0.18rem;
     text-indent: -0.30rem;
+    font-weight: bold;
 }
 .about-content {
     text-indent: -0.2rem;
-    font-size: 1.05rem;
+    font-size: 1.09rem;
     margin: 0;
     margin-left: 0.61rem;
-    color: #6adff5;
+    color: #97edfc;
+    font-weight: bold;
 }
-
+.about-content.darkText {
+    color:#70d2e3;
+}
 .about-content b {
     font-weight: 900;
 }
@@ -835,7 +924,7 @@ tr:hover {
 .closeButton {
     position: absolute;
     top: 2%;
-    right: 7%;
+    right: 9%;
     font-size: 1.6rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: darkgray;
@@ -932,6 +1021,24 @@ tr:hover {
     padding: 2rem;
     font-size: 2rem;
     margin-bottom: 1rem;
+}
+
+.questionBar {
+    display: block;
+    text-align: left;
+    width: 90%;
+    height: 1rem;
+    border-radius: .5rem;
+    padding: 2rem;
+    margin-top: 9rem;
+    margin-left: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1rem;
+    margin-bottom: 1rem;
+    visibility: hidden;
 }
 
 .gameArea {
@@ -1059,15 +1166,35 @@ tr:hover {
     margin-right: 30rem;
 }
 
+/* Animations */
+@keyframes rotation {
+    from {
+            transform: rotate(0deg);
+    }
+    to {
+            transform: rotate(359deg);
+    }
+}
 /* Media Queries */
 
-@media (max-width: 346px) {
+
+/* Tablets */
+@media only screen and (min-width: 1280px) and (max-height: 800px) and (orientation: landscape) {
     :root {
-        font-size: 40%;
+        font-size: 46%;
     }
 }
 
-@media (max-width: 426px) {
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1280px){
+    :root {
+        font-size: 50%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+
     :root {
         font-size: 45%;
     }
@@ -1075,7 +1202,7 @@ tr:hover {
         display: block;
     }
     section#play {
-        /* background-color: #333 */
+        padding-left: 0;
     }
     .sideMenu {
         display: none;
@@ -1086,13 +1213,20 @@ tr:hover {
     .btn img {
         width: 3.6rem;
     }
+
+    .questionBar {
+        width: 100%;
+        margin-left: -2rem;
+        padding: 2rem;
+        font-size: 1.6rem;
+    }
     .consultArea {
         width: 100%;
         margin-left: -2rem;
         padding: 2rem;
     }
     .messageArea {
-        /* margin: auto; */
+        margin: auto;
         width: 140%;
         flex: 2;
         margin-left: -5rem;
@@ -1101,9 +1235,7 @@ tr:hover {
         margin-left: -9.5rem;
     }
     .consultMessage {
-        /* display: block;
-        width: 150%;
-        flex: 1; */
+
         font-size: 1.4rem;
         justify-content: flex-start;
     }
@@ -1125,6 +1257,7 @@ tr:hover {
     section#learn {
         padding-left: 0;
     }
+
     .learnMenu ul li{
 
         font-size: 1.4rem;
@@ -1132,7 +1265,8 @@ tr:hover {
     }
 
     .learnContainer p {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        line-height: 1.7rem;
     }
     .learnContainer {
         width: 90%;
@@ -1142,24 +1276,53 @@ tr:hover {
     }
 
     #trigramsTable {
-        font-size: .9rem;
+        font-size: .99rem;
+        padding: 0;
+        line-height: 1.5rem;
+
     }
     #trigramsTable td:first-child{
-        font-size: 1.8rem;
+        font-size: 2.5rem;
+    }
+    #trigramsTable tr {
+        height: 1rem;
+    }
+
+    .hexagramsInfo {
+        /* margin-top: -8rem; */
+        margin-top: 3rem;
+        margin-left: 7rem;
+    }
+
+    #go-back-link {
+        margin-right: 7rem;
+        margin-top: -5rem;
+    }
+
+    .hexagramsArea {
+        margin-top: -6rem;
+        margin-left: 0.5rem;
     }
 
     .hexagramsContainer {
-        grid-template-columns: repeat(9, 5.6rem);
-        grid-template-rows: repeat(9, 5.6rem);
+        grid-template-columns: repeat(9, 6.2rem);
+        grid-template-rows: repeat(9, 6.2rem);
+        margin-left: -3rem;
+    }
+    .hexagramIndex {
+        width: 6.2rem;
+        height: 6.2rem;
     }
     .hexagramItem {
-        width: 5.6rem;
-        height: 5.6rem;
-        font-size: .7rem;
+        width: 6.2rem;
+        height: 6.2rem;
+        font-size: .9rem;
+        line-height: .9rem;
+        font-weight: bold;
     }
     .hexagramSymbol {
-        font-size: 2rem;
-        line-height: 2rem;
+        font-size: 2.4rem;
+        line-height: 2.3rem;
     }
-
 }
+

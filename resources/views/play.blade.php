@@ -1,25 +1,29 @@
 <x-layout page="play">
     <section id="play">
-        <div class="interactiveArea">
-            <div class="frameArea">
-                <x-InteractiveFrame/>
+        <div class="content">
+            <div class="questionBar">
+                Como posso coneguir um emprego?
             </div>
-            <div class="buttonsArea">
-                <div class="changeSelector">
-                    <input type="checkbox" name="changeHexagram" id="changeSelector">
-                    <label for="changeSelector">@lang('messages.fixedOptionLabel')</label>
+            <div class="interactiveArea">
+                <div class="frameArea">
+                    <x-InteractiveFrame/>
                 </div>
+                <div class="buttonsArea">
+                    <div class="changeSelector">
+                        <input type="checkbox" name="changeHexagram" id="changeSelector">
+                        <label for="changeSelector">@lang('messages.fixedOptionLabel')</label>
+                    </div>
 
-                <x-ChineseLine/>
+                    <x-ChineseLine/>
 
-                <x-InvertButton>@lang('messages.invertButtons.lines')</x-InvertButton>
-                <x-InvertButton>@lang('messages.invertButtons.trigrams')</x-InvertButton>
-                <x-InvertButton>@lang('messages.invertButtons.positions')</x-InvertButton>
+                    <x-InvertButton>@lang('messages.invertButtons.lines')</x-InvertButton>
+                    <x-InvertButton>@lang('messages.invertButtons.trigrams')</x-InvertButton>
+                    <x-InvertButton>@lang('messages.invertButtons.positions')</x-InvertButton>
 
+                </div>
             </div>
         </div>
-    </div>
-    <span class="hintMessage">@lang('messages.hintMessage')</span>
+        <span class="hintMessage">@lang('messages.hintMessage')</span>
         <div class="consultArea">
             <div class="messageArea">
                 <div class="consultMessage">
@@ -57,13 +61,8 @@
                 <x-Button onclick="exitGame()">@lang('messages.conclusion.exit')</x-Button>
 
             </div>
-
-        </div>
-
         </div>
     </section>
 
 </x-layout>
-<script>
-    let lang = 'pt'
-</script>
+

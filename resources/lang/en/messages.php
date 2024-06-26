@@ -14,6 +14,12 @@ return [
         'hexagrams' => "Hexagrams are symbols made up of six lines that make up the I Ching. They represent the 64 combination possibilities of Yin Yang in six lines, and are elements that structure the Chinese book I Ching. Each of the 64 hexagrams is made up of six lines, which can be whole (yang) or broken (yin). It is from the attributes of the hexagrams that the meaning and different meanings of each of them are deduced. The hexagrams are also studied as a whole and not just to compose the content of the book. Chinese masters are skilled in translating collective and individual cycles, as well as deducing opportune conduct from the different circular distributions of the 64 hexagrams.",
     ],
 
+    'seeAllHexagrams' => 'See all hexagrams',
+
+    'originalTextHint' => 'Click on the hexagram to see the original text',
+
+    'goBack' => 'Go back',
+
     'fixedOptionLabel' => 'fixed change',
 
     'overLabel' => 'over',

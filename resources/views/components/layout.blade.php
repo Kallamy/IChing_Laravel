@@ -14,23 +14,6 @@
         href="https://fonts.googleapis.com/css2?family=Handlee&family=Hind:wght@300&family=Kaushan+Script&family=Ma+Shan+Zheng&family=Simonetta&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href={{ asset('/assets/css/style.css') }}>
-    <style>
-        #wrapper {
-            width: 400px;
-            height: 400px;
-        }
-
-        #wrapper.paisagem {
-            -webkit-transform: rotate(-90deg);
-            -moz-transform: rotate(-90deg);
-            background-color: lightgreen;
-        }
-
-        #wrapper.retrato {
-            background-color: lightblue;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -38,9 +21,9 @@
         <div class="logoArea">
             <div class="logo">I Ching<span>view</span></div>
             <div class="flagsArea">
-                <a href="{{ route('setLang', ['lang' => 'en']) }}"><img src={{ asset('./assets/images/us.png') }}
+                <a class="flagButton" href="{{ route('setLang', ['lang' => 'en']) }}"><img src={{ asset('./assets/images/us.png') }}
                         class="flag {{ session('locale') == 'en' ? 'selected' : '' }}"></a>
-                <a href="{{ route('setLang', ['lang' => 'pt']) }}"><img src={{ asset('./assets/images/br.png') }}
+                <a class="flagButton" href="{{ route('setLang', ['lang' => 'pt']) }}"><img src={{ asset('./assets/images/br.png') }}
                         class="flag {{ session('locale') == 'pt' ? 'selected' : '' }}"></a>
 
 
@@ -97,9 +80,12 @@
             </li>
         </ul>
     </nav>
+
+
     <footer>
         By Yuri Mallak
     </footer>
+
 
     {{-- // <script src={{asset('/assets/js/classes/pairs.js')}}></script>
     // <script src={{asset('/assets/js/classes/Hexagram.js')}}></script>
@@ -2150,26 +2136,26 @@
                 `<p class="about-title">${(lang == "pt") ? ("Formado pelos Trigramas") : ((lang == "en") ? ("Formed by the trigrams") : (""))}:<span class="about-content "><span>${hexagrams[currentHexagram].upperTrigram + ` ${(lang == "pt") ? ("sobre") : ((lang == "en") ? ("over") : (""))} ` + hexagrams[currentHexagram].bottomTrigram}` +
                 ".";
             document.querySelector("#aboutGeneral").innerHTML =
-                `<p class="about-title">${(lang == "pt") ? ("Geral") : ((lang == "en") ? ("General") : (""))}:<span class="about-content">${general}</span>`
+                `<p class="about-title">${(lang == "pt") ? ("Geral") : ((lang == "en") ? ("General") : (""))}:<span class="about-content darkText">${general}</span>`
             document.querySelector("#aboutLove").innerHTML =
                 `<p class="about-title">${(lang == "pt") ? ("Amor") : ((lang == "en") ? ("Love") : (""))}:<span class="about-content">${love}</span>`
             document.querySelector("#aboutBusiness").innerHTML =
-                `<p class="about-title">${(lang == "pt") ? ("Negócios") : ((lang == "en") ? ("Business") : (""))}:<span class="about-content">${business}</span>`
+                `<p class="about-title">${(lang == "pt") ? ("Negócios") : ((lang == "en") ? ("Business") : (""))}:<span class="about-content darkText">${business}</span>`
             document.querySelector("#aboutPersonal").innerHTML =
                 `<p class="about-title">${(lang == "pt") ? ("Pessoal") : ((lang == "en") ? ("General") : (""))}:<span class="about-content">${personal}</span>`
             document.querySelector("#aboutOverview").innerHTML =
-                `<p class="about-title">${(lang == "pt") ? ("Visão geral") : ((lang == "en") ? ("Overview") : (""))}:<span class="about-content">${overview}</span>`
+                `<p class="about-title">${(lang == "pt") ? ("Visão geral") : ((lang == "en") ? ("Overview") : (""))}:<span class="about-content darkText">${overview}</span>`
 
             aboutArea.style.display = 'block';
             aboutArea.addEventListener('click', () => {
                 aboutArea.style.visibility = 'hidden';
             });
-
-
         }
     </script>
     <script id="game-js">
         // Variables declaration
+        let  question = "";
+
         let coins = document.querySelectorAll('.coin');
         let coinsResult = [null, null, null];
         let result = '';
@@ -2188,7 +2174,11 @@
             } else if(lang == "pt") {
                 consultMessage.innerHTML = "Sobre o que busca respostas?"
             }
+
+
+
             document.querySelector('.startArea').style.display = 'none';
+            document.querySelector('.questionBar').style.visibility = 'hidden';
             document.querySelector('.questionArea').style.display = 'flex';
             document.querySelector('.conclusionArea').style.display = 'none';
             document.querySelector('.consultLines').style.visibility = 'hidden';
@@ -2198,9 +2188,21 @@
         }
         // Function to show game
         function showGame() {
+
+            question = document.querySelector("#questionInput").value;
+
+            if(question.length == 0) {
+                question = "..."
+            }
+
+            document.querySelector(".questionBar").innerText = question;
+
+            window.scrollTo(0, 0);
+
             // show and hide blocks
             document.querySelector('.consultArea').style.display = 'block';
             document.querySelector('.hintMessage').style.visibility = 'hidden';
+            document.querySelector('.questionBar').style.visibility = 'visible';
             document.querySelector('.questionArea').style.display = 'none';
             document.querySelector(".aboutArea").style.visibility = 'hidden';
 
@@ -2233,6 +2235,13 @@
                 coins[i].style.opacity = '0';
             }
 
+            // change trigrams for quetion
+            document.querySelector(".ut1").innerText = "???";
+            document.querySelector(".bt1").innerText = "???";
+            document.querySelector(".ut2").innerText = "???";
+            document.querySelector(".bt2").innerText = "???";
+
+
             // set consult message in english or in portuguese
 
             if(lang == "en") {
@@ -2249,7 +2258,7 @@
 
             if(lang == "en") {
                 document.querySelector('.coinsButton').innerText = "Toss coins";
-            } else if(lang == "pt-br") {
+            } else if(lang == "pt") {
                 document.querySelector('.coinsButton').innerText = "Jogar moedas";
             }
 
@@ -2374,6 +2383,8 @@
 
                     }, 700);
 
+
+
                 } else {
                     // set button text
 
@@ -2396,6 +2407,12 @@
                     document.querySelector('.prevHexagram').innerHTML = "<";
 
                     let hexagramResult = null;
+
+                    if(lang == "en") {
+                        document.querySelector('.coinsButton').innerText = "Toss coins";
+                    } else if(lang == "pt") {
+                        document.querySelector('.coinsButton').innerText = "Jogar moedas";
+                    }
 
                     hexagrams[0].setInfo();
                     hexagrams[1].setInfo();
@@ -2475,9 +2492,7 @@
 
                 }
                 lastClick = t;
-
             }
-
         }
 
 
@@ -2546,6 +2561,7 @@
                 line.classList.add('active')
             })
 
+            document.querySelector('.questionBar').style.visibility = 'hidden';
             document.querySelector('.hintMessage').style.visibility = 'visible';
             document.querySelector('.originalTextArea').style.display = 'none';
             document.querySelector('.startArea').style.display = 'flex';
@@ -2626,6 +2642,18 @@
                 }
             }
         }
+
+        function refreshScreen () {
+            document.querySelector(".content").style.display = "none"
+        }
+
+        flagButtons = document.querySelectorAll(".flagButton")
+
+        flagButtons.forEach((flagButton) => {
+            flagButton.addEventListener('click', () => {
+                refreshScreen()
+            })
+        })
     </script>
 </body>
 

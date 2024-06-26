@@ -14,6 +14,12 @@ return [
         'hexagrams' => "Os hexagramas são símbolos compostos por seis linhas que compõem o I Ching. Eles representam as 64 possibilidades de combinação de Yin Yang em seis linhas, e são elementos que estruturam o livro chinês I Ching. Cada um dos 64 hexagramas é composto por seis linhas, que podem ser inteiras (yang) ou partidas (yin). É a partir dos atributos dos hexagramas que se deduzem o sentido e os diferentes significados de cada um deles. Os hexagramas também são estudados em seu conjunto e não apenas para compor o conteúdo do livro. Os mestres chineses são hábeis em traduzir os ciclos coletivos e individuais, bem como deduzir a conduta oportuna a partir das diferentes distribuições circulares dos 64 hexagramas.",
     ],
 
+    'seeAllHexagrams' => 'Ver todos os hexagramas',
+
+    'originalTextHint' => 'Clique no hexagrama para ver o texto original',
+
+    'goBack' => 'Voltar',
+
     'fixedOptionLabel' => 'mudança fixa',
 
     'overLabel' => 'sobre',
