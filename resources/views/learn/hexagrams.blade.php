@@ -41,16 +41,16 @@
             <div class="hexagramIndex">
                 ☰
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="1">
                 <div>Ch'ien</div>
-                <div class="hexagramSymbol">䷀</div>
+                <div class="hexagramSymbol" >䷀</div>
                 @if (session('locale') == 'en')
                     <div>The Creative</div>
                 @elseif (session('locale') == 'pt')
                     <div>O Criativo</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="11">
                 <div>T'ai</div>
                 <div class="hexagramSymbol">䷊</div>
                 @if (session('locale') == 'en')
@@ -59,7 +59,7 @@
                     <div>Paz</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="34">
                 <div>Ta Chuang</div>
                 <div class="hexagramSymbol">䷡</div>
                 @if (session('locale') == 'en')
@@ -69,7 +69,7 @@
                 @endif
 
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="5">
                 <div>Hsu</div>
                 <div class="hexagramSymbol">䷄</div>
                 @if (session('locale') == 'en')
@@ -78,7 +78,7 @@
                     <div>A Espera</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="26">
                 <div>Ta Ch'u</div>
                 <div class="hexagramSymbol">䷙</div>
                 @if (session('locale') == 'en')
@@ -87,7 +87,7 @@
                     <div>O Poder de Domar do Grande</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="9">
                 <div>Hsiao Ch'u</div>
                 <div class="hexagramSymbol">䷈</div>
                 @if (session('locale') == 'en')
@@ -96,7 +96,7 @@
                     <div>O Poder de Domar do Pequeno</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="14">
                 <div>Ta Yu</div>
                 <div class="hexagramSymbol">䷍</div>
                 @if (session('locale') == 'en')
@@ -105,7 +105,7 @@
                     <div>Grandes Posses</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="43">
                 <div>Kuai</div>
                 <div class="hexagramSymbol">䷪</div>
                 @if (session('locale') == 'en')
@@ -117,7 +117,7 @@
             <div class="hexagramIndex">
                 ☷
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="12">
                 <div>Pi</div>
                 <div class="hexagramSymbol">䷋</div>
                 @if (session('locale') == 'en')
@@ -126,7 +126,7 @@
                     <div>Estagnação</div>
                 @endif
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="2">
                 <div>K'un</div>
                 <div class="hexagramSymbol">䷁</div>
                 @if (session('locale') == 'en')
@@ -135,7 +135,7 @@
                     <div>O Receptivo</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="16">
                 <div>Yu</div>
                 <div class="hexagramSymbol">䷏</div>
                 @if (session('locale') == 'en')
@@ -144,7 +144,7 @@
                     <div>Entusiasmo</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="8">
                 <div>Pi</div>
                 <div class="hexagramSymbol">䷇</div>
                 @if (session('locale') == 'en')
@@ -153,7 +153,7 @@
                     <div>Manter-se Unido</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="23">
                 <div>Po</div>
                 <div class="hexagramSymbol">䷖</div>
                 @if (session('locale') == 'en')
@@ -162,7 +162,7 @@
                     <div>Desintegração</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="20">
                 <div>Kuan</div>
                 <div class="hexagramSymbol">䷓</div>
                 @if (session('locale') == 'en')
@@ -171,7 +171,7 @@
                     <div>Comtemplação</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="35">
                 <div>Chin</div>
                 <div class="hexagramSymbol">䷢</div>
                 @if (session('locale') == 'en')
@@ -180,7 +180,7 @@
                     <div>Porgresso</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="45">
                 <div>Ts'ui</div>
                 <div class="hexagramSymbol">䷬</div>
                 @if (session('locale') == 'en')
@@ -192,7 +192,7 @@
             <div class="hexagramIndex">
                 ☳
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="25">
                 <div>Wu Wang</div>
                 <div class="hexagramSymbol">䷘</div>
                 @if (session('locale') == 'en')
@@ -201,7 +201,7 @@
                     <div>Inocência</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="24">
                 <div>Fu</div>
                 <div class="hexagramSymbol">䷗</div>
                 @if (session('locale') == 'en')
@@ -210,7 +210,7 @@
                     <div>Retorno</div>
                 @endif
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="51">
                 <div>Chên</div>
                 <div class="hexagramSymbol">䷲</div>
                 @if (session('locale') == 'en')
@@ -219,7 +219,7 @@
                     <div>O Incitar</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="3">
                 <div>Chun</div>
                 <div class="hexagramSymbol">䷂</div>
                 @if (session('locale') == 'en')
@@ -228,7 +228,7 @@
                     <div>Dificuldade Inicial</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="27">
                 <div>I</div>
                 <div class="hexagramSymbol">䷚</div>
                 @if (session('locale') == 'en')
@@ -237,7 +237,7 @@
                     <div>As Bordas da Boca</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="42">
                 <div>I</div>
                 <div class="hexagramSymbol">䷩</div>
                 @if (session('locale') == 'en')
@@ -246,7 +246,7 @@
                     <div>Aumento</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="21">
                 <div>Shih Ho</div>
                 <div class="hexagramSymbol">䷔</div>
                 @if (session('locale') == 'en')
@@ -255,7 +255,7 @@
                     <div>Morder</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="17">
                 <div>Sui</div>
                 <div class="hexagramSymbol">䷐</div>
                 @if (session('locale') == 'en')
@@ -267,7 +267,7 @@
             <div class="hexagramIndex">
                 ☵
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="6">
                 <div>Sung</div>
                 <div class="hexagramSymbol">䷅</div>
                 @if (session('locale') == 'en')
@@ -276,7 +276,7 @@
                     <div>Conflito</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="7">
                 <div>Shih</div>
                 <div class="hexagramSymbol">䷆</div>
                 @if (session('locale') == 'en')
@@ -285,7 +285,7 @@
                     <div>O Exército</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="40">
                 <div>Hsieh</div>
                 <div class="hexagramSymbol">䷧</div>
                 @if (session('locale') == 'en')
@@ -294,7 +294,7 @@
                     <div>Liberação</div>
                 @endif
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="29">
                 <div>K'an</div>
                 <div class="hexagramSymbol">䷜</div>
                 @if (session('locale') == 'en')
@@ -303,7 +303,7 @@
                 <div>O Abismal</div>
             @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="4">
                 <div>Meng</div>
                 <div class="hexagramSymbol">䷃</div>
                 @if (session('locale') == 'en')
@@ -312,7 +312,7 @@
                     <div>Insensatez Juvenil</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="59">
                 <div>Huan</div>
                 <div class="hexagramSymbol">䷺</div>
                 @if (session('locale') == 'en')
@@ -321,7 +321,7 @@
                     <div>Dispersão</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="64">
                 <div>Wei Chi</div>
                 <div class="hexagramSymbol">䷿</div>
                 @if (session('locale') == 'en')
@@ -330,7 +330,7 @@
                     <div>Antes da Conclusão</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="47">
                 <div>K'un</div>
                 <div class="hexagramSymbol">䷮</div>
                 @if (session('locale') == 'en')
@@ -342,7 +342,7 @@
             <div class="hexagramIndex">
                 ☶
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="33">
                 <div>Tun</div>
                 <div class="hexagramSymbol">䷠</div>
                 @if (session('locale') == 'en')
@@ -351,7 +351,7 @@
                     <div>A Retirada</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="15">
                 <div>Ch'ien</div>
                 <div class="hexagramSymbol">䷎</div>
                 @if (session('locale') == 'en')
@@ -360,7 +360,7 @@
                     <div>Modéstia</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="62">
                 <div>Hsiao Kuo</div>
                 <div class="hexagramSymbol">䷽</div>
                 @if (session('locale') == 'en')
@@ -369,7 +369,7 @@
                     <div>A Preponderância do Pequeno</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="39">
                 <div>Chien</div>
                 <div class="hexagramSymbol">䷦</div>
                 @if (session('locale') == 'en')
@@ -378,7 +378,7 @@
                     <div>Obstrução</div>
                 @endif
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="52">
                 <div>Kên</div>
                 <div class="hexagramSymbol">䷳</div>
                 @if (session('locale') == 'en')
@@ -387,7 +387,7 @@
                     <div>A Quietude</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="53">
                 <div>Chien</div>
                 <div class="hexagramSymbol">䷴</div>
                 @if (session('locale') == 'en')
@@ -396,7 +396,7 @@
                     <div>Desenvolvimento</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="56">
                 <div>Lü</div>
                 <div class="hexagramSymbol">䷷</div>
                 @if (session('locale') == 'en')
@@ -405,7 +405,7 @@
                     <div>O Viajante</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="31">
                 <div>Hsien</div>
                 <div class="hexagramSymbol">䷞</div>
                 @if (session('locale') == 'en')
@@ -417,7 +417,7 @@
             <div class="hexagramIndex">
                 ☴
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="44">
                 <div>Kou</div>
                 <div class="hexagramSymbol">䷫</div>
                 @if (session('locale') == 'en')
@@ -426,7 +426,7 @@
                     <div>Vir ao Encontro</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="46">
                 <div>Chêng</div>
                 <div class="hexagramSymbol">䷭</div>
                 @if (session('locale') == 'en')
@@ -435,7 +435,7 @@
                     <div>Ascensão</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="32">
                 <div>Heng</div>
                 <div class="hexagramSymbol">䷟</div>
                 @if (session('locale') == 'en')
@@ -444,7 +444,7 @@
                     <div>Duração</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="48">
                 <div>Ching</div>
                 <div class="hexagramSymbol">䷯</div>
                 @if (session('locale') == 'en')
@@ -453,7 +453,7 @@
                     <div>O Poço</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="18">
                 <div>Ku</div>
                 <div class="hexagramSymbol">䷑</div>
                 @if (session('locale') == 'en')
@@ -462,7 +462,7 @@
                     <div>Trabalho Sobre O que Se Deteriorou</div>
                 @endif
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="57">
                 <div>Sun</div>
                 <div class="hexagramSymbol">䷸</div>
                 @if (session('locale') == 'en')
@@ -471,7 +471,7 @@
                     <div>A Suavidade</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="50">
                 <div>Ting</div>
                 <div class="hexagramSymbol">䷱</div>
                 @if (session('locale') == 'en')
@@ -480,7 +480,7 @@
                     <div>O Caldeirão</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="28">
                 <div>Ta Kuo</div>
                 <div class="hexagramSymbol">䷛</div>
                 @if (session('locale') == 'en')
@@ -492,7 +492,7 @@
             <div class="hexagramIndex">
                 ☲
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="13">
                 <div>Tung Jên</div>
                 <div class="hexagramSymbol">䷌</div>
                 @if (session('locale') == 'en')
@@ -501,7 +501,7 @@
                     <div>Comunidade com os Homens</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="36">
                 <div>Ming I</div>
                 <div class="hexagramSymbol">䷣</div>
                 @if (session('locale') == 'en')
@@ -510,7 +510,7 @@
                     <div>O Obscurecimento da Luz</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="55">
                 <div>Fêng</div>
                 <div class="hexagramSymbol">䷶</div>
                 @if (session('locale') == 'en')
@@ -519,7 +519,7 @@
                     <div>Abundância</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="63">
                 <div>Chi Chi</div>
                 <div class="hexagramSymbol">䷾</div>
                 @if (session('locale') == 'en')
@@ -528,7 +528,7 @@
                     <div>Após a Conclusão</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="22">
                 <div>Pi</div>
                 <div class="hexagramSymbol">䷕</div>
                 @if (session('locale') == 'en')
@@ -537,7 +537,7 @@
                     <div>Graciosidade</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="37">
                 <div>Chia Jen</div>
                 <div class="hexagramSymbol">䷤</div>
                 @if (session('locale') == 'en')
@@ -546,7 +546,7 @@
                     <div>A Família</div>
                 @endif
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="30">
                 <div>Li</div>
                 <div class="hexagramSymbol">䷝</div>
                 @if (session('locale') == 'en')
@@ -555,7 +555,7 @@
                     <div>Aderir</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="49">
                 <div>Ko</div>
                 <div class="hexagramSymbol">䷰</div>
                 @if (session('locale') == 'en')
@@ -567,7 +567,7 @@
             <div class="hexagramIndex">
                 ☱
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="10">
                 <div>Lu</div>
                 <div class="hexagramSymbol">䷉</div>
                 @if (session('locale') == 'en')
@@ -576,7 +576,7 @@
                     <div>A Conduta</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="19">
                 <div>Lin</div>
                 <div class="hexagramSymbol">䷒</div>
                 @if (session('locale') == 'en')
@@ -585,7 +585,7 @@
                     <div>Aproximação</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="54">
                 <div>Kuei Mei</div>
                 <div class="hexagramSymbol">䷵</div>
                 @if (session('locale') == 'en')
@@ -594,7 +594,7 @@
                     <div>A Jovem que se Casa</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="60">
                 <div>Chieh</div>
                 <div class="hexagramSymbol">䷻</div>
                 @if (session('locale') == 'en')
@@ -603,7 +603,7 @@
                     <div>Limitação</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="41">
                 <div>Sun</div>
                 <div class="hexagramSymbol">䷨</div>
                 @if (session('locale') == 'en')
@@ -612,7 +612,7 @@
                     <div>Diminuição</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="61">
                 <div>Chung Fu</div>
                 <div class="hexagramSymbol">䷼</div>
                 @if (session('locale') == 'en')
@@ -621,7 +621,7 @@
                     <div>Verdade Interior</div>
                 @endif
             </div>
-            <div class="hexagramItem">
+            <div class="hexagramItem" data-number="38">
                 <div>K'uei</div>
                 <div class="hexagramSymbol">䷥</div>
                 @if (session('locale') == 'en')
@@ -630,7 +630,7 @@
                     <div>Oposição</div>
                 @endif
             </div>
-            <div class="hexagramItem repeated">
+            <div class="hexagramItem repeated" data-number="58">
                 <div>Tui</div>
                 <div class="hexagramSymbol">䷹</div>
                 @if (session('locale') == 'en')

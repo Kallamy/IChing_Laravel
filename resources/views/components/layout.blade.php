@@ -53,9 +53,15 @@
                 </li>
             </ul>
         </nav>
-        <main>
-            {{ $slot }}
-        </main>
+        <div id="content">
+            <main>
+                {{ $slot }}
+            </main>
+            <div class="originalTextScreen">
+                <x-OriginalTextScreen page={{$page}}/>
+                <x-OriginalTextTemplate />
+            </div>
+        </div>
     </div>
 
     <nav class="mobileMenu">
@@ -81,7 +87,6 @@
         </ul>
     </nav>
 
-
     <footer>
         By Yuri Mallak
     </footer>
@@ -91,6 +96,8 @@
     // <script src={{asset('/assets/js/classes/Hexagram.js')}}></script>
     // <script src={{asset('/assets/js/main.js')}}></script>
     // <script src={{asset('/assets/js/game.js')}}></script> --}}
+
+
     <script id="pairs-js">
         pairs = [
             /*                  céu                                         terra                                                  trovão                                                 água                                      montanha                                                                madeira                       fogo                                 lago               */
@@ -1465,7 +1472,6 @@
                         document.querySelector('#info .bt1').classList.add('fade');
                     }
                     if (document.querySelector('#info .bt2').innerHTML != this.bottomTrigram) {
-                        console.log(document.querySelector('#info .bt2').innerHTML, this.bottomTrigram)
                         document.querySelector('#info .bt2').classList.add('fade');
                     }
                 }
@@ -1702,6 +1708,7 @@
         let lang = "{{ session('locale') }}";
         console.log("lOCALE:", "{{ session('locale') }}")
 
+        let originalTextScreen = null;
 
         hexagrams[0].lineAreas = linesArea[0].querySelectorAll(".lineArea")
         hexagrams[1].lineAreas = linesArea[1].querySelectorAll(".lineArea")
@@ -1722,6 +1729,20 @@
 
         setControls();
         drawTemplate();
+
+        console.log(hexagrams[0].getNumber())
+        function openOriginalText(event) {
+            event.stopImmediatePropagation();
+
+            if(hexagrams[0].getNumber() != null) {
+                OriginalTextScreen.open();
+                if(hasTwoHexagrams) {
+                    OriginalTextScreen.write(hexagrams[0].getNumber(), hexagrams[1].getNumber());
+                } else {
+                    OriginalTextScreen.write(hexagrams[0].getNumber());
+                }
+            }
+        }
 
         slidesArea.style.display = "block";
 
@@ -1812,7 +1833,7 @@
             drawTemplate();
         }
         getInfo();
-
+        OriginalTextScreen.write();
         // Function to fill values of the hexagrams attributes
         function getInfo() {
 
@@ -2325,7 +2346,6 @@
                 if (playCount <= 6) {
                     // consultMessage.innerHTML += "<div class='consultSentence'>Esvazie a mente.</div>";
                     let consultSentence = document.querySelector('.consultSentence')
-                    console.log(hexagrams[0].lines);
 
                     // play the sound of coins when toss
                     if (playCount < 6) {

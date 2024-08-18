@@ -53,7 +53,7 @@
                 <button class="coinsButton" onClick="flipCoins()">Jogar Moedas</button>
             </div>
             <div class="originalTextArea">
-                <x-Button class="originalTextButton" onclick="">@lang('messages.conclusion.originalText')<img width="40.0rem" src="assets/icons/open-book.png"></x-Button>
+                <x-Button class="originalTextButton" onclick="openOriginalText(event)">@lang('messages.conclusion.originalText')<img width="40.0rem" src="assets/icons/open-book.png"></x-Button>
             </div>
             <div class="conclusionArea">
                 <x-Button onclick="showQuestion()">@lang('messages.conclusion.consultAgain') <img width="40.0rem" src="assets/icons/i-ching.png"></x-Button>

@@ -209,6 +209,167 @@ footer {
     list-style-type: none;
 }
 
+#content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ORIGINAL TEXT SCREEN  */
+.originalTemplate {
+    display: none;
+}
+.originalTextScreen {
+    display: none;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #c3c0c0;
+    padding: 1.5rem;
+    z-index: 1;
+}
+.originalTextHeader {
+    display: flex;
+    justify-content: center;
+    margin-top: 8rem;
+    /* background-color:#333; */
+    height: 28rem;
+}
+.originalTextCloseButton {
+    position: absolute;
+    background: gainsboro;
+    border: .6rem solid gray;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 3rem;
+    top: 10rem;
+    right: 20rem;
+    cursor:pointer;
+}
+.originalTextPrevButton,
+.originalTextNextButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 7rem;
+    align-self: center;
+    background:gainsboro;
+    border: .6rem solid gray;
+    padding: 1rem;
+}
+.originalTextPrevButton img,
+.originalTextNextButton img {
+    width: 3rem;
+}
+
+.originalTextHexagram {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:20rem;
+    width: 26rem;
+    margin-top: 1.7rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-size: 10rem;
+    padding: 1.5rem;
+    background: floralwhite;
+    border: .3rem solid gray;
+    border-radius: 1rem;
+    opacity: 65%;
+}
+.originalTextHexagram.selected {
+    opacity: 100%;
+}
+.originalTextCharactere,
+.originalTextCharactere2 {
+    display: block;
+    font-size: 3.4rem;
+    line-height: 3rem;
+    font-family: 'Ma Shan Zheng';
+    height: 80rem;
+    text-align: center;
+    margin-top: 0;
+}
+.originalTextName,
+.originalTextName2{
+    font-size: 1.8rem;
+    text-align: center;
+    height: 1rem;
+    font-weight: bold;
+    margin-bottom: 19rem;
+}
+.originalTextHexagramArea {
+    display: flex;
+    margin-top: -22rem;
+}
+.originalTextSymbol,
+.originalTextSymbol2{
+    font-size: 8rem;
+    font-family: 'Ma Shan Zheng';
+    text-align: center;
+    margin-bottom: .5rem;
+}
+.originalTextLabels {
+    float: right;
+    font-size: 1.6rem;
+    margin-left: .5rem;
+    /* margin-top: 1rem; */
+    margin-top: 9rem;
+}
+.originalTextBottomLabel {
+    margin-top: 1rem;
+}
+
+.originalTextBottomLabel2 {
+    margin-top: 1rem;
+}
+.originalTextCOntainer2 {
+    display: none;
+}
+.originalTextContainer,
+.originalTextContainer2 {
+    height: 100%;
+    width: 80rem;
+    margin: auto;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+.originalTextContent,
+.originalTextContent2 {
+    border: .3rem solid gray;
+    background: floralwhite;
+    height: 40%;
+    padding: 3rem;
+    text-align: justify;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.originalTextContent h2,
+.originalTextContent2 h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+.originalTextContent p,
+.originalTextContent strong,
+.originalTextContent2 p,
+.originalTextContent2 strong{
+    text-align: justify;
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+
+}
+
+/* MAIN */
+
 main {
     float: left;
     width: 100%;
@@ -1177,7 +1338,6 @@ section#asks {
 }
 /* Media Queries */
 
-
 /* Tablets */
 @media only screen and (min-width: 1280px) and (max-height: 800px) and (orientation: landscape) {
     :root {
@@ -1198,6 +1358,16 @@ section#asks {
     :root {
         font-size: 45%;
     }
+    html {
+        /* -ms-overflow-style: none;
+        scrollbar-width: none;
+        max-width: 100vh !important;
+        overflow-y: scroll !important; */
+    }
+    html ::-webkit-scrollbar {
+        display: none;
+    }
+
     .mobileMenu {
         display: block;
     }
@@ -1316,13 +1486,54 @@ section#asks {
     .hexagramItem {
         width: 6.2rem;
         height: 6.2rem;
-        font-size: .9rem;
+        font-size: 1.05rem;
         line-height: .9rem;
         font-weight: bold;
     }
     .hexagramSymbol {
-        font-size: 2.4rem;
+        font-size: 2.45rem;
         line-height: 2.3rem;
+    }
+
+    /* ORIGINAL TEXT */
+    .originalTextHeader {
+        margin-left: -3rem;
+        margin-top: 12rem;
+        height: 25rem;
+    }
+    .originalTextCloseButton {
+        line-height: 3.5rem;
+        top: 9rem;
+        right: 5.5rem;
+    }
+    .originalTextHexagram {
+        margin-left: .25rem;
+        margin-right: .25rem;
+        width: 24rem;
+        height: 18rem;
+    }
+    .originalTextCharactere,
+    .originalTextCharactere2 {
+        font-size: 3.7rem;
+        line-height: 3rem;
+    }
+    .originalTextSymbol,
+    .originalTextSymbol2 {
+        font-size: 7rem;
+        margin-top: 1.5rem;
+    }
+    .originalTextLabels {
+        font-size: 1.4rem;
+    }
+
+    .originalTextContent,
+    .originalTextContent2{
+        width: 45rem;
+        max-height: 45rem;
+        margin-right: 5rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+-webkit-overflow-scrolling: touch;
     }
 }
 
