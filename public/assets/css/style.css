@@ -440,7 +440,7 @@ section#asks {
 .learnContainer {
     margin: auto;
     padding-top: 2rem;
-    padding-left: 1rem;
+    margin-left: 8rem;
     width: 85%;
     text-align: justify;
     text-indent: .5cm;
@@ -1440,6 +1440,7 @@ section#asks {
     }
     .learnContainer {
         width: 90%;
+        margin-left: 3rem;
     }
     .learnContainer img {
         width: 50%;
