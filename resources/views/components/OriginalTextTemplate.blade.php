@@ -52,7 +52,7 @@ por assim dizer, no além, na condição de ideias que estão ainda por se reali
 Criativo tem também o poder de dar forma a esses arquétipos das ideias. Isso é
 indicado na palavra "sucesso". Esse processo é representado por uma imagem da
 natureza: as nuvens passam, a chuva atua, e todos os seres individuais fluem para as
-suas formas próprias. 3 Aplicados ao plano humano, esses atributos indicam ao homem
+suas formas próprias. Aplicados ao plano humano, esses atributos indicam ao homem
 superior o caminho para o grande êxito. "Por ver com muita clareza as causas e os
 efeitos, ele completa, no tempo certo, as seis etapas e sobe no momento adequado
 rumo aos céus, como que conduzido por seis dragões." As seis etapas são as seis
@@ -596,6 +596,7 @@ respeito dessa linha: "Derramam-se lágrimas de sangue: não se deve persistir n
 tal atitude".
             </p>
         </div>
+    </div>
     </div>
     <div class="originalTemplateHexagram" data-number="4">
         <div class="originalTemplateCharactere">
@@ -5359,7 +5360,7 @@ O poder se apoia no eixo de um grande carro.
                 </strong>
                 <p>
                     Se um homem trabalha com perseverança e tranqüilidade na superação de obstáculos,
-ao final alcançará sucesso. 44 Os obstáculos cedem, e desaparece todo motivo de
+ao final alcançará sucesso. Os obstáculos cedem, e desaparece todo motivo de
 arrependimento em virtude do uso abusivo do poder. Aqui o poder de um homem não
 se mostra externamente, mas é capaz de mover pesadas cargas assim como um carro
 grande, cuja força está nos eixos. Quanto menos ele utilizar o poder externamente,
@@ -7077,6 +7078,7 @@ tolerar com tranqüilidade a antipatia das massas.
                 </p>
             </div>
         </div>
+    </div>
     <div class="originalTemplateHexagram" data-number="45">
         <div class="originalTemplateCharactere">
             萃
@@ -10484,6 +10486,4 @@ rebelarão. Portanto, é necessário fixar limites até mesmo às limitações.
             </div>
         </div>
     </div>
-</div>
-</div>
 </div>
