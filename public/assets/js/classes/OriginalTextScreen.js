@@ -32,6 +32,8 @@ class OriginalTextScreen {
 
         this.originalTextHexagrams = document.querySelectorAll('.originalTextHexagram');
 
+        document.querySelector('.originalTextContent').scrollTo(0, 0);
+        document.querySelector('.originalTextContent2').scrollTo(0, 0);
 
         if( this.selectedTemplate != null ) {
             this.charactereText = this.selectedTemplate.querySelector('.originalTemplateCharactere').innerText;

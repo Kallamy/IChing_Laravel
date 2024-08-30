@@ -99,8 +99,6 @@
     </div>
 </div>
 
-
-<script src={{asset('/assets/js/classes/OriginalTextScreen.js')}}></script>
 <script>
     console.log(document.querySelectorAll('.originalTextHexagram'))
     document.querySelectorAll('.originalTextHexagram').forEach(card => {
