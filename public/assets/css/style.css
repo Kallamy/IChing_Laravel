@@ -1,7 +1,8 @@
 :root {
     font-size: 61.5%; /* 10px */
 
-    --bg1: #268e8c;
+    /* --bg1: #268e8c; */
+    --bg1: #58b6b5;
     --bg2: #979fcc;
     --bg3: #2f638c;
 
@@ -16,6 +17,7 @@
     --yellow: #f7c118;
 
     --consult-color: #384540;
+
 
     --fade-time : 1.5s;
     font-size: 50%;
