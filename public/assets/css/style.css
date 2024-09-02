@@ -1551,13 +1551,5 @@ section#asks {
     -webkit-overflow-scrolling: touch;
     touch-action: auto;
     }
-
-    .testElement {
-        font-size: 4rem;
-        color: red;
-        background-color:darkgoldenrod;
-        padding: 2rem;
-        border: 1rem dashed red;
-    }
 }
 
