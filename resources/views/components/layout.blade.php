@@ -1733,14 +1733,12 @@
         setControls();
         drawTemplate();
 
-        console.log(hexagrams[0].getNumber())
         function openOriginalText(event) {
             event.stopImmediatePropagation();
-
             if(hexagrams[0].getNumber() != null) {
-                OriginalTextScreen.open();
+                OriginalTextScreen.open("play");
                 if(hasTwoHexagrams) {
-                    OriginalTextScreen.write(hexagrams[0].getNumber(), hexagrams[1].getNumber());
+                    OriginalTextScreen.write(hexagrams[0].getNumber(), hexagrams[1].getNumber(), movingLinesPositions);
                 } else {
                     OriginalTextScreen.write(hexagrams[0].getNumber());
                 }
@@ -2189,6 +2187,7 @@
         let consultMessage = document.querySelector(".consultMessage");
         let consultResult = document.querySelectorAll(".consultResult");
         let movingLines = [];
+        let movingLinesPositions = [];
 
         const hexagramHeaders = document.querySelectorAll('.hexagramHeader');
 
@@ -2448,6 +2447,7 @@
 
                     document.querySelector('.messageArea').classList.add('conclusion');
                     writeMovingLines();
+                    console.log(movingLinesPositions)
 
                     hexagramHeaders[0].style.opacity = 1;
                     hexagramHeaders[1].style.opacity = 1;
@@ -2612,6 +2612,7 @@
             }
 
             movingLines = [];
+            movingLinesPositions = [];
             for (let i = 0; i <= 6 - 1; i++) {
                 let stringNumber = "";
 
@@ -2641,6 +2642,8 @@
                     } else if(lang == "pt") {
                         movingLines.push('Nove na ' + stringNumber + " posição");
                     }
+
+                    movingLinesPositions.push(i+1);
                 }
                 if (hexagrams[0].lines[i] == false && hexagrams[1].lines[i] == true) {
                     if(lang == "en") {
@@ -2648,6 +2651,8 @@
                     } else if(lang == "pt") {
                         movingLines.push('Seis na ' + stringNumber + " posição");
                     }
+
+                    movingLinesPositions.push(i+1);
                 }
             }
 

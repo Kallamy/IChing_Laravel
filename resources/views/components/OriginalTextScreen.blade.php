@@ -72,7 +72,7 @@
         <div class="originalTextImage">
 
         </div>
-        <h2>Linhas móveis</h2>
+        <h2 id="moving-lines-h2">Linhas móveis</h2>
         <div class="originalTextLines">
 
         </div>
@@ -115,7 +115,7 @@
         item.addEventListener('click', (e) => {
             hexagramNumber = e.currentTarget.getAttribute("data-number");
 
-            OriginalTextScreen.open();
+            OriginalTextScreen.open("learn");
             OriginalTextScreen.write(hexagramNumber);
         })
     })

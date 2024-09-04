@@ -1,5 +1,6 @@
 class OriginalTextScreen {
 
+    page = "";
     hexagramNumber = null;
     templateIndex = null;
     selectedTemplate = "";
@@ -10,22 +11,24 @@ class OriginalTextScreen {
     hexagramUpperText = "";
     hexagramBottomText = "";
 
-    descriptionContent = "";
+    templateMovingLines = null;
+
     descriptionContent = "";
     judgmentContent = "";
     imageContent = "";
     linesContent = "";
     originalTextHexagrams = null;
-    static open() {
+
+    static open(page) {
+        this.page = page
         document.querySelector('.originalTextScreen').style.display = 'block';
     }
     static close() {
         document.querySelector('.originalTextScreen').style.display = 'none';
     }
-    static write(hexagramNumber, hexagramNumber2 = 0) {
+    static write(hexagramNumber, hexagramNumber2 = 0, movingLines = null) {
         this.templateIndex = hexagramNumber;
         this.templateIndex2 = hexagramNumber2;
-
         this.selectedTemplate = document.querySelector(`.originalTemplateHexagram[data-number~="${this.templateIndex}"`);
         this.selectedTemplate2 = document.querySelector(`.originalTemplateHexagram[data-number~="${this.templateIndex2}"`);
 
@@ -45,7 +48,24 @@ class OriginalTextScreen {
             this.descriptionContent = this.selectedTemplate.querySelector('.originalTemplateDescription').innerHTML;
             this.judgmentContent = this.selectedTemplate.querySelector('.originalTemplateJudgment').innerHTML;
             this.imageContent = this.selectedTemplate.querySelector('.originalTemplateImage').innerHTML;
+
             this.linesContent = this.selectedTemplate.querySelector('.originalTemplateLines').innerHTML;
+            if(this.page == "play") {
+                document.querySelector('#moving-lines-h2').style.display = 'block';
+                this.linesContent = "";
+                if( movingLines ) {
+                    this.templateMovingLines = this.selectedTemplate.querySelectorAll('.originalTemplateLine');
+
+                    this.templateMovingLines.forEach(line => {
+                        if(movingLines.includes(parseInt(line.getAttribute("data-position")))) {
+                            this.linesContent += line.innerHTML;
+                        }
+                    })
+                } else {
+                    document.querySelector('#moving-lines-h2').style.display = 'none';
+                    this.linesContent = "";
+                }
+            }
 
             document.querySelector('.originalTextCharactere').innerText = this.charactereText;
             document.querySelector('.originalTextName').innerText = this.hexagramNameText;
