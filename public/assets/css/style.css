@@ -2,7 +2,7 @@
     font-size: 61.5%; /* 10px */
 
     /* --bg1: #268e8c; */
-    --bg1: #58b6b5;
+    --bg1: #57b5b3;
     --bg2: #979fcc;
     --bg3: #2f638c;
 
@@ -416,6 +416,7 @@ section#asks {
     display: flex;
     justify-content: center;
     margin-top: -3rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .learnMenu ul{
     display: flex;
@@ -441,6 +442,7 @@ section#asks {
 .learnMenu ul a{
     color: #fff;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .learnContainer {
@@ -460,6 +462,7 @@ section#asks {
 }
 .learnContainer p {
     margin-bottom: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #trigramsTable {
@@ -529,6 +532,7 @@ section#asks {
 #show-all-hexagrams-link {
     color: white;
     text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .hexagramsInfo {
@@ -552,7 +556,7 @@ section#asks {
     left: 3rem;
     color: white;
     text-decoration: none;
-
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .hexagramsContainer {
