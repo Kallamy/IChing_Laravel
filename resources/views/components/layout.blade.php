@@ -56,14 +56,13 @@
                 </li>
             </ul>
         </nav>
+
         <div id="content">
             <main>
                 {{ $slot }}
             </main>
             <div class="originalTextScreen">
                 <x-OriginalTextScreen page={{$page}}/>
-                <x-OriginalTextTemplate/>
-
             </div>
         </div>
     </div>
@@ -95,6 +94,7 @@
         By Yuri Mallak
     </footer>
 
+    <x-OriginalTextTemplate />
 
     {{-- // <script src={{asset('/assets/js/classes/pairs.js')}}></script>
     // <script src={{asset('/assets/js/classes/Hexagram.js')}}></script>

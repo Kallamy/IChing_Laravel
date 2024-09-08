@@ -99,6 +99,9 @@
     </div>
 </div>
 
+
+
+
 <script>
     console.log(document.querySelectorAll('.originalTextHexagram'))
     document.querySelectorAll('.originalTextHexagram').forEach(card => {
@@ -127,3 +130,4 @@
     })
 
 </script>
+
