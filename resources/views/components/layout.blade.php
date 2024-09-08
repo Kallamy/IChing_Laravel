@@ -94,13 +94,10 @@
         By Yuri Mallak
     </footer>
 
-    <x-OriginalTextTemplate />
-
     {{-- // <script src={{asset('/assets/js/classes/pairs.js')}}></script>
     // <script src={{asset('/assets/js/classes/Hexagram.js')}}></script>
     // <script src={{asset('/assets/js/main.js')}}></script>
     // <script src={{asset('/assets/js/game.js')}}></script> --}}
-
 
     <script id="pairs-js">
         pairs = [
@@ -2684,6 +2681,8 @@
             })
         })
     </script>
+
+    <x-OriginalTextTemplate />
 </body>
 
 </html>
