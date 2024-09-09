@@ -1736,7 +1736,7 @@
             if(hexagrams[0].getNumber() != null) {
                 OriginalTextScreen.open("play");
                 if(hasTwoHexagrams) {
-                    OriginalTextScreen.write(hexagrams[0].getNumber(), hexagrams[1].getNumber(), [1,2,3,4,5,6]);
+                    OriginalTextScreen.write(hexagrams[0].getNumber(), hexagrams[1].getNumber(), movingLinesPositions);
                 } else {
                     OriginalTextScreen.write(hexagrams[0].getNumber());
                 }
