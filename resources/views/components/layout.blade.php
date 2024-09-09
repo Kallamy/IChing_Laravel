@@ -2119,7 +2119,7 @@
         // Function to get the texts about the hexagrams and write on screen
         function getAbout() {
             // show about area
-            aboutArea = document.querySelector(".aboutArea")
+            aboutArea = document.querySelector(".about-area")
             aboutArea.style.visibility = "visible";
 
             // set variables as empty
@@ -2202,8 +2202,11 @@
             document.querySelector('.questionBar').style.visibility = 'hidden';
             document.querySelector('.questionArea').style.display = 'flex';
             document.querySelector('.conclusionArea').style.display = 'none';
+            document.querySelector('.buttonsArea').style.visibility = 'hidden';
             document.querySelector('.consultLines').style.visibility = 'hidden';
             document.querySelector('.originalTextArea').style.display = "none";
+            document.querySelector('.hint-area').style.display = "block";
+            document.querySelector('.hintMessage').style.visibility = 'hidden';
             document.querySelector('#questionInput').value = "";
             document.querySelector('.messageArea').classList.remove('conclusion');
         }
@@ -2222,19 +2225,18 @@
 
             // show and hide blocks
             document.querySelector('.consultArea').style.display = 'block';
-            document.querySelector('.hintMessage').style.visibility = 'hidden';
             document.querySelector('.questionBar').style.visibility = 'visible';
             document.querySelector('.questionArea').style.display = 'none';
-            document.querySelector(".aboutArea").style.visibility = 'hidden';
-
+            document.querySelector(".about-area").style.visibility = 'hidden';
+            document.querySelector('.hint-area').style.display = "none";
             document.querySelector('.gameArea').style.display = 'flex';
             document.querySelector('.startArea').style.display = 'none';
             document.querySelector('.conclusionArea').style.display = 'none';
-            document.querySelector('.buttonsArea').style.visibility = 'hidden';
+
             document.querySelector('.consultLines').style.visibility = 'hidden';
             document.querySelector(".about-button").style.display = 'none';
             // document.querySelector('.consultButton').style.visibility = 'hidden';
-            // document.querySelector('.aboutArea').style.display = 'none';
+            // document.querySelector('.about-area').style.display = 'none';
             // document.querySelector('.about-button').style.display ='none';
             // document.querySelector('.hintArea').style.display ='none';
             // document.querySelector('.aboutIChing').style.display ='none';

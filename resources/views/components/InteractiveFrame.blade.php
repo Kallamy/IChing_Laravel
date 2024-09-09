@@ -94,7 +94,7 @@
         <div class="templateLine"></div>
     </div>
 
-    <div class="aboutArea">
+    <div class="about-area">
         <div class="closeButton">✖</div>
         <div class="aboutContainer">
             <blockquote id="aboutQuote"> Peace. The small departs, The great approaches. <br> Good fortune. Success.</blockquote>
@@ -105,6 +105,27 @@
             <div id="aboutPersonal"><p class="about-title">Personal:</p><p class="about-content">Do a good deed.</p></div>
             <div id="aboutOverview"><p class="about-title">Overview:</p><p class="about-content">T'ai relates to harmony. Everything should currently be going well. Dont take it for granted though. Examine all the aspects of your life and see how that harmony come about. Nothing is permanent of course, and this is no less so for T'ai. Enjoy the peace and harmony arround you. T'ai is a very auspicious hexagram and indicates a successful time of life.</p></div>
         </div>
+    </div>
+    <div class="hint-area">
+        @if (session('locale') == 'en')
+            <h3>Consultation guidelines:</h3>
+            <ul>
+                <li> The I Ching shows possibilities of events, it does not show an implacable destiny.</li>
+                <li>After the consultation, meditate on your results until you understand the situation.</li>
+                <li>Consider the results as advice from a friend.</li>
+                <li>Everyone can interpret the meanings of the hexagrams in the way they see fit.</li>
+                <li>You must read the texts to have a greater understanding of the hexagrams.</li>
+            </ul>
+        @elseif (session('locale') == 'pt')
+            <h3>Orientações para a consulta:</h3>
+            <ul>
+                <li> O I Ching mostra possibilidades de acontecimentos, não mostra um destino implacável.</li>
+                <li>Depois da consulta medite no seu resultado até entender a situação.</li>
+                <li>Encare os resultados como conselhos de um amigo.</li>
+                <li>Cada um pode interpretar os significados dos hexagramas da maneira que achar mais adequada.</li>
+                <li>Você deve ler os textos para ter uma maior compreensão dos hexagramas.</li>
+            </ul>
+        @endif
     </div>
 
     <div class="controllersArea">
