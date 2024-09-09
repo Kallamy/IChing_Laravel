@@ -1736,7 +1736,7 @@
             if(hexagrams[0].getNumber() != null) {
                 OriginalTextScreen.open("play");
                 if(hasTwoHexagrams) {
-                    OriginalTextScreen.write(hexagrams[0].getNumber(), hexagrams[1].getNumber(), movingLinesPositions);
+                    OriginalTextScreen.write(2, hexagrams[1].getNumber(), [1,2,3,4,5,6]);
                 } else {
                     OriginalTextScreen.write(hexagrams[0].getNumber());
                 }
@@ -2447,7 +2447,6 @@
 
                     document.querySelector('.messageArea').classList.add('conclusion');
                     writeMovingLines();
-                    console.log(movingLinesPositions)
 
                     hexagramHeaders[0].style.opacity = 1;
                     hexagramHeaders[1].style.opacity = 1;

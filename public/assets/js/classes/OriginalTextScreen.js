@@ -56,11 +56,16 @@ class OriginalTextScreen {
                 if( movingLines ) {
                     this.templateMovingLines = this.selectedTemplate.querySelectorAll('.originalTemplateLine');
 
+                    if(movingLines.length == 6) {
+                        movingLines.push(7)
+                    }
+
                     this.templateMovingLines.forEach(line => {
                         if(movingLines.includes(parseInt(line.getAttribute("data-position")))) {
                             this.linesContent += line.innerHTML;
                         }
                     })
+
                 } else {
                     document.querySelector('#moving-lines-h2').style.display = 'none';
                     this.linesContent = "";

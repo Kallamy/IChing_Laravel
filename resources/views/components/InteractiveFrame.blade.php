@@ -106,6 +106,7 @@
             <div id="aboutOverview"><p class="about-title">Overview:</p><p class="about-content">T'ai relates to harmony. Everything should currently be going well. Dont take it for granted though. Examine all the aspects of your life and see how that harmony come about. Nothing is permanent of course, and this is no less so for T'ai. Enjoy the peace and harmony arround you. T'ai is a very auspicious hexagram and indicates a successful time of life.</p></div>
         </div>
     </div>
+
     <div class="hint-area">
         @if (session('locale') == 'en')
             <h3>Consultation guidelines:</h3>
