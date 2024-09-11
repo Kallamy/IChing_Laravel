@@ -929,6 +929,7 @@ section#asks {
 }
 /* Invert Buttons */
 .buttonsArea {
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1135,6 +1136,7 @@ section#asks {
 /* CONSULT AREA */
 .consultArea {
     /* margin: auto; */
+    visibility: hidden;
     display: block;
     text-align: left;
     width: 90%;

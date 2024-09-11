@@ -1684,7 +1684,10 @@
     <script id="main-js">
         window.onload = function() {
             document.querySelector('.frame').style.visibility = 'visible';
+            document.querySelector('.buttonsArea').style.visibility = 'visible';
             document.querySelector('.hintMessage').style.visibility = 'visible';
+            document.querySelector('.hintMessage').style.visibility = 'visible';
+            document.querySelector('.consultArea').style.visibility = 'visible';
         };
         let yinyangDuration = 4000;
         let hasTwoHexagrams = false;
