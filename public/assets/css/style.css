@@ -197,6 +197,7 @@ footer {
     width: 100%;
     height: 12rem;
     bottom: 5rem;
+    z-index: 9;
 }
 .mobileMenu .menu_icon {
     transform-origin: center center;
@@ -246,7 +247,7 @@ footer {
 .originalTextCloseButton {
     position: absolute;
     background: gainsboro;
-    border: .6rem solid gray;
+    border: .4rem solid gray;
     width: 4rem;
     height: 4rem;
     text-align: center;
@@ -1530,13 +1531,16 @@ section#asks {
     /* ORIGINAL TEXT */
     .originalTextHeader {
         margin-left: -3rem;
-        margin-top: 12rem;
+        margin-top: 10rem;
         height: 25rem;
     }
     .originalTextCloseButton {
         line-height: 3.5rem;
-        top: 9rem;
+        top: 8.3rem;
         right: 5.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 2.5rem;
     }
     .originalTextHexagram {
         margin-left: .25rem;
@@ -1561,6 +1565,7 @@ section#asks {
     .originalTextContent,
     .originalTextContent2{
         width: 45rem;
+        height: 36rem;
         max-height: 45rem;
         margin-right: 5rem;
         overflow-x: hidden;
