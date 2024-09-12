@@ -52,11 +52,15 @@ body {
     border: 0;
     cursor: pointer;
 }
+
 .btn img {
-   width: 4rem;
+    width: 4rem;
 }
 .btn:hover {
     transform: scale(1.02);
+}
+.startArea .btn {
+    visibility: hidden;
 }
 
 /* HEADER  */
@@ -1136,7 +1140,6 @@ section#asks {
 /* CONSULT AREA */
 .consultArea {
     /* margin: auto; */
-    visibility: hidden;
     display: block;
     text-align: left;
     width: 90%;

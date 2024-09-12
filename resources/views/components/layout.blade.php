@@ -1687,7 +1687,7 @@
             document.querySelector('.buttonsArea').style.visibility = 'visible';
             document.querySelector('.hintMessage').style.visibility = 'visible';
             document.querySelector('.hintMessage').style.visibility = 'visible';
-            document.querySelector('.consultArea').style.visibility = 'visible';
+            document.querySelector('.consultArea .btn').style.visibility = 'visible';
         };
         let yinyangDuration = 4000;
         let hasTwoHexagrams = false;
