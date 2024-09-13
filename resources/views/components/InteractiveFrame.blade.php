@@ -111,18 +111,18 @@
         @if (session('locale') == 'en')
             <h3>Consultation guidelines:</h3>
             <ul>
-                <li> The I Ching shows possibilities of events, it does not show an implacable destiny.</li>
+                <li>The I Ching shows possibilities of events in a person's life, but it does not show an implacable destiny.</li>
                 <li>After the consultation, meditate on your results until you understand the situation.</li>
-                <li>Consider the results as advice from a friend.</li>
+                <li>Consider the results as advice from a friend to improve your self-knowledge.</li>
                 <li>Everyone can interpret the meanings of the hexagrams in the way they see fit.</li>
                 <li>You must read the texts to have a greater understanding of the hexagrams.</li>
             </ul>
         @elseif (session('locale') == 'pt')
             <h3>Orientações para a consulta:</h3>
             <ul>
-                <li> O I Ching mostra possibilidades de acontecimentos, não mostra um destino implacável.</li>
+                <li> O I Ching mostra possibilidades de acontecimentos na vida de uma pessoa, porém não mostra um destino implacável.</li>
                 <li>Depois da consulta medite no seu resultado até entender a situação.</li>
-                <li>Encare os resultados como conselhos de um amigo.</li>
+                <li>Encare os resultados como conselhos de um amigo para melhorar o seu autoconhecimento.</li>
                 <li>Cada um pode interpretar os significados dos hexagramas da maneira que achar mais adequada.</li>
                 <li>Você deve ler os textos para ter uma maior compreensão dos hexagramas.</li>
             </ul>
