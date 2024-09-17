@@ -352,6 +352,7 @@ footer {
     margin: auto;
     margin-top: 2rem;
     overflow: hidden;
+    user-select: text;
 }
 .originalTextContent,
 .originalTextContent2 {
@@ -362,6 +363,8 @@ footer {
     text-align: justify;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: auto;
 }
 .originalTextContent h2,
 .originalTextContent2 h2 {
@@ -1127,7 +1130,7 @@ section#asks {
     margin-bottom: 1rem;
 }
 .hint-area ul li {
-    margin-top: 1rem;
+    margin-top: .5rem;
     text-indent: 1rem;
 }
 .hintMessage {
@@ -1579,6 +1582,11 @@ section#asks {
         overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     touch-action: auto;
+    }
+
+    /* HINT AREA */
+    .hint-area {
+        font-size: 1.5rem;
     }
 }
 
