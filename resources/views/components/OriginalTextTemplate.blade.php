@@ -24,8 +24,8 @@
         </div>
         <div class="originalTemplateJudgment">
             <strong>
-                O CRIATIVO promove sublime sucesso, favorecendo através da
-                perseverança.
+                O CRIATIVO promove sublime sucesso, <br>
+                favorecendo através da perseverança.
             </strong>
             <p>
                 De acordo com o sentido original, os atributos (sublime, sucesso, poder de favorecer
@@ -857,7 +857,7 @@
                     O perigo aproxima-se pouco a pouco. A areia está próxima à margem do rio e a água
                     significa perigo. aumentam os desentendimentos. Nessas épocas cresce facilmente
                     uma intranquilidade geral. Os homens culpam-se uns aos outros. quem permanecer
-                    sereno 11 conseguirá que tudo chegue a bom termo. A difamação terminará por
+                    sereno conseguirá que tudo chegue a bom termo. A difamação terminará por
                     emudecer, caso não seja alimentada por réplicas ofendidas.
                 </p>
             </div>
@@ -1115,7 +1115,7 @@
                 não se deve deflagrá-la apressada e impensadamente mas, como a um remédio
                 venenoso, recorrer-lhe apenas em última instância. A causa justa, assim como o
                 objetivo claro e compreensível da guerra, deve ser explicada ao povo por um líder
-                experiente. Somente quando existe4m objetivos de guerra bem definidos, aos quais o
+                experiente. Somente quando existem objetivos de guerra bem definidos, aos quais o
                 povo possa aderir em plena consciência, surgem a unidade e a força de convicção que
                 conduzem à vitória. Mas o líder deve cuidar para que a paixão da guerra e o delírio do
                 triunfo não levem a injustiças que não teriam a aprovação de todos. Tendo como base
@@ -2266,8 +2266,8 @@
             </div>
             <div class="originalTemplateLine" data-position="3">
                 <strong>
-                    Nove na terceira posição significa:
-                    Um príncipe o oferece ao Filho do Céu.
+                    Nove na terceira posição significa: <br>
+                    Um príncipe o oferece ao Filho do Céu. <br>
                     Um homem mesquinho não poderia fazê-lo.
                 </strong>
                 <p>
@@ -3120,11 +3120,11 @@
             </p>
         </div>
         <div class="originalTemplateJudgment">
-            <stong>
+            <strong>
                 CONTEMPLAÇÃO. <br>
                 A ablução já foi realizada, mas ainda não a oferenda. <br>
                 Confiantes, eles erguem o olhar para ele.
-            </stong>
+            </strong>
             <p>
                 O ritual de sacrifício na China começava com uma ablução e uma libação, com que se
                 invocava a divindade. Em seguida se oferecia o sacrifício. O lapso de tempo entre as
@@ -3734,7 +3734,7 @@
                 céu e da terra. Todos os movimentos se completam em seis etapas, e a sétima traz o
                 retorno. Deste modo, o solstício de inverno, com o qual tem início o declínio do ano,
                 ocorre no sétimo mês após o solstício de verão. Do mesmo modo, o nascer do sol
-                ocorre na sétima hora dupla, 34 após o crepúsculo. Por isso o sete é o número da luz
+                ocorre na sétima hora dupla, após o crepúsculo. Por isso o sete é o número da luz
                 nova e surge quando ao seis, o número da grande escuridão, se adiciona a unidade.
                 Assim, o estado de repouso dá lugar ao movimento.
             </p>
@@ -4378,7 +4378,8 @@
             </div>
             <div class="originalTemplateLine" data-position="4">
                 <strong>
-                    A viga-mestra é sustentada. Boa fortuna.
+                    Nove na quarta posição significa: <br>
+                    A viga-mestra é sustentada. Boa fortuna. <br>
                     Se há segundas intenções isso é humilhante.
                 </strong>
                 <p>
@@ -4949,7 +4950,7 @@
                     Nada é favorável.
                 </strong>
                 <p>
-                    O duradouro só pode ser criado gradualmente, através delongo trabalho e cuidadosa
+                    O duradouro só pode ser criado gradualmente, através de longo trabalho e cuidadosa
                     reflexão. Lao-Tsé comenta a respeito. "Quando se quer comprimir algo, deve-se
                     primeiro deixá-lo expandir-se plenamente". Aquele que já ao início faz exigências
                     excessivas, está assim se precipitando, e por querer demais, termina não conseguindo
@@ -5016,7 +5017,11 @@
                     Seis na sexta posição significa: <br>
                     A inquietude como condição duradoura traz infortúnio.
                 </strong>
-                <p></p>
+                <p>
+                    Há pessoas que estão constantemente numa movimentação agitada e nunca alcançam
+                    a tranqüilidade interior. A inquietude não só impede um aprofundamento interior, mas
+                    torna-se na verdade perigosa quando predomina em posições de autoridade.
+                </p>
             </div>
         </div>
     </div>
@@ -5101,7 +5106,7 @@
                     Aqui se indica que enquanto os homens superiores se retiram e os inferiores avançam,
                     um homem inferior se aferra a um superior tão firme e tenazmente que este não pode
                     desprender-se. Como deseja o que é correto e sua vontade é tão firme, ele alcança
-                    sua meta. 42 Deste modo, a linha confirma o que é dito no Julgamento: "No pequeno _
+                    sua meta. Deste modo, a linha confirma o que é dito no Julgamento: "No pequeno _
                     equivalente aqui ao homem inferior _ é favorável a perseverança".
                 </p>
             </div>
@@ -5244,7 +5249,7 @@
                     O homem inferior age através do poder. <br>
                     o homem superior não age assim. <br>
                     É perigoso continuar. <br>
-                    Um bode arremete contra uma  <br>
+                    Um bode arremete contra uma cerca<br>
                     e prende seus chifres.
                 </strong>
                 <p>
@@ -5748,7 +5753,7 @@
                 <p>
                     O rei é o símbolo de um homem paternal e interiormente rico. Ele não age infundindo
                     temor, mas, ao contrário, toda a família pode confiar nele porque o amor rege seu
-                    relacionamento. 46 Seu caráter por si só exerce a influência correta.
+                    relacionamento. Seu caráter por si só exerce a influência correta.
                 </p>
             </div>
             <div class="originalTemplateLine" data-position="6">
@@ -5946,7 +5951,6 @@
                 OBSTRUÇÃO. <br>
                 O sudoeste é favorável. <br>
                 O nordeste não é favorável. <br>
-                O nordeste não é favorável. <br>
                 É favorável ver o grande homem. <br>
                 A perseverança traz boa fortuna.
             </strong>
@@ -6125,7 +6129,10 @@
         </div>
         <div class="originalTemplateLines">
             <div class="originalTemplateLine" data-position="1">
-                <strong></strong>
+                <strong>
+                    Seis na primeira posição significa: <br>
+                    Sem culpa.
+                </strong>
                 <p>
                     A situação aqui não requer muitas palavras. O impedimento passou, a liberação é
                     chegada. A recuperação deve se fazer na tranqüilidade e quietude. Essa é a atitude
@@ -6397,7 +6404,7 @@
         <div class="originalTemplateDescription">
             <p>
                 A ideia de aumento é sugerida pelo fato de a linha inferior forte do trigrama superior
-                ter mergulhado, colocando-se embaixo do trigrama inferior. 50 Esta concepção de
+                ter mergulhado, colocando-se embaixo do trigrama inferior. Esta concepção de
                 aumento exprime também uma ideia fundamental no Livro das Mutações. Governar na
                 verdade significa servir. Um sacrifício do superior visando a um aumento do inferior é
                 considerado um simples aumento. Isso indica o único espírito capaz de ajuda o mundo.
@@ -6456,16 +6463,16 @@
             <div class="originalTemplateLine" data-position="2">
                 <strong>
                     Seis na segunda posição significa: <br>
-                    Alguém sem dúvida o aumento. <br>
+                    Alguém sem dúvida o aumenta. <br>
                     Dez pares de tartarugas não podem se opor a isso. <br>
                     Contínua perseverança traz boa fortuna.  <br>
                     O rei o apresenta diante de Deus. <br>
                     Boa fortuna.
                 </strong>
                 <p>
-                    O verdadeiro aumento ocorre quando o homem cria interiormente asa condições
+                    O verdadeiro aumento ocorre quando o homem cria interiormente as condições
                     propícias à sua manifestação, isto é, quando cultiva a receptividade e o amor ao bem.
-                    Dessa forma, aquilo pelo que ele anseia bem ao seu encontro com a inevitabilidade das
+                    Dessa forma, aquilo pelo que ele anseia vem ao seu encontro com a inevitabilidade das
                     leis naturais. Estando assim o aumento em harmonia com as leis supremas do
                     universo, não pode ser impedido por nenhum conjunto de circunstâncias ocasionais.
                     Tudo depende de ele não se tornar negligente em virtude da boa fortuna. O homem
@@ -6638,7 +6645,7 @@
                     Não tema coisa alguma.
                 </strong>
                 <p>
-                    Estar preparado e tudo que importa. A decisão exige cautela. Quando se é cauteloso e
+                    Estar preparado é tudo que importa. A decisão exige cautela. Quando se é cauteloso e
                     atento não há razão para assustar-se ou perturbar-se. Mantendo-se alerta antes do
                     perigo surgir se estará preparado para enfrentá-lo, e, portanto, não há nada a temer.
                     O homem superior permanece em guarda contra o que ainda não pode ver, e atento
@@ -6779,7 +6786,9 @@
                 alcança todas as direções. Lá o vento estava embaixo, sobre a terra, simbolizando o
                 governante tomando consciência das condições vigentes em seu reino. Aqui o vento
                 sopra de cima, simbolizando a influência exercida pelo dirigente através de suas
-                ordens. O céu está afastado das coisas da terra, porém as movimenta através do
+                ordens. O céu está afastado das coisas da terra, porém as movimenta através do vento.
+                O governante está afastado do povo, porém o movimento através de suas
+                ordens e decretos.
             </p>
         </div>
         <div class="originalTemplateLines">
@@ -7063,8 +7072,8 @@
         </div>
         <div class="originalTemplateJudgment">
             <strong>
-                A ASCENSÃO tem sublime sucesso.
-                É preciso ver o grande homem.
+                A ASCENSÃO tem sublime sucesso. <br>
+                É preciso ver o grande homem. <br>
                 Não tema! A partida rumo ao sul traz boa fortuna.
             </strong>
             <p>
@@ -7141,7 +7150,7 @@
                 </strong>
                 <p>
                     O monte Ch'i está situado no oeste da China, terra natal do Rei Wen, cujo filho, o
-                    Duque de Chou, acrescentou os comentários às linhas individuais. 55 O texto assim
+                    Duque de Chou, acrescentou os comentários às linhas individuais. O texto assim
                     rememora o período de ascensão da dinastia Chou. Naquela época, o Rei Wen
                     apresentou seus mais ilustres auxiliares ao deus da montanha de sua terra natal, e
                     cada um deles teve direito a um lugar na sala dos antepassados, junto ao governante.
@@ -7852,9 +7861,9 @@
         <div class="originalTemplateJudgment">
             <strong>
                 A COMOÇÃO traz sucesso. <br>
-                O choque vem: <br>
-                oh, oh! Expressões de riso: br
-                ha, ha! O choque gera pavor num raio de cem milhas e ele não deixa cair a
+                O choque vem: oh, oh! <br>
+                Expressões de riso: ha, ha! <br>
+                O choque gera pavor num raio de cem milhas e ele não deixa cair a
                 colher do cerimonial de sacrifício, nem o cálice.
             </strong>
             <p>
@@ -7968,7 +7977,7 @@
                     Avançar traz infortúnio. <br>
                     Se o choque ainda não atingiu o seu próprio corpo, <br>
                     mas apenas o do vizinho, <br>
-                    não há nenhuma culpa. br
+                    não há nenhuma culpa. <br>
                     Os companheiros têm assunto para conversa.
                 </strong>
                 <p>
@@ -8111,7 +8120,7 @@
                 <strong>
                     Seis na quinta posição significa: <br>
                     Mantendo imóveis as mandíbulas. <br>
-                    As palavras estão em ordem.
+                    As palavras estão em ordem. <br>
                     O arrependimento desaparece.
                 </strong>
                 <p>
@@ -8536,7 +8545,7 @@
                 <strong>
                     Seis na segunda posição significa: <br>
                     A cortina é tão densa <br>
-                    que se pode ver a estrela polar 65 ao meio-dia. <br>
+                    que se pode ver a estrela polar ao meio-dia. <br>
                     Seguir adiante provocará desconfiança e ódio. <br>
                     Se o despertarem através da verdade, <br>
                     a boa fortuna virá.
@@ -9093,7 +9102,7 @@
                 que separa os homens é preciso recorrer a forças religiosas. O meio empregado pelos
                 grandes governantes para unir os homens era a celebração comunitária das grandes
                 festas de sacrifícios e ritos sagrados, que expressavam tanto a articulação social como
-                a ligação existente entre a família e o estado. 69 A música sacra e o esplendor das
+                a ligação existente entre a família e o estado. A música sacra e o esplendor das
                 cerimônias envolviam as pessoas numa intensa emoção conjunta, despertando-lhes a
                 consciência para a origem comum de todos os seres. Assim, a desunião era superada e
                 a intransigência, dissolvida. Outro recurso consiste em promover a cooperação entre
@@ -9415,8 +9424,8 @@
                 primeiro lugar, é preciso procurar se libertar-se de qualquer preconceito. Deve-se
                 como que deixar que a psique do outro atue sobre si sem qualquer restrição. Assim se
                 pode estabelecer um contato com o outro, compreendê-lo, e adquirir poder sobre ele.
-                71 Quando uma porta assim se abre, a força de sua personalidade vem a influenciá-lo.
-                72 Deste modo, não havendo mais obstáculos intransponíveis, pode-se empreender até
+                Quando uma porta assim se abre, a força de sua personalidade vem a influenciá-lo.
+                Deste modo, não havendo mais obstáculos intransponíveis, pode-se empreender até
                 mesmo as coisas mais perigosas, como atravessar a grande água, e se terá sucesso.
                 Mas é importante compreender as condições das quais depende a força da verdade
                 interior. Essa força não é idêntica a uma simples intimidade ou a ligações secretas.
