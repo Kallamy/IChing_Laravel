@@ -1381,16 +1381,23 @@ section#asks {
 /* Media Queries */
 
 /* Tablets */
-@media only screen and (min-width: 1280px) and (max-height: 800px) and (orientation: landscape) {
+@media only screen and (min-width: 1024px) and (max-height: 800px) and (orientation: landscape) {
     :root {
         font-size: 46%;
     }
 }
 
 /* Desktop */
+/* small */
+@media (max-width: 1280px) {
+    :root {
+        font-size:44%;
+    }
+}
+/* large */
 @media (min-width: 1025px) and (max-width: 1280px){
     :root {
-        font-size: 50%;
+        font-size:50%;
     }
 }
 
