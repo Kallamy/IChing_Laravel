@@ -1704,6 +1704,7 @@
         const consultArea = document.querySelector(".consultArea");
         const slidesArea = document.querySelector(".slidesArea");
         const templateLines = document.querySelectorAll(".templateLine");
+        const colorSelector = document.querySelector(".colorSelector");
         const changeSelector = document.querySelector("#changeSelector");
 
         const linesArea = document.querySelectorAll(".linesArea");
@@ -1939,6 +1940,12 @@
                 canInvert = false;
             }
         });
+
+        // color button click
+        colorSelector.addEventListener("click", () => {
+            colorSelector.classList.toggle("selected");
+        })
+
         // Invert lines
         function invertLines() {
             let inversedLines1 = []

@@ -9,6 +9,8 @@
                     <x-InteractiveFrame/>
                 </div>
                 <div class="buttonsArea">
+
+                    <div class="colorSelector"></div>
                     <div class="changeSelector">
                         <input type="checkbox" name="changeHexagram" id="changeSelector">
                         <label for="changeSelector">@lang('messages.fixedOptionLabel')</label>

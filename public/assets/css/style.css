@@ -786,12 +786,15 @@ section#asks {
     gap: 2.6rem;
 }
 .line {
-    background:black;
+    background: black;
     width: 100%;
     height: 100%;
 }
 .lineArea.active:hover .line{
-    background: darkslategrey;
+    opacity: 80%;
+    cursor: pointer;
+}
+.lineArea.active:hover .lineNumber{
     cursor: pointer;
 }
 
@@ -803,7 +806,7 @@ section#asks {
 .lineNumber {
     visibility: hidden;
     font-size: 0.93rem;
-    color: #333;
+    color: black;
     font-family: Kaushan;
     font-weight: bold;
     float: left;
@@ -934,7 +937,7 @@ section#asks {
     width: 10.8rem;
     height: 1.90rem;
     display: block;
-    margin-top: 1rem;
+    margin-top: .1rem;
 }
 /* Invert Buttons */
 .buttonsArea {
@@ -943,13 +946,24 @@ section#asks {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 1rem;
-    padding: 3rem 3rem 3rem 1rem;
+    gap: .3rem;
+    padding: 1.5rem 3rem 1.5em 1rem;
     border-radius: .5rem;
     margin-right: 0rem;
     margin-left: 0rem;
     background-color: rgba(255, 255, 255, .3);
 }
+.colorSelector {
+    width: 6.5rem;
+    height: 6.5rem;
+    background-image: url("../icons/color_unselected.png");
+    background-size: cover;
+    margin-bottom: 1.5rem;
+}
+.colorSelector.selected {
+    background-image: url("../icons/color_selected.png");
+}
+
 .changeSelector {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
