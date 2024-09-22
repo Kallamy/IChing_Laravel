@@ -1701,6 +1701,10 @@
         let isConsulting = false;
         let canPlay = true;
 
+        let colorMode = false;
+        let upperColor = "";
+        let bottomColor = "";
+
         const consultArea = document.querySelector(".consultArea");
         const slidesArea = document.querySelector(".slidesArea");
         const templateLines = document.querySelectorAll(".templateLine");
@@ -1727,6 +1731,7 @@
             line.addEventListener('click', (e) => {
                 if (canPlay) {
                     lineChange(e);
+                    colorize();
                 }
             });
 
@@ -1774,10 +1779,75 @@
                     }
                 }
             }
+
             hexagrams[currentHexagram].update();
             setControls();
             drawTemplate();
             updateHexagram();
+        }
+
+         // Color mode function
+        function colorize() {
+            if(isConsulting == false) {
+                const linesAreas = document.querySelectorAll('.linesArea')
+                for (let i= 0; i < 2; i++) {
+                    const lineArea = linesAreas[i];
+
+                    if(colorMode) {
+                        if(hexagrams[i].getTrigram("upper") == "heaven" | hexagrams[i].getTrigram("upper") == "céu") {
+                            upperColor = 'blue';
+                        } else if(hexagrams[i].getTrigram("upper") == "earth" | hexagrams[i].getTrigram("upper") == "terra") {
+                            upperColor = 'gold';
+                        } else if(hexagrams[i].getTrigram("upper") == "thunder" | hexagrams[i].getTrigram("upper") == "trovão") {
+                            upperColor = 'forestgreen';
+                        } else if(hexagrams[i].getTrigram("upper") == "water" | hexagrams[i].getTrigram("upper") == "água") {
+                            upperColor = 'darkslategrey';
+                        } else if(hexagrams[i].getTrigram("upper") == "wind" | hexagrams[i].getTrigram("upper") == "madeira") {
+                            upperColor = 'orange';
+                        } else if(hexagrams[i].getTrigram("upper") == "fire" | hexagrams[i].getTrigram("upper") == "fogo") {
+                            upperColor = 'red';
+                        } else if(hexagrams[i].getTrigram("upper") == "mountain" | hexagrams[i].getTrigram("upper") == "montanha") {
+                            upperColor = 'violet';
+                        } else if(hexagrams[i].getTrigram("upper") == "lake" | hexagrams[i].getTrigram("upper") == "lago") {
+                            upperColor = 'turquoise';
+                        }
+
+                        if(hexagrams[i].getTrigram("bottom") == "heaven" | hexagrams[i].getTrigram("bottom") == "céu") {
+                            bottomColor = 'blue';
+                        } else if(hexagrams[i].getTrigram("bottom") == "earth" | hexagrams[i].getTrigram("bottom") == "terra") {
+                            bottomColor = 'gold';
+                        } else if(hexagrams[i].getTrigram("bottom") == "thunder" | hexagrams[i].getTrigram("bottom") == "trovão") {
+                            bottomColor = 'forestgreen';
+                        } else if(hexagrams[i].getTrigram("bottom") == "water" | hexagrams[i].getTrigram("bottom") == "água") {
+                            bottomColor = 'darkslategrey';
+                        } else if(hexagrams[i].getTrigram("bottom") == "wind" | hexagrams[i].getTrigram("bottom") == "madeira") {
+                            bottomColor = 'orange';
+                        } else if(hexagrams[i].getTrigram("bottom") == "fire" | hexagrams[i].getTrigram("bottom") == "fogo") {
+                            bottomColor = 'red';
+                        } else if(hexagrams[i].getTrigram("bottom") == "mountain" | hexagrams[i].getTrigram("bottom") == "montanha") {
+                            bottomColor = 'violet';
+                        } else if(hexagrams[i].getTrigram("bottom") == "lake" | hexagrams[i].getTrigram("bottom") == "lago") {
+                            bottomColor = 'turquoise';
+                        }
+
+                        lineArea.querySelectorAll('.line').forEach(line => {
+                            let position = line.parentElement.getAttribute("data-pos");
+                            if(position < 4 ) {
+                                line.style.backgroundColor = bottomColor;
+                            }
+                            if(position > 3 ) {
+                                line.style.backgroundColor = upperColor;
+                            }
+                        })
+                    } else {
+                        for (let i = 0; i < 6; i ++) {
+                            lineArea.querySelectorAll('.line').forEach(line => {
+                                line.style.backgroundColor = "black";
+                            })
+                        }
+                    }
+                }
+            }
         }
 
         // Function to update the hexagram
@@ -1832,42 +1902,15 @@
                 // add smooth class
                 slidesArea.classList.add('smooth');
             }
+
             getInfo();
             drawTemplate();
+            colorize();
         }
         getInfo();
         OriginalTextScreen.write();
         // Function to fill values of the hexagrams attributes
         function getInfo() {
-
-            // if(document.querySelector('.hexagramNumber1').innerHTML != hexagrams[0].getNumber()) {
-            //     document.querySelector('.hexagramNumber1').classList.add('fade');
-            // } else if(document.querySelector('.hexagramNumber2').innerHTML != hexagrams[1].getNumber()) {
-            //     document.querySelector('.hexagramNumber2').classList.add('fade');
-            // }else if(document.querySelector('.chineseTitle1').innerHTML != hexagrams[0].getHexagram('chinese')) {
-            //     document.querySelector('.chineseTitle1').classList.add('fade');
-            // }else if(document.querySelector('.chineseTitle2').innerHTML != hexagrams[1].getHexagram('chinese')) {
-            //     document.querySelector('.chineseTitle2').classList.add('fade');
-            // }else if(document.querySelector('.hexagramTitle1').innerHTML != hexagrams[0].getHexagram('title')) {
-            //     document.querySelector('.hexagramTitle1').classList.add('fade');
-            // }else if(document.querySelector('.hexagramTitle2').innerHTML != hexagrams[1].getHexagram('title')) {
-            //     document.querySelector('.hexagramTitle2').classList.add('fade');
-            // }else if(document.querySelector('.charactere1').innerHTML != hexagrams[0].getCharactere()) {
-            //     document.querySelector('.charactere1').classList.add('fade');
-            // }else if(document.querySelector('.charactere2').innerHTML != hexagrams[1].getCharactere()) {
-            //     document.querySelector('.charactere2').classList.add('fade');
-            // }else if(document.querySelector('#info .ut1').innerHTML != hexagrams[0].getTrigram("upper")) {
-            //     document.querySelector('#info .ut1').classList.add('fade');
-            // }else if(document.querySelector('#info .ut2').innerHTML != hexagrams[1].getTrigram("upper")) {
-            //     console.log(document.querySelector('#info .ut2').innerHTML, hexagrams[1].getTrigram("upper"))
-            //     document.querySelector('#info .ut2').classList.add('fade');
-            // }else if(document.querySelector('#info .bt1').innerHTML != hexagrams[0].getTrigram("bottom")) {
-            //     document.querySelector('#info .bt1').classList.add('fade');
-            // }else if(document.querySelector('#info .bt2').innerHTML != hexagrams[1].getTrigram("bottom")) {
-            //     console.log(document.querySelector('#info .bt2').innerHTML, hexagrams[1].getTrigram("bottom"))
-            //     document.querySelector('#info .bt2').classList.add('fade');
-            // }
-            // wait some time to set innerHTML of the elements with the attributes values
             setTimeout(() => {
                 document.querySelector('.hexagramNumber1').innerHTML = hexagrams[0].getNumber();
                 document.querySelector('.hexagramNumber2').innerHTML = hexagrams[1].getNumber();
@@ -1944,6 +1987,8 @@
         // color button click
         colorSelector.addEventListener("click", () => {
             colorSelector.classList.toggle("selected");
+            colorMode = !colorMode;
+            colorize();
         })
 
         // Invert lines
@@ -1983,6 +2028,7 @@
 
                 setTimeout(() => {
                     updateHexagram();
+                    colorize();
                     canInvert = true;
                 }, yinyangDuration)
             }
@@ -2014,6 +2060,7 @@
 
                 setTimeout(() => {
                     updateHexagram();
+                    colorize();
                     canInvert = true;
                 }, (yinyangDuration / 2))
             }
@@ -2040,6 +2087,7 @@
 
                 setTimeout(() => {
                     updateHexagram();
+                    colorize();
                     canInvert = true;
                 }, yinyangDuration / 2)
             }
@@ -2434,10 +2482,12 @@
                     successSound.play();
                     isConsulting = false;
                     hexagrams[currentHexagram].setInfo();
+                    colorMode = false;
+                    colorSelector.classList.remove("selected");
                     updateHexagram();
+
                     document.querySelector('.nextHexagram').innerHTML = ">";
                     document.querySelector('.prevHexagram').innerHTML = "<";
-
                     let hexagramResult = null;
 
                     if(lang == "en") {
@@ -2526,8 +2576,6 @@
                 lastClick = t;
             }
         }
-
-
 
         // Function to get coins results
         function getResult() {

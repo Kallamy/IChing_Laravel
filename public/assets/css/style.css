@@ -791,11 +791,11 @@ section#asks {
     height: 100%;
 }
 .lineArea.active:hover .line{
-    opacity: 80%;
+    filter: opacity(80%);
     cursor: pointer;
 }
-.lineArea.active:hover .lineNumber{
-    cursor: pointer;
+span.lineNumber {
+    filter: opacity(100%);
 }
 
 .emptyLine {
@@ -807,6 +807,8 @@ section#asks {
     visibility: hidden;
     font-size: 0.93rem;
     color: black;
+    opacity: 100%;
+    filter: opacity(100%);
     font-family: Kaushan;
     font-weight: bold;
     float: left;
@@ -814,10 +816,12 @@ section#asks {
     font-weight: bold;
     margin-top: 0px; /* 0px */
     margin-left: -0.93rem;
+
 }
 .lineArea:hover .lineNumber {
     visibility: visible;
     display: block;
+    filter: opacity(100%);
 }
 
 .identification {
