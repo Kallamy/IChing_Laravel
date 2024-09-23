@@ -18,9 +18,13 @@ class Locale
     {
         // Verifica se a localidade está presente na solicitação
         $locale = 'en';
+        if (session()->has('locale')) {
+            app()->setLocale(session('locale'));
+        } else {
+            session(['locale' => $locale]);
+        }
 
         // Define a localidade da aplicação
-        session(['locale' => $locale]);
         return $next($request);
     }
 }
