@@ -14,8 +14,8 @@ class LanguageController extends Controller
     public function setLang($lang) {
         session(['locale' => $lang]);
 
-        // $content = view('learn.history');
-        // return view('learn' , compact('content'));
+        $content = view('learn.history');
+        return view('learn' , compact('content'));
         return redirect()->back();
     }
 }
