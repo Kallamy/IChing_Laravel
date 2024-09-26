@@ -1455,6 +1455,7 @@ span.lineNumber {
     .questionBar {
         width: 100%;
         margin-left: -2rem;
+        margin-bottom: .4rem;
         padding: 2rem;
         font-size: 1.6rem;
     }
@@ -1562,6 +1563,10 @@ span.lineNumber {
     .hexagramSymbol {
         font-size: 2.45rem;
         line-height: 2.3rem;
+    }
+
+    .hintMessage {
+        margin-bottom: -.5rem;
     }
 
     /* ORIGINAL TEXT */
