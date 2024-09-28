@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
     <link
-    font-family: 'Hind';
         href="https://fonts.googleapis.com/css2?family=Handlee&family=Hind:wght@300&family=Kaushan+Script&family=Ma+Shan+Zheng&family=Simonetta&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href={{ asset('/assets/css/style.css') }}>
@@ -28,9 +27,11 @@
                         class="flag {{ session('locale') == 'en' ? 'selected' : '' }}"></a>
                 <a class="flagButton" href="{{ route('setLang', ['lang' => 'pt']) }}"><img src={{ asset('./assets/images/br.png') }}
                         class="flag {{ session('locale') == 'pt' ? 'selected' : '' }}"></a>
-
-
             </div>
+        </div>
+        <div class="authLinks">
+            <a href="{{ route('signup') }}">Create User</a>
+            <a href="{{ route('signin') }}">Login</a>
         </div>
     </header>
     <div class="container">

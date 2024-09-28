@@ -1,5 +1,10 @@
 <?php
 return [
+    'auth' => [
+        'createUser' => 'Create User',
+        'login' => 'Login',
+    ],
+
     'learnButtons' => [
         'history' => 'History of I Ching',
         'about' => 'About I Ching',
