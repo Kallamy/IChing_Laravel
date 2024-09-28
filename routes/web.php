@@ -31,4 +31,3 @@ Route::post('/signin', [AuthController::class, 'signin']);
 Route::get('/signup', [AuthController::class, 'showSignupForm'])->name('signup');
 Route::post('/signup', [AuthController::class, 'signup']);
 
-
