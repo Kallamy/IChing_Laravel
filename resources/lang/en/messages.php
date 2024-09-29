@@ -1,10 +1,5 @@
 <?php
 return [
-    'auth' => [
-        'createUser' => 'Create User',
-        'login' => 'Login',
-    ],
-
     'learnButtons' => [
         'history' => 'History of I Ching',
         'about' => 'About I Ching',
@@ -46,6 +41,11 @@ return [
         'consultAgain' => 'Consult again',
         'register' => 'Register consultation',
         'exit' => 'Exit',
+    ],
+
+    'auth' => [
+        'createUser' => 'Create User',
+        'login' => 'Login',
     ],
 
 ];

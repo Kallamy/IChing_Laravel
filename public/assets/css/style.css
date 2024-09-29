@@ -1446,6 +1446,17 @@ span.lineNumber {
         display: none;
     }
 
+    .logoArea {
+        margin-left: 1.10rem;
+    }
+    .authLinks {
+        margin-right: 3.10rem;
+        line-height: 1.8rem;
+    }
+    .authLinks a {
+        font-size: 1.8rem;
+    }
+
     .mobileMenu {
         display: block;
     }
