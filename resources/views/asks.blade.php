@@ -4,7 +4,7 @@
             @if (session('locale') == 'en')
                 <div class="loginMessage">
                     <h3>Consultation register</h3>
-                    <h4>To save your queries you need to be registered.</h4>
+                    <h4>To save your consultations you need to be registered.</h4>
                 </div>
                 <div class="loginButtons">
                     <x-Button onclick="window.location='{{ route('signup') }}'">Create User <img width="40.0rem" src="assets/icons/login-avatar.png"></x-Button>
