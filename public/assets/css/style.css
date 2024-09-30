@@ -4,7 +4,8 @@
     /* --bg1: #268e8c; */
     --bg1: #57b5b3;
     --bg2: #979fcc;
-    --bg3: #2f638c;
+    /* --bg3: #2f638c; */
+    --bg3: #7ba5c5;
 
     --gray: #46484b;
     --drakgray: #343a40;
@@ -416,6 +417,9 @@ section#play .content {
     /* this is to fix merge margin bug on .questionBar */
     overflow: auto;
     touch-action: none;
+}
+section#asks .content {
+    padding: 7rem;
 }
 
 section#learn {
@@ -1336,8 +1340,6 @@ span.lineNumber {
     margin-left: 50rem;
 }
 
-
-
 .consultResult, .consultUnfolding {
     float: left;
     margin-bottom: 1rem;
@@ -1366,8 +1368,6 @@ span.lineNumber {
     height: 2.5rem;
     position: relative;
     transform-style: preserve-3d;
-
-
 }
 
 .yinFace, .yangFace {
@@ -1396,6 +1396,17 @@ span.lineNumber {
 
 .exitButton {
     margin-right: 30rem;
+}
+
+.loginMessage {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+.loginButtons {
+    display: flex;
+    gap: 1rem;
 }
 
 /* Animations */
@@ -1446,12 +1457,15 @@ span.lineNumber {
         display: none;
     }
 
+    section#asks .content {
+        padding: 0;
+    }
+
     .logoArea {
         margin-left: 1.10rem;
     }
     .authLinks {
         margin-right: 3.10rem;
-        line-height: 1.8rem;
     }
     .authLinks a {
         font-size: 1.8rem;
