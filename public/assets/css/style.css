@@ -6,6 +6,7 @@
     --bg2: #979fcc;
     /* --bg3: #2f638c; */
     --bg3: #7ba5c5;
+    --bg4: #aea6a6;
 
     --gray: #46484b;
     --drakgray: #343a40;
@@ -433,7 +434,12 @@ section#play {
 section#asks {
     background-color: var(--bg3);
 }
-
+section#signin {
+    background-color: var(--bg4)
+}
+section#signup {
+    background-color: var(--bg4);
+}
 
 /* LEARN  */
 .learnMenu {
@@ -1409,6 +1415,59 @@ span.lineNumber {
     gap: 1rem;
 }
 
+/* Login forms */
+.formContainer {
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.loginButton {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background-color: #4cae4c;
+}
+
+/* Auth errors  */
+
+.alert {
+    background: pink;
+    padding: .5rem;
+    margin-top: 1rem;
+}
+
 /* Animations */
 @keyframes rotation {
     from {
@@ -1648,6 +1707,11 @@ span.lineNumber {
         overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     touch-action: auto;
+    }
+
+    /* FORMS */
+    .formContainer {
+        margin: 0;
     }
 
     /* HINT AREA */

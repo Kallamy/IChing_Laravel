@@ -17,15 +17,19 @@ class AuthController extends Controller
 
     public function signin(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('learn');
-        }
-
-        return back()->withErrors([
-            'email' => 'As credenciais fornecidas não correspondem aos nossos registros.'
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
         ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        return redirect()->route('play')->with('success', 'Usuário cadastrado com sucesso!');
     }
 
     public function showSignupForm()
@@ -38,7 +42,7 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
         $user = User::create([
@@ -49,6 +53,6 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('auth.signin');
+        return redirect()->route('signin');
     }
 }
