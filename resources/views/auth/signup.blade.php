@@ -16,10 +16,10 @@
                 @endif
 
                 <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required value="{{ old('name') }}">
                 <br>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required value="{{ old('email') }}">
                 <br>
                 <label for="password">Senha:</label>
                 <input type="password" id="password" name="password" required>
