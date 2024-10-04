@@ -1448,6 +1448,7 @@ input {
 
 .loginButton {
     margin-top: 20px;
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #5cb85c;
     color: #fff;

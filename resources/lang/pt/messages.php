@@ -42,9 +42,4 @@ return [
         'register' => 'Registrar consulta',
         'exit' => 'Sair',
     ],
-
-    'auth' => [
-        'createAccount' => 'Criar Usuário',
-        'login' => 'Entrar',
-    ],
 ];

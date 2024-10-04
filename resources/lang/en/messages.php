@@ -42,10 +42,4 @@ return [
         'register' => 'Register consultation',
         'exit' => 'Exit',
     ],
-
-    'auth' => [
-        'createUser' => 'Create User',
-        'login' => 'Login',
-    ],
-
 ];

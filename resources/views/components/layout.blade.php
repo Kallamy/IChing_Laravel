@@ -30,8 +30,8 @@
             </div>
         </div>
         <div class="authLinks">
-            <a href="{{ route('signup') }}">Create User</a>
-            <a href="{{ route('signin') }}">Login</a>
+            <a href="{{ route('signup') }}">@lang('auth.createUser')</a>
+            <a href="{{ route('signin') }}">@lang('auth.login')</a>
         </div>
     </header>
     <div class="container">

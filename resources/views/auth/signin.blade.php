@@ -14,16 +14,15 @@
                     </div>
                 @endif
 
-                <label for="email">E-mail:</label>
+                <label for="email">@lang('auth.form.email'):</label>
                 <input type="email" id="email" name="email" required>
 
-                <label for="password">Senha:</label>
+                <label for="password">@lang('auth.form.password'):</label>
                 <input type="password" id="password" name="password" required>
 
-                <button class="loginButton" type="submit">Login</button>
+                <button class="loginButton" type="submit">@lang('auth.login')</button>
 
-                <a href="/password/reset">Esqueceu a senha?</a>
-                <a href="/register">Registrar-se</a>
+                <a href="/new">@lang('auth.createUser')</a>
             </form>
         </div>
     </section>
