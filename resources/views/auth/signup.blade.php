@@ -1,7 +1,11 @@
 <x-layout page="signup">
     <section id="signup">
         <div class="formContainer">
-            <h1>Cadastro de usuário</h1>
+            @if (session('locale') == 'en')
+                <h1>New user</h1>
+            @elseif (session('locale') == 'pt')
+                <h1>Novo usuário</h1>
+            @endif
             <form action="{{ route('signup') }}" method="POST">
                 @csrf
 
