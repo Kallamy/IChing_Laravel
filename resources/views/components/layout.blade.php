@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Iching View</title>
 
 
@@ -2737,6 +2738,37 @@
                     document.querySelector('.consultLines').innerHTML = `<span><strong>Nenhuma linha móvel</strong></span>`;
                 }
             }
+        }
+
+        function saveConsultation () {
+
+            const questionTxt = document.querySelector('.questionBar').innerText;
+            const resultNum = hexagrams[0].getNumber();
+            const relatedNum = hexagrams[1].getNumber();
+
+            const data = {
+                subject: questionTxt,
+                result: resultNum,
+                related: relatedNum,
+            }
+
+            fetch('/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message);
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+            });
+
+            alert("Sua consulta foi registrada com sucesso!");
         }
 
         function refreshScreen () {

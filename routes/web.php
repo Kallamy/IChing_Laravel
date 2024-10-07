@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\LearnController;
+use App\Http\Controllers\AskController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -31,4 +32,6 @@ Route::post('/login', [AuthController::class, 'signin']);
 Route::get('/new', [AuthController::class, 'showSignupForm'])->name('signup');
 Route::post('/new', [AuthController::class, 'signup']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::post('/save', [AskController::class, 'save'])->name('save');
 

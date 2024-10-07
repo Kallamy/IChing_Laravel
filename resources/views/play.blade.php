@@ -59,7 +59,7 @@
             </div>
             <div class="conclusionArea">
                 <x-Button onclick="showQuestion()">@lang('messages.conclusion.consultAgain') <img width="40.0rem" src="assets/icons/i-ching.png"></x-Button>
-                <x-Button onclick="">@lang('messages.conclusion.register')<img width="40.0rem" src="assets/icons/pencil.png"></x-Button>
+                <x-Button onclick="saveConsultation()">@lang('messages.conclusion.register')<img width="40.0rem" src="assets/icons/pencil.png"></x-Button>
                 <x-Button onclick="exitGame()">@lang('messages.conclusion.exit')</x-Button>
 
             </div>
