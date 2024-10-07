@@ -19,6 +19,11 @@
 </head>
 
 <body>
+    @php
+        if (auth()->check()) {
+            $user = auth()->user();
+        }
+    @endphp
     <header>
         <div class="logoArea">
             <div class="logo">I Ching<span>view</span></div>
@@ -30,8 +35,13 @@
             </div>
         </div>
         <div class="authLinks">
+            @if (auth()->check()):
+            <span class="userNameLabel">{{$user->name}}</span>
+            <a href="{{ route('logout') }}">Disconect</a>
+            @else
             <a href="{{ route('signup') }}">@lang('auth.createUser')</a>
             <a href="{{ route('signin') }}">@lang('auth.login')</a>
+            @endif
         </div>
     </header>
     <div class="container">
