@@ -1486,15 +1486,17 @@ input {
 
 #asksTable th,  #asksTable td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 3px;
     text-align: left;
-    height: 4rem;
+    height: 2rem;
 }
 
 #asksTable th {
     background-color: darkslategrey;
     color: white;
     text-align: center;
+    padding: 2rem;
+    height: 2rem;
 }
 
 #asksTable tr:nth-child(even) {
@@ -1527,6 +1529,10 @@ input {
     text-align: left;
     margin-left: 33rem;
     margin-bottom: 5rem;
+}
+
+.asksTableSymbol {
+    font-size: 3rem;
 }
 
 /* Animations */
@@ -1787,14 +1793,18 @@ input {
         font-size: 1rem;
         width: 100%;
     }
+    #asksTable th,  #asksTable td {
+        height: 3rem;
+        padding: 1rem;
+    }
 
-    .dateField {
+    .dateHeader {
         width: 1rem;
     }
-    .subjectField {
+    .subjectHeader {
         width: 8rem;
     }
-    .resultField {
+    .resultHeader {
         width: 11rem;
     }
 

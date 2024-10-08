@@ -6,7 +6,6 @@ use App\Http\Controllers\LearnController;
 use App\Http\Controllers\AskController;
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', [LearnController::class, 'history'])->name('learn.history');
 
 Route::prefix('learn')->group(function() {

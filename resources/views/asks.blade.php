@@ -1,3 +1,8 @@
+@inject('askModel', 'App\Models\Ask')
+@php
+    use Carbon\Carbon;
+    $date = Carbon::now();
+@endphp
 <x-layout page="asks">
     <section id="asks">
         <div class="content">
@@ -11,45 +16,34 @@
                     <h3>Registro de consultas, {{auth()->user()->name}}:</h3>
                 </div>
             @endif
+            @php
+                $asks = $askModel::where('user_id', auth()->id())->get();
+                $date = Carbon::now();
+            @endphp
             <table id="asksTable">
                 <thead>
                     <tr>
-                        <th class="dateField">Data</th>
-                        <th class="subjectField">Assunto</th>
-                        <th class="resultField">Resultado</th>
-                        <th class="resultField">Desdobramento</th>
-                        <th class="actionField"></th>
+                        <th class="dateHeader">Data</th>
+                        <th class="subjectHeader">Assunto</th>
+                        <th class="resultHeder">Resultado</th>
+                        <th class="resultHeder">Desdobramento</th>
+                        <th class="actionHeder"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>06/09/2024</td>
-                        <td>O que devo fazer?</td>
-                        <td>61. Chung Fu - Verdade Interior</td>
-                        <td>63. Chi Chi - Após a Conclusão</td>
-                        <td><x-Button onclick=""><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
-                    </tr>
-                    <tr>
-                        <td>06/09/2024</td>
-                        <td>Quuando vou poder andar novamente de skate?</td>
-                        <td>09. Hsiao Ch'u - O Poder de Domar do Pequeno</td>
-                        <td></td>
-                        <td><x-Button onclick=""><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
-                    </tr>
-                    <tr>
-                        <td>06/09/2024</td>
-                        <td>Como posso ser feliz?</td>
-                        <td>18. Ku - Trabalho Sobre o que Se Deteriorou</td>
-                        <td>17. Sui - Seguir</td>
-                        <td><x-Button onclick=""><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
-                    </tr>
-                    <tr>
-                        <td>06/09/2024</td>
-                        <td>Como posso conseguir um emprego?</td>
-                        <td>61. Chung Fu - Verdade Interior</td>
-                        <td></td>
-                        <td><x-Button onclick=""><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
-                    </tr>
+                    @foreach ($asks as $ask)
+                        <tr>
+                            @if(session('locale') == 'en')
+                                <td class="dateField">{{ Carbon::parse($ask->date)->format('m/d/Y') }}</td>
+                            @else
+                                <td class="dateField">{{ Carbon::parse($ask->date)->format('d/m/Y') }}</td>
+                            @endif
+                            <td class="subjectField">{{ $ask->subject }}</td>
+                            <td class="resultField">{{ $ask->result }}</td>
+                            <td class="resultField">{{ $ask->related }}</td>
+                            <td><x-Button onclick=""><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         @else
@@ -72,3 +66,14 @@
         </div>
     </section>
 </x-layout>
+
+<script>
+    let resultFields = document.querySelectorAll('.resultField');
+    resultFields.forEach(field => {
+        templateIndex = field.innerText;
+        selectedTemplate = document.querySelector(`.originalTemplateHexagram[data-number~="${templateIndex}"`);
+        hexagramSymbolText = selectedTemplate.querySelector('.originalTemplateSymbol').innerText;
+        hexagramNameText = selectedTemplate.querySelector('.originalTemplateName').innerText;
+        field.innerHTML = `<span class="asksTableSymbol">${hexagramSymbolText}</span> <div class="asksTableHexagramInfo">${hexagramNameText}</div>`
+    })
+</script>
