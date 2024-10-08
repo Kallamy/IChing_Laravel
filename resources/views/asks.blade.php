@@ -40,7 +40,11 @@
                             @endif
                             <td class="subjectField">{{ $ask->subject }}</td>
                             <td class="resultField">{{ $ask->result }}</td>
-                            <td class="resultField">{{ $ask->related }}</td>
+                            @if($ask->result != $ask->related)
+                                <td class="resultField">{{ $ask->related }}</td>
+                            @else
+                                <td class="resultField"></td>
+                            @endif
                             <td><x-Button onclick=""><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
                         </tr>
                     @endforeach

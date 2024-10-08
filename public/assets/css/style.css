@@ -1486,7 +1486,7 @@ input {
 
 #asksTable th,  #asksTable td {
     border: 1px solid #ddd;
-    padding: 3px;
+    padding: 6px;
     text-align: left;
     height: 2rem;
 }
@@ -1532,7 +1532,7 @@ input {
 }
 
 .asksTableSymbol {
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 /* Animations */
@@ -1790,7 +1790,7 @@ input {
 
     #asksTable {
         margin-left: -4rem;
-        font-size: 1rem;
+        font-size: 1.1rem;
         width: 100%;
     }
     #asksTable th,  #asksTable td {
