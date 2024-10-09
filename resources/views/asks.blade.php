@@ -45,7 +45,7 @@
                             @else
                                 <td class="resultField"></td>
                             @endif
-                            <td><x-Button onclick=""><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
+                            <td><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick="openConsultation(this)"><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -72,12 +72,33 @@
 </x-layout>
 
 <script>
+    document.querySelectorAll('.openConsultationButton').forEach(button => {
+        button.addEventListener('click', function() {
+            let ask_id = button.getAttribute('data-id');
+            let row = this.closest('tr');
+            let data = {
+                date: row.cells[0].innerText,
+                subject: row.cells[1].innerText,
+                result: row.cells[2].innerText,
+                related:  row.cells[3].innerText,
+            };
+            openConsultation(data);
+        });
+    });
+
     let resultFields = document.querySelectorAll('.resultField');
     resultFields.forEach(field => {
+        console.log(field.innerText);
         templateIndex = field.innerText;
         selectedTemplate = document.querySelector(`.originalTemplateHexagram[data-number~="${templateIndex}"`);
         hexagramSymbolText = selectedTemplate.querySelector('.originalTemplateSymbol').innerText;
         hexagramNameText = selectedTemplate.querySelector('.originalTemplateName').innerText;
         field.innerHTML = `<span class="asksTableSymbol">${hexagramSymbolText}</span> <div class="asksTableHexagramInfo">${hexagramNameText}</div>`
     })
+
+
+    function openConsultation(data) {
+        sessionStorage.setItem('data', JSON.stringify(data));
+        window.location.href = '/play';
+    }
 </script>

@@ -1,4 +1,7 @@
 <x-layout page="play">
+    @php
+
+    @endphp
     <section id="play">
         <div class="content">
             <div class="questionBar">
@@ -65,6 +68,5 @@
             </div>
         </div>
     </section>
-
 </x-layout>
 

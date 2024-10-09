@@ -1694,13 +1694,19 @@
         secondHexagram.setInfo()
     </script>
     <script id="main-js">
+
         window.onload = function() {
             document.querySelector('.frame').style.visibility = 'visible';
-            document.querySelector('.buttonsArea').style.visibility = 'visible';
+            document.querySelector('.buttonsArea').style.visibility = 'visible'
             document.querySelector('.hintMessage').style.visibility = 'visible';
             document.querySelector('.hintMessage').style.visibility = 'visible';
             document.querySelector('.consultArea .btn').style.visibility = 'visible';
+
+            if(sessionStorage.getItem("data")) {
+                loadConsultation()
+            }
         };
+
         let yinyangDuration = 4000;
         let hasTwoHexagrams = false;
         let currentHexagram = 0;
@@ -2769,6 +2775,59 @@
             });
 
             alert("Sua consulta foi registrada com sucesso!");
+        }
+
+
+        function loadConsultation() {
+            const data = JSON.parse(sessionStorage.getItem('data'));
+
+            document.querySelector('.buttonsArea').style.visibility = 'hidden';
+            document.querySelector('.hintMessage').style.visibility = 'hidden';
+
+            document.querySelector('.questionBar').style.visibility = 'visible';
+            document.querySelector('.questionBar').innerText = data.subject;
+
+
+            document.querySelector(".startArea").style.display = "none";
+            document.querySelector(".originalTextArea").style.display = "flex";
+            document.querySelector(".conclusionArea").style.display = "flex";
+
+            document.querySelector('.messageArea').classList.add('conclusion');
+            consultMessage.style.display = "block";
+
+            canPlay = false;
+
+            if(lang == "en") {
+                consultResult[0].innerHTML =
+                `<strong>You received the hexagram: </strong> <em>${data.result}</em>`;
+
+            } else if(lang == "pt") {
+                consultResult[0].innerHTML =
+                `<strong>Você tirou o hexagrama: </strong> <em>${data.result}</em>`;
+            }
+
+            if (hasTwoHexagrams) {
+                if(lang == "en") {
+                    consultResult[1].innerHTML =
+                        `<strong>Related Hexagram: </strong> <em>${data.related}</em>`;
+                } else if(lang == "pt") {
+                    consultResult[1].innerHTML =
+                        `<strong>Desdobramento: </strong> <em>${data.related}</em>`;
+                }
+            } else {
+                if(lang == "en") {
+                    consultResult[1].innerText = 'No unfolding.';
+                } else if(lang == "pt") {
+                    consultResult[1].innerText = 'Sem desdobramento.';
+                }
+
+            }
+            document.querySelectorAll('.consuultLines').innerText = "Linhas móveis"
+
+            writeMovingLines();
+
+
+            sessionStorage.removeItem("data");
         }
 
         function refreshScreen () {
