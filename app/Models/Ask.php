@@ -11,6 +11,8 @@ class Ask extends Model
         'subject',
         'result',
         'related',
+        'result_lines',
+        'related_lines',
         'user_id',
     ];
 }

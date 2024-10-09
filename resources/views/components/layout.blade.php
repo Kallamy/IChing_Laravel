@@ -2506,63 +2506,8 @@
 
                     document.querySelector('.nextHexagram').innerHTML = ">";
                     document.querySelector('.prevHexagram').innerHTML = "<";
-                    let hexagramResult = null;
 
-                    if(lang == "en") {
-                        document.querySelector('.coinsButton').innerText = "Toss coins";
-                    } else if(lang == "pt") {
-                        document.querySelector('.coinsButton').innerText = "Jogar moedas";
-                    }
-
-                    hexagrams[0].setInfo();
-                    hexagrams[1].setInfo();
-
-                    document.querySelector('.gameArea').style.display = 'none';
-                    document.querySelector(".conclusionArea").style.display = "flex";
-                    document.querySelector(".originalTextArea").style.display = "flex";
-
-                    document.querySelector('.consultLines').style.visibility = 'visible';
-
-                    document.querySelector('.messageArea').classList.add('conclusion');
-                    writeMovingLines();
-
-                    hexagramHeaders[0].style.opacity = 1;
-                    hexagramHeaders[1].style.opacity = 1;
-
-                    consultButton = document.querySelectorAll(".consultButton");
-                    // verify if has one or two hexagrams and change the message with the results in english or portuguese
-
-                    if(lang == "en") {
-                        consultResult[0].innerText =
-                        `<strong>You received the hexagram: </strong> <em>${hexagrams[0].getHexagram()}</em>`;
-
-                    } else if(lang == "pt") {
-                        consultResult[0].innerText =
-                        `<strong>Você tirou o hexagrama: </strong> <em>${hexagrams[0].getHexagram()}</em>`;
-                    }
-
-
-                    if (hasTwoHexagrams) {
-                        if(lang == "en") {
-                            consultResult[1].innerText =
-                                `<strong>Related Hexagram: </strong> <em>${hexagrams[1].getHexagram()}</em>`;
-                        } else if(lang == "pt") {
-                            consultResult[1].innerText =
-                                `<strong>Desdobramento: </strong> <em>${hexagrams[1].getHexagram()}</em>`;
-                        }
-                    } else {
-                        if(lang == "en") {
-                            consultResult[1].innerText = 'No unfolding.';
-                        } else if(lang == "pt") {
-                            consultResult[1].innerText = 'Sem desdobramento.';
-                        }
-
-                    }
-
-                    consultMessage.innerHTML =
-                        ` <span class="consultResult">${consultResult[0].innerText}</span><br><span class="consultResult">${consultResult[1].innerText}</span>`;
-
-
+                    showResult();
                     //  document.querySelector(".gameArea").style.display = "none";
 
 
@@ -2639,6 +2584,66 @@
                     coins[i].classList.remove('yang')
                 }
             }
+        }
+
+        // Function to show the rresult
+        function showResult() {
+            let hexagramResult = null;
+
+                    if(lang == "en") {
+                        document.querySelector('.coinsButton').innerText = "Toss coins";
+                    } else if(lang == "pt") {
+                        document.querySelector('.coinsButton').innerText = "Jogar moedas";
+                    }
+
+                    hexagrams[0].setInfo();
+                    hexagrams[1].setInfo();
+
+                    document.querySelector('.gameArea').style.display = 'none';
+                    document.querySelector(".conclusionArea").style.display = "flex";
+                    document.querySelector(".originalTextArea").style.display = "flex";
+
+                    document.querySelector('.consultLines').style.visibility = 'visible';
+
+                    document.querySelector('.messageArea').classList.add('conclusion');
+                    writeMovingLines();
+
+                    hexagramHeaders[0].style.opacity = 1;
+                    hexagramHeaders[1].style.opacity = 1;
+
+                    consultButton = document.querySelectorAll(".consultButton");
+                    // verify if has one or two hexagrams and change the message with the results in english or portuguese
+
+                    if(lang == "en") {
+                        consultResult[0].innerText =
+                        `<strong>You received the hexagram: </strong> <em>${hexagrams[0].getHexagram()}</em>`;
+
+                    } else if(lang == "pt") {
+                        consultResult[0].innerText =
+                        `<strong>Você tirou o hexagrama: </strong> <em>${hexagrams[0].getHexagram()}</em>`;
+                    }
+
+
+                    if (hasTwoHexagrams) {
+                        if(lang == "en") {
+                            consultResult[1].innerText =
+                                `<strong>Related Hexagram: </strong> <em>${hexagrams[1].getHexagram()}</em>`;
+                        } else if(lang == "pt") {
+                            consultResult[1].innerText =
+                                `<strong>Desdobramento: </strong> <em>${hexagrams[1].getHexagram()}</em>`;
+                        }
+                    } else {
+                        if(lang == "en") {
+                            consultResult[1].innerText = 'No unfolding.';
+                        } else if(lang == "pt") {
+                            consultResult[1].innerText = 'Sem desdobramento.';
+                        }
+
+                    }
+
+                    consultMessage.innerHTML =
+                        ` <span class="consultResult">${consultResult[0].innerText}</span><br><span class="consultResult">${consultResult[1].innerText}</span>`;
+
         }
 
         // Function to clear the template
@@ -2751,11 +2756,15 @@
             const questionTxt = document.querySelector('.questionBar').innerText;
             const resultNum = hexagrams[0].getNumber();
             const relatedNum = hexagrams[1].getNumber();
+            const resultLines = encodeLines(hexagrams[0].lines);
+            const relatedLines = encodeLines(hexagrams[1].lines);
 
             const data = {
                 subject: questionTxt,
                 result: resultNum,
                 related: relatedNum,
+                result_lines: resultLines,
+                related_lines: relatedLines,
             }
 
             fetch('/save', {
@@ -2781,6 +2790,13 @@
         function loadConsultation() {
             const data = JSON.parse(sessionStorage.getItem('data'));
 
+            console.log(data.resultLines);
+            hexagrams[0].lines = decodeLines(data.resultLines);
+            hexagrams[1].lines = decodeLines(data.relatedLines);
+
+            hexagrams[0].update();
+            hexagrams[1].update();
+            updateHexagram();
             document.querySelector('.buttonsArea').style.visibility = 'hidden';
             document.querySelector('.hintMessage').style.visibility = 'hidden';
 
@@ -2797,34 +2813,7 @@
 
             canPlay = false;
 
-            if(lang == "en") {
-                consultResult[0].innerHTML =
-                `<strong>You received the hexagram: </strong> <em>${data.result}</em>`;
-
-            } else if(lang == "pt") {
-                consultResult[0].innerHTML =
-                `<strong>Você tirou o hexagrama: </strong> <em>${data.result}</em>`;
-            }
-
-            if (hasTwoHexagrams) {
-                if(lang == "en") {
-                    consultResult[1].innerHTML =
-                        `<strong>Related Hexagram: </strong> <em>${data.related}</em>`;
-                } else if(lang == "pt") {
-                    consultResult[1].innerHTML =
-                        `<strong>Desdobramento: </strong> <em>${data.related}</em>`;
-                }
-            } else {
-                if(lang == "en") {
-                    consultResult[1].innerText = 'No unfolding.';
-                } else if(lang == "pt") {
-                    consultResult[1].innerText = 'Sem desdobramento.';
-                }
-
-            }
-            document.querySelectorAll('.consuultLines').innerText = "Linhas móveis"
-
-            writeMovingLines();
+            showResult();
 
 
             sessionStorage.removeItem("data");
@@ -2841,6 +2830,15 @@
                 refreshScreen()
             })
         })
+
+        function decodeLines(str) {
+            const arr = str.split(',').map(num => num === '1');
+            return arr;
+        }
+        function encodeLines(arr) {
+            const str = arr.map(bool => bool ? '1' : '0').join(',');
+            return str;
+        }
     </script>
 
     <x-OriginalTextTemplate />

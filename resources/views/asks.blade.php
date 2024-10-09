@@ -27,6 +27,7 @@
                         <th class="subjectHeader">Assunto</th>
                         <th class="resultHeder">Resultado</th>
                         <th class="resultHeder">Desdobramento</th>
+                        <th class="linesField"></th>
                         <th class="actionHeder"></th>
                     </tr>
                 </thead>
@@ -45,6 +46,9 @@
                             @else
                                 <td class="resultField"></td>
                             @endif
+                            <td class="linesField">{{ $ask->result_lines }}</td>
+                            <td class="linesField">{{ $ask->related_lines }}</td>
+
                             <td><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick="openConsultation(this)"><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
                         </tr>
                     @endforeach
@@ -79,8 +83,8 @@
             let data = {
                 date: row.cells[0].innerText,
                 subject: row.cells[1].innerText,
-                result: row.cells[2].innerText,
-                related:  row.cells[3].innerText,
+                resultLines: row.cells[4].innerText,
+                relatedLines:  row.cells[5].innerText,
             };
             openConsultation(data);
         });

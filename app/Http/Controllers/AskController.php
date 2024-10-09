@@ -21,6 +21,8 @@ class AskController extends Controller
             'subject' => $request->subject,
             'result' => $request->result,
             'related' => $request->related,
+            'result_lines' => $request->result_lines,
+            'related_lines' => $request->related_lines,
             'user_id' => auth()->id(),
         ]);
 

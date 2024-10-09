@@ -1524,6 +1524,9 @@ input {
 .actionField {
     width: 4rem;
 }
+.linesField {
+    display: none;
+}
 
 .consultRegisterMessage {
     text-align: left;
