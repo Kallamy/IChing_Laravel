@@ -33,4 +33,5 @@ Route::post('/new', [AuthController::class, 'signup']);
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::post('/save', [AskController::class, 'save'])->name('save');
+Route::delete('/delete/{id}', [AskController::class, 'delete']);
 

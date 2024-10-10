@@ -28,4 +28,10 @@ class AskController extends Controller
 
         return response()->json(['success' => true, 'message' => 'Dados recebidos com sucesso!']);
     }
+
+    public function delete($id) {
+        $ask = Ask::findOrFail($id);
+        $ask->delete();
+        return redirect()->route('asks')->with(['message' => 'Recurso deletado com sucesso!']);
+    }
 }

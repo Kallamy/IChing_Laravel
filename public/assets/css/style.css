@@ -1485,8 +1485,8 @@ input {
 }
 
 #asksTable th,  #asksTable td {
-    border: 1px solid #ddd;
-    padding: 6px;
+    border: .1rem solid #ddd;
+    padding: 1rem;
     text-align: left;
     height: 2rem;
 }
@@ -1495,7 +1495,7 @@ input {
     background-color: darkslategrey;
     color: white;
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     height: 2rem;
 }
 
@@ -1510,6 +1510,21 @@ input {
 }
 #asksTable tr:hover {
     background-color: #eee;
+}
+
+.deleteImage {
+    cursor: pointer;
+}
+.openConsultationButton {
+    background-image: url("../icons/i-ching.png");
+    width: 4rem;
+    height: 4rem;
+    background-size: 4rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.openConsultationButton.delete {
+    background-image: url("../icons/delete.png");
 }
 
 .dateField {
@@ -1531,7 +1546,7 @@ input {
 .consultRegisterMessage {
     text-align: left;
     margin-left: 33rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .asksTableSymbol {
@@ -1797,7 +1812,7 @@ input {
         width: 100%;
     }
     #asksTable th,  #asksTable td {
-        height: 3rem;
+        height: 4.5rem;
         padding: 1rem;
     }
 
@@ -1814,7 +1829,7 @@ input {
     .consultRegisterMessage {
         text-align: left;
         margin-left: 0;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
         font-size: 1.5rem;
     }
 

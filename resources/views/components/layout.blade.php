@@ -1733,7 +1733,6 @@
         const infoSpan = document.querySelectorAll("#info span");
 
         let lang = "{{ session('locale') }}";
-        console.log("lOCALE:", "{{ session('locale') }}")
 
         let originalTextScreen = null;
 
@@ -2225,7 +2224,6 @@
                     overview = a.overview;
                 }
             })
-            console.log("geral: " + general)
             // write the texts on the screen
             document.querySelector("#aboutQuote").innerHTML = sentence;
             document.querySelector("#aboutTrigrams").innerHTML =
@@ -2797,6 +2795,7 @@
             hexagrams[0].update();
             hexagrams[1].update();
             updateHexagram();
+
             document.querySelector('.buttonsArea').style.visibility = 'hidden';
             document.querySelector('.hintMessage').style.visibility = 'hidden';
 

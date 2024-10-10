@@ -103,7 +103,6 @@
 
 
 <script>
-    console.log(document.querySelectorAll('.originalTextHexagram'))
     document.querySelectorAll('.originalTextHexagram').forEach(card => {
         card.addEventListener('click', (e) => {
             if ( !e.currentTarget.classList.contains("selected")) {

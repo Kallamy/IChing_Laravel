@@ -1,8 +1,9 @@
-@inject('askModel', 'App\Models\Ask')
 @php
+    use App\Models\Ask;
     use Carbon\Carbon;
     $date = Carbon::now();
 @endphp
+
 <x-layout page="asks">
     <section id="asks">
         <div class="content">
@@ -17,7 +18,7 @@
                 </div>
             @endif
             @php
-                $asks = $askModel::where('user_id', auth()->id())->get();
+                $asks = Ask::where('user_id', auth()->id())->get();
                 $date = Carbon::now();
             @endphp
             <table id="asksTable">
@@ -28,7 +29,7 @@
                         <th class="resultHeder">Resultado</th>
                         <th class="resultHeder">Desdobramento</th>
                         <th class="linesField"></th>
-                        <th class="actionHeder"></th>
+                        <th class="actionHeder"><img class="deleteImage" width="29rem" src="assets/icons/bin.png"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,7 +50,7 @@
                             <td class="linesField">{{ $ask->result_lines }}</td>
                             <td class="linesField">{{ $ask->related_lines }}</td>
 
-                            <td><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick="openConsultation(this)"><img width="26.0rem" src="assets/icons/i-ching.png"></x-Button></td>
+                            <td class=""><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick=""></x-Button></td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -76,28 +77,59 @@
 </x-layout>
 
 <script>
+    document.querySelector('.deleteImage').addEventListener('click', function() {
+        buttons = document.querySelectorAll('.openConsultationButton')
+        buttons.forEach(button => {
+            button.classList.toggle('delete');
+        });
+    });
+
     document.querySelectorAll('.openConsultationButton').forEach(button => {
         button.addEventListener('click', function() {
             let ask_id = button.getAttribute('data-id');
-            let row = this.closest('tr');
-            let data = {
-                date: row.cells[0].innerText,
-                subject: row.cells[1].innerText,
-                resultLines: row.cells[4].innerText,
-                relatedLines:  row.cells[5].innerText,
-            };
-            openConsultation(data);
+
+            if(button.classList.contains('delete')) {
+                fetch('/delete/'+ask_id, {
+                    method: 'DELETE',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Sucesso:', data);
+                })
+                .catch((error) => {
+                    console.error('Erro:', error);
+                });
+
+                // recarrega a página duas vezes seguidas
+                location.reload(true);
+                    setTimeout(function() {
+                    location.reload();
+                }, 300);
+            } else {
+                let row = this.closest('tr');
+                let data = {
+                    date: row.cells[0].innerText,
+                    subject: row.cells[1].innerText,
+                    resultLines: row.cells[4].innerText,
+                    relatedLines:  row.cells[5].innerText,
+                };
+                openConsultation(data);
+            }
         });
     });
 
     let resultFields = document.querySelectorAll('.resultField');
     resultFields.forEach(field => {
-        console.log(field.innerText);
         templateIndex = field.innerText;
-        selectedTemplate = document.querySelector(`.originalTemplateHexagram[data-number~="${templateIndex}"`);
-        hexagramSymbolText = selectedTemplate.querySelector('.originalTemplateSymbol').innerText;
-        hexagramNameText = selectedTemplate.querySelector('.originalTemplateName').innerText;
-        field.innerHTML = `<span class="asksTableSymbol">${hexagramSymbolText}</span> <div class="asksTableHexagramInfo">${hexagramNameText}</div>`
+        if(templateIndex != "") {
+            selectedTemplate = document.querySelector(`.originalTemplateHexagram[data-number~="${templateIndex}"`);
+            hexagramSymbolText = selectedTemplate.querySelector('.originalTemplateSymbol').innerText;
+            hexagramNameText = selectedTemplate.querySelector('.originalTemplateName').innerText;
+            field.innerHTML = `<span class="asksTableSymbol">${hexagramSymbolText}</span> <div class="asksTableHexagramInfo">${hexagramNameText}</div>`
+        }
     })
 
 
