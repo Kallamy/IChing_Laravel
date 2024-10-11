@@ -5,7 +5,8 @@
     <section id="play">
         <div class="content">
             <div class="questionBar">
-                Como posso coneguir um emprego?
+                <span class="questionDate"></span>
+                <span class="questionText"></span>
             </div>
             <div class="interactiveArea">
                 <div class="frameArea">

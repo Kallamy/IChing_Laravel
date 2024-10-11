@@ -1276,6 +1276,7 @@ span.lineNumber {
 }
 
 .questionBar {
+    position: relative;
     display: block;
     text-align: left;
     width: 90%;
@@ -1291,6 +1292,11 @@ span.lineNumber {
     line-height: 1rem;
     margin-bottom: 1rem;
     visibility: hidden;
+}
+.questionDate {
+    position: absolute;
+    right: 40rem;
+    color:deepskyblue;
 }
 
 .gameArea {
@@ -1641,6 +1647,10 @@ input {
         padding: 2rem;
         font-size: 1.6rem;
     }
+    .questionDate {
+        right: 6rem;
+    }
+
     .consultArea {
         width: 100%;
         margin-left: -2rem;

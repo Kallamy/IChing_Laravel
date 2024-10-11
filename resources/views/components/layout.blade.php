@@ -2291,11 +2291,13 @@
 
             question = document.querySelector("#questionInput").value;
 
+            document.querySelector('.questionDate').innerText = "";
+
             if(question.length == 0) {
                 question = "..."
             }
 
-            document.querySelector(".questionBar").innerText = question;
+            document.querySelector(".questionText").innerText = question;
 
             window.scrollTo(0, 0);
 
@@ -2669,6 +2671,7 @@
                 line.classList.add('active')
             })
 
+            document.querySelector('.questionDate').innerText = "";
             document.querySelector('.questionBar').style.visibility = 'hidden';
             document.querySelector('.hintMessage').style.visibility = 'visible';
             document.querySelector('.originalTextArea').style.display = 'none';
@@ -2758,7 +2761,7 @@
         function saveConsultation () {
             if(!saveConsultationButton.classList.contains('disabled'))
             {
-                const questionTxt = document.querySelector('.questionBar').innerText;
+                const questionTxt = document.querySelector('.questionText').innerText;
                 const resultNum = hexagrams[0].getNumber();
                 const relatedNum = hexagrams[1].getNumber();
                 const resultLines = encodeLines(hexagrams[0].lines);
@@ -2805,11 +2808,13 @@
             hexagrams[1].update();
             updateHexagram();
 
+            document.querySelector('.questionDate').innerText = data.date
+
             document.querySelector('.buttonsArea').style.visibility = 'hidden';
             document.querySelector('.hintMessage').style.visibility = 'hidden';
 
             document.querySelector('.questionBar').style.visibility = 'visible';
-            document.querySelector('.questionBar').innerText = data.subject;
+            document.querySelector('.questionText').innerText = data.subject;
 
 
             document.querySelector(".startArea").style.display = "none";
