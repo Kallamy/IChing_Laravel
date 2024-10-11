@@ -54,12 +54,15 @@ body {
     border: 0;
     cursor: pointer;
 }
-
+.btn.disabled {
+    opacity: .7;
+    cursor: default;
+}
+.btn:not(.disabled):hover {
+    transform: scale(1.02);
+}
 .btn img {
     width: 4rem;
-}
-.btn:hover {
-    transform: scale(1.02);
 }
 .startArea .btn {
     visibility: hidden;

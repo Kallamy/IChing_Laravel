@@ -1732,6 +1732,8 @@
         const linesArea = document.querySelectorAll(".linesArea");
         const infoSpan = document.querySelectorAll("#info span");
 
+        const saveConsultationButton = document.querySelector('.saveConsultationButton');
+
         let lang = "{{ session('locale') }}";
 
         let originalTextScreen = null;
@@ -2604,6 +2606,11 @@
                     document.querySelector('.consultLines').style.visibility = 'visible';
 
                     document.querySelector('.messageArea').classList.add('conclusion');
+                    document.querySelector('.saveConsultationButton').classList.remove('disabled');
+                    @if(!auth()->check())
+                        document.querySelector('.saveConsultationButton').classList.add('disabled');
+                    @endif();
+
                     writeMovingLines();
 
                     hexagramHeaders[0].style.opacity = 1;
@@ -2674,7 +2681,6 @@
             document.querySelector('.consultButton').style.visibility = 'visible';
             document.querySelector('.about-button').style.display = 'block';
             document.querySelector('.hintArea').style.display = 'block';
-
 
             document.querySelector('.aboutIChing').style.display = 'block';
             document.querySelector('.messageArea').style.marginLeft = '9.5rem';
@@ -2750,45 +2756,48 @@
         }
 
         function saveConsultation () {
+            if(!saveConsultationButton.classList.contains('disabled'))
+            {
+                const questionTxt = document.querySelector('.questionBar').innerText;
+                const resultNum = hexagrams[0].getNumber();
+                const relatedNum = hexagrams[1].getNumber();
+                const resultLines = encodeLines(hexagrams[0].lines);
+                const relatedLines = encodeLines(hexagrams[1].lines);
 
-            const questionTxt = document.querySelector('.questionBar').innerText;
-            const resultNum = hexagrams[0].getNumber();
-            const relatedNum = hexagrams[1].getNumber();
-            const resultLines = encodeLines(hexagrams[0].lines);
-            const relatedLines = encodeLines(hexagrams[1].lines);
+                const data = {
+                    subject: questionTxt,
+                    result: resultNum,
+                    related: relatedNum,
+                    result_lines: resultLines,
+                    related_lines: relatedLines,
+                }
 
-            const data = {
-                subject: questionTxt,
-                result: resultNum,
-                related: relatedNum,
-                result_lines: resultLines,
-                related_lines: relatedLines,
+                fetch('/save', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message);
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                });
+
+                document.querySelector('.saveConsultationButton').classList.add('disabled');
+                alert("Sua consulta foi registrada com sucesso!");
             }
 
-            fetch('/save', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data.message);
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-            });
-
-            alert("Sua consulta foi registrada com sucesso!");
         }
 
 
         function loadConsultation() {
             const data = JSON.parse(sessionStorage.getItem('data'));
 
-            console.log(data.resultLines);
             hexagrams[0].lines = decodeLines(data.resultLines);
             hexagrams[1].lines = decodeLines(data.relatedLines);
 
@@ -2813,11 +2822,12 @@
             canPlay = false;
 
             showResult();
-
+            document.querySelector('.saveConsultationButton').classList.add('disabled');
 
             sessionStorage.removeItem("data");
         }
 
+        // function to refresh the screen
         function refreshScreen () {
             document.querySelector(".content").style.display = "none"
         }
