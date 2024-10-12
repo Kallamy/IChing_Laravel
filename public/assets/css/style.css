@@ -1487,10 +1487,26 @@ input {
 
 /* CONSULTATIONS TABLE */
 
+.table-container {
+    display: inline-block;
+    height: 53rem;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    margin: 0 auto;
+}
+
 #asksTable {
+    margin: auto;
     border-collapse: collapse;
     font-size: 1.5rem;
-    margin: auto;
+}
+
+#asksTable thead, #asksTable th{
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2; /* Cor de fundo do cabeçalho */
+    z-index: 1; /* Garantir que o cabeçalho fique sobre as células */
 }
 
 #asksTable th,  #asksTable td {
@@ -1501,7 +1517,7 @@ input {
 }
 
 #asksTable th {
-    background-color: darkslategrey;
+    background-color: seagreen;
     color: white;
     text-align: center;
     padding: 1.5rem;
@@ -1611,6 +1627,10 @@ input {
     }
 
     section#asks .content {
+        position: relative;
+        padding: .2rem;
+    }
+    section#asks {
         padding: 0;
     }
 
@@ -1819,13 +1839,23 @@ input {
 
     /* CONSULTATIONS TABLE */
 
+    .table-container {
+        position: relative;
+        margin-top: 15rem;
+        width: 100%;
+        height: 58rem;
+        border: 1px solid black;
+    }
+
     #asksTable {
-        margin-left: -4rem;
+        position: absolute;
+        top: 0;
+        left: 0;
         font-size: 1.1rem;
         width: 100%;
     }
-    #asksTable th,  #asksTable td {
-        height: 4.5rem;
+    #asksTable td {
+        height: 8rem;
         padding: 1rem;
     }
 
@@ -1839,12 +1869,33 @@ input {
         width: 11rem;
     }
 
-    .consultRegisterMessage {
+    .loginMessage {
         text-align: left;
-        margin-left: 0;
-        margin-bottom: 3rem;
+        padding: 1rem;
+        padding-left: 3rem;
+        margin-top: 10rem;
+        margin-left: 0rem;
+        width: 100%;
         font-size: 1.5rem;
     }
-
+    .loginButtons {
+        text-align: left;
+        padding: 1rem;
+        padding-left: 3rem;
+        margin-top: 2rem;
+        margin-left: 0rem;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    .consultRegisterMessage {
+        position: absolute;
+        text-align: left;
+        padding: 1rem;
+        padding-left: 3rem;
+        margin-top: 10rem;
+        margin-left: 0rem;
+        width: 100%;
+        font-size: 1.5rem;
+    }
 }
 

@@ -18,43 +18,46 @@
                 </div>
             @endif
             @php
-                $asks = Ask::where('user_id', auth()->id())->get();
+                $asks = Ask::where('user_id', auth()->id())->orderBy('id', 'asc')->get();
                 $date = Carbon::now();
             @endphp
-            <table id="asksTable">
-                <thead>
-                    <tr>
-                        <th class="dateHeader">Data</th>
-                        <th class="subjectHeader">Assunto</th>
-                        <th class="resultHeder">Resultado</th>
-                        <th class="resultHeder">Desdobramento</th>
-                        <th class="linesField"></th>
-                        <th class="actionHeder"><img class="deleteImage" width="29rem" src="assets/icons/bin.png"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($asks as $ask)
+            <div class="table-container">
+                <table id="asksTable">
+                    <thead>
                         <tr>
-                            @if(session('locale') == 'en')
-                                <td class="dateField">{{ Carbon::parse($ask->date)->format('m/d/Y') }}</td>
-                            @else
-                                <td class="dateField">{{ Carbon::parse($ask->date)->format('d/m/Y') }}</td>
-                            @endif
-                            <td class="subjectField">{{ $ask->subject }}</td>
-                            <td class="resultField">{{ $ask->result }}</td>
-                            @if($ask->result != $ask->related)
-                                <td class="resultField">{{ $ask->related }}</td>
-                            @else
-                                <td class="resultField"></td>
-                            @endif
-                            <td class="linesField">{{ $ask->result_lines }}</td>
-                            <td class="linesField">{{ $ask->related_lines }}</td>
-
-                            <td class=""><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick=""></x-Button></td>
+                            <th class="dateHeader">Data</th>
+                            <th class="subjectHeader">Assunto</th>
+                            <th class="resultHeder">Resultado</th>
+                            <th class="resultHeder">Desdobramento</th>
+                            <th class="linesField"></th>
+                            <th class="actionHeder"><img class="deleteImage" width="29rem" src="assets/icons/bin.png"></th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($asks as $ask)
+                            <tr>
+                                @if(session('locale') == 'en')
+                                    <td class="dateField">{{ Carbon::parse($ask->date)->format('m/d/Y') }}</td>
+                                @else
+                                    <td class="dateField">{{ Carbon::parse($ask->date)->format('d/m/Y') }}</td>
+                                @endif
+                                <td class="subjectField">{{ $ask->subject }}</td>
+                                <td class="resultField">{{ $ask->result }}</td>
+                                @if($ask->result != $ask->related)
+                                    <td class="resultField">{{ $ask->related }}</td>
+                                @else
+                                    <td class="resultField"></td>
+                                @endif
+                                <td class="linesField">{{ $ask->result_lines }}</td>
+                                <td class="linesField">{{ $ask->related_lines }}</td>
+
+                                <td class=""><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick=""></x-Button></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+
         @else
             @if (session('locale') == 'en')
             <div class="loginMessage">
@@ -77,6 +80,52 @@
 </x-layout>
 
 <script>
+    // Efeito de scorll passo a passo
+    const container = document.querySelector('.table-container');
+
+    // para celular
+    if (isMobile()) {
+        const rowHeight = 60;
+
+        let startY, endY;
+
+        container.addEventListener('touchstart', function(event) {
+            startY = event.touches[0].clientY;
+        });
+
+        container.addEventListener('touchmove', function(event) {
+            endY = event.touches[0].clientY;
+        });
+
+        container.addEventListener('touchend', function(event) {
+            let deltaY = startY - endY;
+            if (deltaY > 5) {
+                // Rolagem para cima
+                container.scrollTop += rowHeight;
+            } else if (deltaY < -5) {
+                // Rolagem para baixo
+                container.scrollTop -= rowHeight;
+            }
+            // Reset dos valores
+            startY = null;
+            endY = null;
+        });
+    // para computador
+    } else {
+        const rowHeight = 70;
+
+        container.addEventListener('wheel', function(event) {
+            if (event.deltaY < 0) {
+                // Rolagem para cima
+                container.scrollTop -= rowHeight;
+            } else {
+                // Rolagem para baixo
+                container.scrollTop += rowHeight;
+            }
+            event.preventDefault(); // Impede a rolagem padrão
+        });
+    }
+
     document.querySelector('.deleteImage').addEventListener('click', function() {
         buttons = document.querySelectorAll('.openConsultationButton')
         buttons.forEach(button => {
@@ -89,25 +138,31 @@
             let ask_id = button.getAttribute('data-id');
 
             if(button.classList.contains('delete')) {
-                fetch('/delete/'+ask_id, {
+                @if (session('locale') == 'en')
+                    let confirmText = 'Are you sure you want to delete this consultation'
+                @elseif (session('locale') == 'pt')
+                    let confirmText = 'Tem certeza que quer deletar esta consulta?'
+                @endif
+                if(confirm(confirmText)) {
+                    fetch('/delete/'+ask_id, {
                     method: 'DELETE',
                     headers: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Sucesso:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Erro:', error);
+                    });
+                        // recarrega a página duas vezes seguidas
+                        location.reload(true);
+                            setTimeout(function() {
+                            location.reload();
+                        }, 300);
                     }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Sucesso:', data);
-                })
-                .catch((error) => {
-                    console.error('Erro:', error);
-                });
-
-                // recarrega a página duas vezes seguidas
-                location.reload(true);
-                    setTimeout(function() {
-                    location.reload();
-                }, 300);
             } else {
                 let row = this.closest('tr');
                 let data = {
@@ -136,5 +191,9 @@
     function openConsultation(data) {
         sessionStorage.setItem('data', JSON.stringify(data));
         window.location.href = '/play';
+    }
+
+    function isMobile() {
+        return /Mobi|Android/i.test(navigator.userAgent);
     }
 </script>
