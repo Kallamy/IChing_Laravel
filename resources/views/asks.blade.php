@@ -19,10 +19,10 @@
                     </div>
                 @endif
                 @php
-                    $asks = Ask::where('user_id', auth()->id())->orderBy('id', 'asc')->get();
+                    $asks = Ask::where('user_id', auth()->id())->orderBy('id', 'asc')->paginate(5);
                     $date = Carbon::now();
                 @endphp
-                <div class="table-container">
+                <div class="tableContainer">
                     <table id="asksTable">
                         <thead>
                             <tr>
@@ -66,6 +66,10 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="pagination-links">
+                    {{ $asks->links('vendor.pagination.default') }}
+                </div>
             @else
             <div class="consultRegisterMessage">
                 @if (session('locale') == 'en')
@@ -98,52 +102,6 @@
 </x-layout>
 
 <script>
-    // Efeito de scorll passo a passo
-    const container = document.querySelector('.table-container');
-
-    // para celular
-    if (isMobile()) {
-        const rowHeight = 60;
-
-        let startY, endY;
-
-        container.addEventListener('touchstart', function(event) {
-            startY = event.touches[0].clientY;
-        });
-
-        container.addEventListener('touchmove', function(event) {
-            endY = event.touches[0].clientY;
-        });
-
-        container.addEventListener('touchend', function(event) {
-            let deltaY = startY - endY;
-            if (deltaY > 5) {
-                // Rolagem para cima
-                container.scrollTop += rowHeight;
-            } else if (deltaY < -5) {
-                // Rolagem para baixo
-                container.scrollTop -= rowHeight;
-            }
-            // Reset dos valores
-            startY = null;
-            endY = null;
-        });
-    // para computador
-    } else {
-        const rowHeight = 70;
-
-        container.addEventListener('wheel', function(event) {
-            if (event.deltaY < 0) {
-                // Rolagem para cima
-                container.scrollTop -= rowHeight;
-            } else {
-                // Rolagem para baixo
-                container.scrollTop += rowHeight;
-            }
-            event.preventDefault(); // Impede a rolagem padrão
-        });
-    }
-
     document.querySelector('.deleteImage').addEventListener('click', function() {
         buttons = document.querySelectorAll('.openConsultationButton')
         buttons.forEach(button => {
