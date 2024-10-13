@@ -2,6 +2,8 @@
 return [
     'createUser' => 'Criar Usuário',
     'login' => 'Entrar',
+    'logout' => 'Sair',
+
 
     'form' => [
         'name' => 'Nome',

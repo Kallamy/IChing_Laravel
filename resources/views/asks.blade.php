@@ -8,56 +8,74 @@
     <section id="asks">
         <div class="content">
         @if (auth()->check())
-            @if (session('locale') == 'en')
-                <div class="consultRegisterMessage">
-                    <h3>Consultation register, {{auth()->user()->name}}:</h3>
-                </div>
-            @elseif (session('locale') == 'pt')
-                <div class="consultRegisterMessage">
-                    <h3>Registro de consultas, {{auth()->user()->name}}:</h3>
-                </div>
-            @endif
-            @php
-                $asks = Ask::where('user_id', auth()->id())->orderBy('id', 'asc')->get();
-                $date = Carbon::now();
-            @endphp
-            <div class="table-container">
-                <table id="asksTable">
-                    <thead>
-                        <tr>
-                            <th class="dateHeader">Data</th>
-                            <th class="subjectHeader">Assunto</th>
-                            <th class="resultHeder">Resultado</th>
-                            <th class="resultHeder">Desdobramento</th>
-                            <th class="linesField"></th>
-                            <th class="actionHeder"><img class="deleteImage" width="29rem" src="assets/icons/bin.png"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($asks as $ask)
+            @if(Ask::where('user_id', auth()->id())->exists())
+                @if (session('locale') == 'en')
+                    <div class="consultRegisterMessage">
+                        <h3>Consultation register, {{auth()->user()->name}}:</h3>
+                    </div>
+                @elseif (session('locale') == 'pt')
+                    <div class="consultRegisterMessage">
+                        <h3>Registro de consultas, {{auth()->user()->name}}:</h3>
+                    </div>
+                @endif
+                @php
+                    $asks = Ask::where('user_id', auth()->id())->orderBy('id', 'asc')->get();
+                    $date = Carbon::now();
+                @endphp
+                <div class="table-container">
+                    <table id="asksTable">
+                        <thead>
                             <tr>
                                 @if(session('locale') == 'en')
-                                    <td class="dateField">{{ Carbon::parse($ask->date)->format('m/d/Y') }}</td>
+                                    <th class="dateHeader">Date</th>
+                                    <th class="subjectHeader">Subject</th>
+                                    <th class="resultHeder">Result</th>
+                                    <th class="resultHeder">Related Hexagram</th>
                                 @else
-                                    <td class="dateField">{{ Carbon::parse($ask->date)->format('d/m/Y') }}</td>
+                                    <th class="dateHeader">Data</th>
+                                    <th class="subjectHeader">Assunto</th>
+                                    <th class="resultHeder">Resultado</th>
+                                    <th class="resultHeder">Desdobramento</th>
                                 @endif
-                                <td class="subjectField">{{ $ask->subject }}</td>
-                                <td class="resultField">{{ $ask->result }}</td>
-                                @if($ask->result != $ask->related)
-                                    <td class="resultField">{{ $ask->related }}</td>
-                                @else
-                                    <td class="resultField"></td>
-                                @endif
-                                <td class="linesField">{{ $ask->result_lines }}</td>
-                                <td class="linesField">{{ $ask->related_lines }}</td>
 
-                                <td class=""><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick=""></x-Button></td>
+                                <th class="linesField"></th>
+                                <th class="actionHeder"><img class="deleteImage" width="29rem" src="assets/icons/bin.png"></th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            @foreach ($asks as $ask)
+                                <tr>
+                                    @if(session('locale') == 'en')
+                                        <td class="dateField">{{ Carbon::parse($ask->date)->format('m/d/Y') }}</td>
+                                    @else
+                                        <td class="dateField">{{ Carbon::parse($ask->date)->format('d/m/Y') }}</td>
+                                    @endif
+                                    <td class="subjectField">{{ $ask->subject }}</td>
+                                    <td class="resultField">{{ $ask->result }}</td>
+                                    @if($ask->result != $ask->related)
+                                        <td class="resultField">{{ $ask->related }}</td>
+                                    @else
+                                        <td class="resultField"></td>
+                                    @endif
+                                    <td class="linesField">{{ $ask->result_lines }}</td>
+                                    <td class="linesField">{{ $ask->related_lines }}</td>
 
+                                    <td class=""><x-Button class="openConsultationButton" data-id="{{ $ask->id }}" onclick=""></x-Button></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            @else
+            <div class="consultRegisterMessage">
+                @if (session('locale') == 'en')
+                    <h3>You do not have any consultation registered at the moment.</h3>
+                @elseif(session('locale') == 'pt')
+                    <h3>Você não tem nehuma consulta registrada no momento.</h3>
+                @endif
+                <img src="assets/images/dragon.png">
+            </div>
+            @endif
         @else
             @if (session('locale') == 'en')
             <div class="loginMessage">

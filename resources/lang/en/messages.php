@@ -34,7 +34,6 @@ return [
 
     'consultWithCoins' => "Consult with coins",
     'questionPlaceholder' => "Tell me about...",
-    'consult' => "Consult",
 
     'conclusion' => [
         'originalText' => 'Original Text',

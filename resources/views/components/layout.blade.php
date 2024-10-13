@@ -38,7 +38,7 @@
         <div class="authLinks">
             @if (auth()->check()):
             <span class="userNameLabel">{{$user->name}}</span>
-            <a href="{{ route('logout') }}">Disconect</a>
+            <a href="{{ route('logout') }}">@lang('auth.logout')</a>
             @else
             <a href="{{ route('signup') }}">@lang('auth.createUser')</a>
             <a href="{{ route('signin') }}">@lang('auth.login')</a>
