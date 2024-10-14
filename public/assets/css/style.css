@@ -1486,6 +1486,11 @@ input {
 }
 
 /* CONSULTATIONS TABLE */
+.asksTableHeader {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 .tableContainer {
     height: 57rem;
 }
@@ -1515,7 +1520,7 @@ input {
     color: white;
     text-align: center;
     padding: 1.5rem;
-    height: 2rem;
+    height: 5rem;
 }
 
 #asksTable tr:nth-child(even) {
@@ -1534,7 +1539,6 @@ input {
 .pagination-links {
     margin: auto;
     display: flex;
-    flex-direction: row;
 }
 
 .pagination {
@@ -1542,6 +1546,8 @@ input {
     display: flex;
     list-style-type: none;
     padding: 0;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
 }
 .pagination li {
     margin: 0 5px;
@@ -1549,9 +1555,9 @@ input {
 .pagination li a,
 .pagination li span {
     display: block;
-    padding: 8px 16px;
+    padding: .8rem 1.6rem;
     text-decoration: none;
-    border: 1px solid #ddd;
+    border: .1rem solid #ddd;
     color: #333;
 }
 .pagination li a:hover {
@@ -1771,7 +1777,6 @@ input {
     }
 
     .hexagramsInfo {
-        /* margin-top: -8rem; */
         margin-top: 3rem;
         margin-left: 7rem;
     }
@@ -1868,11 +1873,12 @@ input {
     }
 
     /* CONSULTATIONS TABLE */
-    .tableContainer {
-        height: 60rem;
+    .asksTableHeader {
+        align-items: center;
+        margin-top: 12rem;
     }
     #asksTable {
-        margin-top: 15rem;
+        margin-top: -2rem;
         font-size: 1.05rem;
         width: 100%;
     }
@@ -1910,14 +1916,25 @@ input {
         font-size: 1.5rem;
     }
     .consultRegisterMessage {
-        position: absolute;
         text-align: left;
         padding: 1rem;
         padding-left: 3rem;
-        margin-top: 10rem;
         margin-left: 0rem;
-        width: 100%;
+        width: 130rem;
         font-size: 1.5rem;
     }
+
+    .pagination {
+        margin-left: 2rem;
+    }
+
+    .pagination li a,
+    .pagination li span {
+    display: block;
+    padding: .5rem .9rem;
+    text-decoration: none;
+    border: .1rem solid #ddd;
+    color: #333;
+}
 }
 

@@ -7,21 +7,28 @@
 <x-layout page="asks">
     <section id="asks">
         <div class="content">
+        @php
+            $asks = Ask::where('user_id', auth()->id())->orderBy('id', 'asc')->paginate(5);
+            $date = Carbon::now();
+        @endphp
         @if (auth()->check())
-            @if(Ask::where('user_id', auth()->id())->exists())
+        @if(Ask::where('user_id', auth()->id())->exists())
+            <div class="asksTableHeader">
                 @if (session('locale') == 'en')
                     <div class="consultRegisterMessage">
-                        <h3>Consultation register, {{auth()->user()->name}}:</h3>
+                        <h3>{{auth()->user()->name}},</h3>
+                        <h3>Consultation register:</h3>
                     </div>
                 @elseif (session('locale') == 'pt')
                     <div class="consultRegisterMessage">
-                        <h3>Registro de consultas, {{auth()->user()->name}}:</h3>
+                        <h3>{{auth()->user()->name}},</h3>
+                        <h3>Registro de consultas:</h3>
                     </div>
                 @endif
-                @php
-                    $asks = Ask::where('user_id', auth()->id())->orderBy('id', 'asc')->paginate(5);
-                    $date = Carbon::now();
-                @endphp
+                <div class="pagination-links">
+                    {{ $asks->links('vendor.pagination.default') }}
+                </div>
+            </div>
                 <div class="tableContainer">
                     <table id="asksTable">
                         <thead>
@@ -65,10 +72,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-
-                <div class="pagination-links">
-                    {{ $asks->links('vendor.pagination.default') }}
                 </div>
             @else
             <div class="consultRegisterMessage">
@@ -163,13 +166,8 @@
         }
     })
 
-
     function openConsultation(data) {
         sessionStorage.setItem('data', JSON.stringify(data));
         window.location.href = '/play';
-    }
-
-    function isMobile() {
-        return /Mobi|Android/i.test(navigator.userAgent);
     }
 </script>
