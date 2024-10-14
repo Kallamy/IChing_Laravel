@@ -992,7 +992,7 @@ span.lineNumber {
     height: 6.5rem;
     background-image: url("../icons/color_unselected.png");
     background-size: cover;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
 }
 .colorSelector.selected {
     background-image: url("../icons/color_selected.png");
@@ -1188,7 +1188,7 @@ span.lineNumber {
     margin: auto;
     text-align: center;
     font-weight: bold;
-    padding-top: 2rem;
+    padding-top: 1rem;
     margin-right: 16rem;
 }
 /* CONSULT AREA */
@@ -1290,12 +1290,12 @@ span.lineNumber {
     text-align: center;
     font-size: 2rem;
     line-height: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     visibility: hidden;
 }
 .questionDate {
     position: absolute;
-    right: 40rem;
+    right: 30rem;
     color:deepskyblue;
 }
 
@@ -1696,6 +1696,13 @@ input {
         width: 3.6rem;
     }
 
+    .frameArea {
+        margin-top: 1rem;
+    }
+    .frameArea.center {
+        margin-left: 17rem;
+    }
+
     .questionBar {
         width: 100%;
         margin-left: -2rem;
@@ -1704,7 +1711,7 @@ input {
         font-size: 1.6rem;
     }
     .questionDate {
-        right: 6rem;
+        right: 4rem;
     }
 
     .consultArea {

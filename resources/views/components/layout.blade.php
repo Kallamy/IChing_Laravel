@@ -2281,6 +2281,7 @@
             document.querySelector('.buttonsArea').style.visibility = 'hidden';
             document.querySelector('.consultLines').style.visibility = 'hidden';
             document.querySelector('.originalTextArea').style.display = "none";
+            document.querySelector('.frameArea').classList.add('center');
             document.querySelector('.hint-area').style.display = "block";
             document.querySelector('.hintMessage').style.visibility = 'hidden';
             document.querySelector('#questionInput').value = "";
@@ -2673,6 +2674,7 @@
 
             document.querySelector('.questionDate').innerText = "";
             document.querySelector('.questionBar').style.visibility = 'hidden';
+            document.querySelector('.frameArea').classList.remove('center');
             document.querySelector('.hintMessage').style.visibility = 'visible';
             document.querySelector('.originalTextArea').style.display = 'none';
             document.querySelector('.startArea').style.display = 'flex';
@@ -2809,6 +2811,8 @@
             updateHexagram();
 
             document.querySelector('.questionDate').innerText = data.date
+
+            document.querySelector('.frameArea').classList.add('center');
 
             document.querySelector('.buttonsArea').style.visibility = 'hidden';
             document.querySelector('.hintMessage').style.visibility = 'hidden';
