@@ -14,6 +14,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Handlee&family=Hind:wght@300&family=Kaushan+Script&family=Ma+Shan+Zheng&family=Simonetta&display=swap"
         rel="stylesheet">
+    <link rel="preload" href={{ asset('/assets/css/style.css') }} as="style">
     <link rel="stylesheet" href={{ asset('/assets/css/style.css') }}>
     <script src={{asset('/assets/js/classes/OriginalTextScreen.js')}}></script>
 

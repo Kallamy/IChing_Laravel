@@ -2,10 +2,10 @@
     font-size: 61.5%; /* 10px */
 
     /* --bg1: #268e8c; */
-    --bg1: #57b5b3;
-    --bg2: #979fcc;
+    --bg1: rgba(87, 181, 179, 1);
+    --bg2: rgba(151, 159, 204, 1);
     /* --bg3: #2f638c; */
-    --bg3: #7ba5c5;
+    --bg3: rgba(123, 165, 197, 1);
     --bg4: #aea6a6;
 
     --gray: #46484b;
@@ -176,6 +176,9 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: var(--gray);
+    /* background-image: url(../images/menu-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; */
     width: 39.0rem;
     height: 100%;
     color: white;
@@ -311,13 +314,12 @@ footer {
     font-size: 10rem;
     padding: 1.5rem;
     background: floralwhite;
-    color:gray;
+    color:darkgray;
     border: .3rem solid gray;
     border-radius: 1rem;
     opacity: 80%;
 }
 .originalTextHexagram.selected {
-    opacity: 100%;
     color: black;
 }
 .originalTextCharactere,
@@ -434,15 +436,28 @@ section#asks .content {
 }
 
 section#learn {
+    background-image: url("../images/bg-image-02.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: var(--bg1);
+    background-blend-mode: soft-light;
 }
 section#play {
+    background-image: url("../images/bg-image-01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: var(--bg2);
+    background-blend-mode: soft-light;
     padding: 0;
     padding-left: 3rem;
 }
 section#asks {
     background-color: var(--bg3);
+    background-image: url("../images/bg-image-03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--bg2);
+    background-blend-mode: soft-light;
 }
 section#signin {
     background-color: var(--bg4)
@@ -503,6 +518,7 @@ section#signup {
 .learnContainer p {
     margin-bottom: 2rem;
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(246, 235, 235);
 }
 
 #trigramsTable {
@@ -542,11 +558,11 @@ section#signup {
 }
 
 #trigramsTable tr:nth-child(odd) {
-    background-color: #cecece;
+    background-color: #e7e7e7;
 }
 
 #trigramsTable tr:nth-child(even) {
-    background-color: #e7e7e7;
+    background-color: #cecece;
 }
 
 #trigramsTable tbody tr:hover {
@@ -910,14 +926,14 @@ span.lineNumber {
 .charactere2
  {
     display: inline-block;
-    font-size: 2.8rem;
+    font-size: 3.3rem;
     font-family: 'Ma Shan Zheng';
     text-align: center;
-    margin-top: -2.3rem;
+    margin-top: -2rem;
     margin-left: 3.2rem;
     transition: opacity  ease-in-out var(--fade-time);
     height: 2.5rem;
-    line-height: 3.12rem;
+    line-height: 5rem;
     align-items: center;
 }
 
