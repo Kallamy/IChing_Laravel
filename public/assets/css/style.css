@@ -570,9 +570,9 @@ section#signup {
 
 .hexagramsArea {
     display: none;
-    padding-top: 6rem;
+    padding-top: 12rem;
     /* margin: auto; */
-    background-color: var(--bg1);
+    background-color: transparent;
     position: relative;
     width: 140rem;
     height: 77rem;

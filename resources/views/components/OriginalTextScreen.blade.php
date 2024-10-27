@@ -103,6 +103,10 @@
 
 
 <script>
+    let loaded = false;
+    window.addEventListener('load', () => {
+        loaded = true;
+    });
     document.querySelectorAll('.originalTextHexagram').forEach(card => {
         card.addEventListener('click', (e) => {
             if ( !e.currentTarget.classList.contains("selected")) {
@@ -115,10 +119,12 @@
     })
     document.querySelectorAll('.hexagramItem').forEach(item => {
         item.addEventListener('click', (e) => {
-            hexagramNumber = e.currentTarget.getAttribute("data-number");
+            if( loaded ) {
+                hexagramNumber = e.currentTarget.getAttribute("data-number");
 
-            OriginalTextScreen.open("learn");
-            OriginalTextScreen.write(hexagramNumber);
+                OriginalTextScreen.open("learn");
+                OriginalTextScreen.write(hexagramNumber);
+            }
         })
     })
     document.querySelector('.originalTextNextButton').addEventListener('click', () => {

@@ -16,7 +16,3 @@
         </div>
     </section>
 </x-layout>
-<script>
-
-
-</script>

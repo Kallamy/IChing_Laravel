@@ -639,31 +639,28 @@
                     <div>A Alegria</div>
                 @endif
             </div>
-
         </div>
 
         <div class = "hexagramsInfo">
             <p>@lang('messages.originalTextHint')</p>
             <a href="#" id="go-back-link">@lang('messages.goBack')</a>
         </div>
-
-
-
-
-
-
-
 </div>
 
 <script>
 
     document.querySelector('#show-all-hexagrams-link').addEventListener('click', () =>{
         document.querySelector('.hexagramsArea').style.display="block";
+        document.querySelector('.learnMenu').style.display="none";
         document.querySelector('.learnText').style.display="none";
+        document.querySelector('#show-all-hexagrams-link').style. display="none";
     })
     document.querySelector('#go-back-link').addEventListener('click', () =>{
         document.querySelector('.hexagramsArea').style.display="none";
+        document.querySelector('.learnMenu').style.display="flex";
         document.querySelector('.learnText').style.display="block";
+        document.querySelector('#show-all-hexagrams-link').style. display="block";
+
 
     })
 
