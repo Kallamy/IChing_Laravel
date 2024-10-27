@@ -1,11 +1,9 @@
 :root {
     font-size: 61.5%; /* 10px */
 
-    /* --bg1: #268e8c; */
-    --bg1: rgba(87, 181, 179, 1);
-    --bg2: rgba(151, 159, 204, 1);
-    /* --bg3: #2f638c; */
-    --bg3: rgba(123, 165, 197, 1);
+    --bg1: rgba(87, 181, 179, .5);
+    --bg2: rgba(151, 159, 204, .5);
+    --bg3: rgba(123, 165, 197, .5);
     --bg4: #aea6a6;
 
     --gray: #46484b;
@@ -187,7 +185,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 4.0rem;
-    margin-bottom: 12.0rem;
+    margin-bottom: 3.0rem;
 }
 .sideMenu ul li{
     display: flex;
@@ -518,7 +516,7 @@ section#signup {
 .learnContainer p {
     margin-bottom: 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(246, 235, 235);
+    color: rgb(255, 246, 246);
 }
 
 #trigramsTable {
@@ -1018,7 +1016,7 @@ span.lineNumber {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 1rem; */
     display: flex;
     gap: .6rem;
 }
@@ -1026,6 +1024,7 @@ span.lineNumber {
 #changeSelector {
     width: 1.5rem;
     height: 1.5rem;
+    margin-top: 1.4rem;
 }
 
 .invertButton {
@@ -1702,6 +1701,7 @@ input {
     section#play {
         padding-left: 0;
     }
+
     .sideMenu {
         display: none;
     }
