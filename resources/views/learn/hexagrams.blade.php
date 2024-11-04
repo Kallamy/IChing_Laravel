@@ -661,7 +661,6 @@
         document.querySelector('.learnText').style.display="block";
         document.querySelector('#show-all-hexagrams-link').style. display="block";
 
-
     })
 
 </script>

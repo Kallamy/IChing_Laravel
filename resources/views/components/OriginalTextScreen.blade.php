@@ -60,19 +60,37 @@
 <hr>
 <div class="originalTextContainer">
     <div class="originalTextContent">
-        <h2>Notas do autor</h2>
+        @if (session('locale') == 'en')
+            <h2>Author Notes</h2>
+        @elseif (session('locale') == 'pt')
+            <h2>Notas do Autor</h2>
+        @endif
         <div class="originalTextDescription">
 
         </div>
-        <h2>Julgamento</h2>
+
+        @if (session('locale') == 'en')
+            <h2>Judgment</h2>
+        @elseif (session('locale') == 'pt')
+            <h2>Julgamento</h2>
+        @endif
         <div class="originalTextJudgment">
 
         </div>
-        <h2>Imagem</h2>
+        @if (session('locale') == 'en')
+            <h2>Image</h2>
+        @elseif (session('locale') == 'pt')
+            <h2>Imagem</h2>
+        @endif
         <div class="originalTextImage">
 
         </div>
-        <h2 id="moving-lines-h2">Linhas móveis</h2>
+
+        @if (session('locale') == 'en')
+            <h2 id="moving-lines-h2">The Lines</h2>
+        @elseif (session('locale') == 'pt')
+            <h2 id="moving-lines-h2">Linhas Móveis</h2>
+        @endif
         <div class="originalTextLines">
 
         </div>
@@ -80,19 +98,39 @@
 </div>
 <div class="originalTextContainer2">
     <div class="originalTextContent2">
-        <h2>Notas do autor</h2>
+
+        @if (session('locale') == 'en')
+            <h2>Author Notes</h2>
+        @elseif (session('locale') == 'pt')
+            <h2>Notas do Autor</h2>
+        @endif
         <div class="originalTextDescription2">
 
         </div>
-        <h2>Julgamento</h2>
+
+        @if (session('locale') == 'en')
+            <h2>Judgment</h2>
+        @elseif (session('locale') == 'pt')
+            <h2>Julgamento</h2>
+        @endif
         <div class="originalTextJudgment2">
 
         </div>
-        <h2>Imagem</h2>
+
+        @if (session('locale') == 'en')
+            <h2>Image</h2>
+        @elseif (session('locale') == 'pt')
+            <h2>Imagem</h2>
+        @endif
         <div class="originalTextImage2">
 
         </div>
-        <h2>Linhas móveis</h2>
+
+        @if (session('locale') == 'en')
+            <h2>The Lines</h2>
+        @elseif (session('locale') == 'pt')
+            <h2>Linhas Móveis</h2>
+        @endif
         <div class="originalTextLines2">
 
         </div>
