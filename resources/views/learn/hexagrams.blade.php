@@ -651,13 +651,13 @@
 
     document.querySelector('#show-all-hexagrams-link').addEventListener('click', () =>{
         document.querySelector('.hexagramsArea').style.display="block";
-        document.querySelector('.learnMenu').style.display="none";
+        // document.querySelector('.learnMenu').style.display="none";
         document.querySelector('.learnText').style.display="none";
         document.querySelector('#show-all-hexagrams-link').style. display="none";
     })
     document.querySelector('#go-back-link').addEventListener('click', () =>{
         document.querySelector('.hexagramsArea').style.display="none";
-        document.querySelector('.learnMenu').style.display="flex";
+        // document.querySelector('.learnMenu').style.display="flex";
         document.querySelector('.learnText').style.display="block";
         document.querySelector('#show-all-hexagrams-link').style. display="block";
 

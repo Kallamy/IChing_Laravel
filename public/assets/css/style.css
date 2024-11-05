@@ -450,11 +450,10 @@ section#play {
     padding-left: 3rem;
 }
 section#asks {
-    background-color: var(--bg3);
     background-image: url("../images/bg-image-03.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--bg2);
+    background-color: var(--bg3);
     background-blend-mode: soft-light;
 }
 section#signin {
@@ -570,14 +569,13 @@ section#signup {
 
 .hexagramsArea {
     display: none;
-    padding-top: 12rem;
-    /* margin: auto; */
+    padding-top: -3rem;
     background-color: transparent;
     position: relative;
     width: 140rem;
     height: 77rem;
-    top: -9rem;
-    left: -2rem;
+    top: 3rem;
+    left: 11rem;
     margin-top: -8rem;
     margin-left: -10rem;
 
@@ -1810,8 +1808,9 @@ input {
     }
 
     .hexagramsArea {
-        margin-top: -6rem;
+        margin-top: -8rem;
         margin-left: 0.5rem;
+        left: -2rem;
     }
 
     .hexagramsContainer {
