@@ -869,7 +869,7 @@ span.lineNumber {
 .identification {
     margin-left: 3.9rem;
     height: 3.12rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
 }
 .hexagramNumber1,
 .hexagramNumber2 {
@@ -878,8 +878,8 @@ span.lineNumber {
     font-family: Hind;
     font-size: 1.3rem;
     font-weight: bold;
-    margin-left: 6rem;
-    margin-bottom:  3.2rem;
+    margin-left: 7.5rem;
+    margin-top:  -5rem;
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
@@ -894,6 +894,7 @@ span.lineNumber {
     /* margin-bottom: 1%; */
     margin-left: 0rem;
     margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
     background: transparent;
     height: 3.12rem;
     text-align: center;
@@ -925,8 +926,8 @@ span.lineNumber {
     font-size: 3.3rem;
     font-family: 'Ma Shan Zheng';
     text-align: center;
-    margin-top: -2rem;
-    margin-left: 3.2rem;
+    margin-top: -20rem;
+    margin-left: 1rem;
     transition: opacity  ease-in-out var(--fade-time);
     height: 2.5rem;
     line-height: 5rem;
@@ -1065,8 +1066,8 @@ span.lineNumber {
     position: absolute;
     background-color: aliceblue;
     transform: rotate(180deg);
-    width: 6rem;
-    height: 6rem;
+    width: 7rem;
+    height: 7rem;
     padding: .5rem;
     margin-top: 0.9rem;
     margin-left: 1rem;
