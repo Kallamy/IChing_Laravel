@@ -2022,7 +2022,7 @@
                         The superior man is without blame.
                     </strong>
                     <p>
-                        "Contemplation of my life", that is contemplationof the people.
+                        Here the person in authority must contemplate the cause and effect of his own behaviours to make sure that he always knows why he does what does. This is what generates good decisions and actions. Legge concurs "He is a superior man, but this does not relieve him from the duty of self-contemplation or examination." The resultant hexagram 23 or Splitting Apart is another bad outcome from a good line. It seems that this lines good attributes are not enough to avoid the trouble portrayed in hexagram 23. Do not take for granted your current position or success.
                     </p>
                 </div>
                 <div class="originalTemplateLine" data-position="6">
@@ -2238,7 +2238,7 @@
         </div>
         <div class="originalTemplateHexagram" data-number="23">
             <div class="originalTemplateCharactere">剝</div>
-            <div class="originalTemplateName">23. Po - Desintegração</div>
+            <div class="originalTemplateName">23. Po - Splitting Apart</div>
             <div class="originalTemplateSymbol">䷖</div>
             <div class="originalTemplateUpperLabel">Above: KÊN, THE STILLNESS, MOUNTAIN. </div>
             <div class="originalTemplateBottomLabel">Below: K´UN, THE RECEPTIVE, EARTH.</div>
@@ -2250,7 +2250,7 @@
             <div class="originalTemplateJudgment">
                 <strong>
                     DESINTEGRAÇÃO. <br>
-                    SPLITTING APART. IT does not further one <br>
+                    SPLITTING APART. It does not further one <br>
                     To go anywhere.
                 </strong>
                 <p>
