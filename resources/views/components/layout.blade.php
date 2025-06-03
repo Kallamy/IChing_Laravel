@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Iching View</title>
@@ -104,7 +104,12 @@
     </nav>
 
     <footer>
-        By Yuri Mallak
+        By Yuri Mallak <div class="socialMediaLinksArea">
+            <a href="https://www.facebook.com/profile.php?id=61576927196762"><img width="22px" class="socialMediaLink" src={{ asset('assets/icons/facebook_icon.png') }} alt="facebook"></a>
+            <a href="https://www.instagram.com/iching.view/"><img width="22px" class="socialMediaLink" src={{ asset('assets/icons/instagram_icon.png') }} alt="instagram"></a>
+
+        </div>
+
     </footer>
 
     {{-- // <script src={{asset('/assets/js/classes/pairs.js')}}></script>

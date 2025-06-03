@@ -144,17 +144,36 @@ header {
 /* FOOTER  */
 footer {
     position: fixed;
+    display: flex;
     bottom: 0;
     width: 100%;
-    height: 5rem;
+    height: 6rem;
     background: white;
     border-top: 0.6rem solid black;
     font-weight: bold;
     text-align: center;
     line-height: 4.37rem;
     font-size: 1.7rem;
-    padding-top: 1rem;
+    padding-top: .5rem;
+    justify-content: center;
+    align-items: center;
     z-index: 9;
+}
+.socialMediaLinksArea {
+    display: inline-flex;
+    width: 15rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    gap: 3rem;
+    line-height: 4rem;
+    justify-content: center;
+}
+.socialMediaLink {
+    height: 22px;
+    margin-bottom: 1rem;
+}
+.socialMediaLink:hover {
+    opacity: 70%;
 }
 
 .container {
@@ -174,9 +193,7 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: var(--gray);
-    /* background-image: url(../images/menu-bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */
+
     width: 39.0rem;
     height: 100%;
     color: white;
@@ -634,7 +651,7 @@ section#signup {
     border: .27rem solid black;
 }
 .hexagramItem {
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     width: 7.6rem;
     height: 7.6rem;
@@ -655,14 +672,27 @@ section#signup {
 .hexagramItem:hover {
     background: seashell;
     cursor: pointer;
+    font-weight: bold;
 }
 .hexagramItem div {
     font-weight: bold;
     margin-top: .09rem;
 }
+.hexagramItem span {
+    display: inline-block;
+    text-align: center;
+    width: 1.5rem;
+    font-size: 1.5rem;
+    line-height: .5rem;
+    margin-bottom: -2rem;
+    margin-left: -1.5rem;
+}
 .hexagramSymbol {
+    display: block;
     font-size: 3rem;
     line-height: 3.1rem;
+    margin-top: -2rem;
+    /* margin-left: .5rem; */
     /* font-weight: bold; */
 }
 
