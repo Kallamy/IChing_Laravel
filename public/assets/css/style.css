@@ -1171,7 +1171,7 @@ span.lineNumber {
 .about-title {
     margin: 0.19rem;
 
-    color: hsl(52, 99%, 62%);
+    color:#58d5eb;
     font-size: 1.09rem;
     font-weight: bold;
     margin-top: 0.18rem;
@@ -1184,10 +1184,11 @@ span.lineNumber {
     margin: 0;
     margin-left: 0.61rem;
     color: #97edfc;
+    color: hsl(52, 99%, 62%);
     font-weight: bold;
 }
 .about-content.darkText {
-    color:#70d2e3;
+    color: hsl(52, 71%, 51%);
 }
 .about-content b {
     font-weight: 900;
