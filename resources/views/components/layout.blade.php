@@ -2292,6 +2292,9 @@
             document.querySelector('.hintMessage').style.visibility = 'hidden';
             document.querySelector('#questionInput').value = "";
             document.querySelector('.messageArea').classList.remove('conclusion');
+
+            document.querySelector('.about-area ').style.visibility = 'hidden';
+
         }
         // Function to show game
         function showGame() {
@@ -2688,6 +2691,8 @@
             document.querySelector('.conclusionArea').style.display = 'none';
             document.querySelector('.consultLines').style.visibility = 'hidden';
             document.querySelector('.buttonsArea').style.visibility = 'visible';
+            document.querySelector('.about-area ').style.visibility = 'hidden';
+
             // show buttons area
             document.querySelector('.consultButton').style.visibility = 'visible';
             document.querySelector('.about-button').style.display = 'block';

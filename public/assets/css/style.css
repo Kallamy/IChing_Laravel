@@ -439,6 +439,7 @@ section {
     padding: 4rem;
     padding-top: 12rem;
     touch-action: none;
+    overflow: auto;
 }
 
 section#play .content {
@@ -1143,7 +1144,7 @@ span.lineNumber {
     z-index: 100;
     width: 103%;
     height: 103%;
-    transition: all linear 2s;
+    /* transition: all linear 2s; */
 }
 .aboutContainer {
     margin-top: -1rem;
@@ -1183,12 +1184,12 @@ span.lineNumber {
     font-size: 1.09rem;
     margin: 0;
     margin-left: 0.61rem;
-    color: #97edfc;
-    color: hsl(52, 99%, 62%);
+    color: #fff494;
+
     font-weight: bold;
 }
 .about-content.darkText {
-    color: hsl(52, 71%, 51%);
+    color: #ffc678;
 }
 .about-content b {
     font-weight: 900;
