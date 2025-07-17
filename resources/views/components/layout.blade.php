@@ -106,7 +106,7 @@
     <footer>
         By Yuri Mallak <div class="socialMediaLinksArea">
             <a href="https://www.facebook.com/profile.php?id=61576927196762"><img width="22px" class="socialMediaLink" src={{ asset('assets/icons/facebook_icon.png') }} alt="facebook"></a>
-            <a href="https://www.instagram.com/iching.view/"><img width="22px" class="socialMediaLink" src={{ asset('assets/icons/instagram_icon.png') }} alt="instagram"></a>
+            <a href="https://www.instagram.com/iching_view/"><img width="22px" class="socialMediaLink" src={{ asset('assets/icons/instagram_icon.png') }} alt="instagram"></a>
 
         </div>
 
