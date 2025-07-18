@@ -1357,7 +1357,7 @@ span.lineNumber {
 
 /* Table Area */
 .tableArea {
-    width: 50.25rem;
+    width: 53.25rem;
     height: 7rem;
 
     background-color:burlywood;
@@ -1432,8 +1432,8 @@ span.lineNumber {
 }
 
 .coin {
-    width: 3.4rem;
-    height: 3.4rem;
+    width: 4.5rem;
+    height: 4.5rem;
     position: relative;
     transform-style: preserve-3d;
 }

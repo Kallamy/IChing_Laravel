@@ -2398,7 +2398,7 @@
                 coinsResult[1] = Math.random() < 0.5 ? 0 : 1;
                 coinsResult[2] = Math.random() < 0.5 ? 0 : 1;
                 // set random coins positions
-                marginRange = 25;
+                marginRange = 20;
                 leftM = [Math.floor(Math.random() * marginRange), Math.floor(Math.random() * marginRange), Math.floor(Math
                     .random() * marginRange)];
                 rightM = [Math.floor(Math.random() * marginRange), Math.floor(Math.random() * marginRange), Math.floor(Math
