@@ -1842,6 +1842,17 @@ input {
     .learnMenu ul li{
         font-size: 1.4rem;
         margin-left: -6rem;
+        border-left: .6rem solid rgba(0, 0, 0, 0.3);
+    }
+
+    .learnMenu ul li.active{
+        background-color: rgba(0, 0, 0, 0.4);
+        border-left: .6rem solid var(--red);
+        border-bottom: none;
+    }
+    .learnMenu ul li:not(.active):hover{
+        border-left: .6rem solid rgb(160, 16, 16);
+        border-bottom: none;
     }
 
     .learnContainer p {
