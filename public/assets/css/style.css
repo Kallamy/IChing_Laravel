@@ -15,6 +15,7 @@
     --clearblue: #227c9d;
     --blue: #3a86ff;
     --yellow: #f7c118;
+    --orange: #ffd23b;
 
     --consult-color: #384540;
 
@@ -616,10 +617,22 @@ section#signup {
 
 }
 
+.textBtn {
+    color: var(--orange);
+    background: cornflowerblue;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 4rem;
+
+}
+
 #show-all-hexagrams-link {
-    color: white;
+    padding: 1rem;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
 }
 
 .hexagramsInfo {
@@ -630,24 +643,24 @@ section#signup {
     flex-direction: column;
     margin-top: -41rem;
     margin-left: 1rem;
-    gap: 5rem;
+    gap: 3rem;
     font-weight: bold;
     /* background-color: #9f0102; */
 }
 
 #go-back-link {
-    display: block;
+    display: inline-block;
     margin-top: -4rem;
-    margin-right: 3rem;
+    /* margin-right: 3rem; */
     align-self: flex-end;
-    left: 3rem;
-    color: white;
+    /* left: 3rem; */
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .hexagramsContainer {
     /* margin-top: 1rem; */
+    /* background-color: red; */
     margin-left: 44rem;
     margin-top: 5rem;
     display: grid;
@@ -1887,7 +1900,7 @@ input {
 
     #go-back-link {
         margin-right: 7rem;
-        margin-top: -5rem;
+        margin-top: -3.5rem;
     }
 
     .hexagramsArea {

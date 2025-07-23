@@ -29,7 +29,7 @@
         }
 
         document.querySelector(".learnContainer").addEventListener("click", () => {
-            if( document.querySelector(".learnMenu").style.display == "block" ) {
+            if( document.querySelector(".learnMenu").style.display == "flex" ) {
                 document.querySelector(".learnMenu").style.display = "none";
             }
         });

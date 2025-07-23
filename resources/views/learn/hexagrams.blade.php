@@ -1,7 +1,7 @@
 
 <p class="learnText">@lang('messages.learnTexts.hexagrams')</p>
 
-<a href="#" id="show-all-hexagrams-link">@lang('messages.seeAllHexagrams')</a>
+<x-TextButton id="show-all-hexagrams-link">@lang('messages.seeAllHexagrams')</x-TextButton>
 <div class="hexagramsArea">
     <div class="hexagramsContainer">
         {{-- @for ($i=0; $i < 64; $i++)
@@ -643,7 +643,7 @@
 
         <div class = "hexagramsInfo">
             <p>@lang('messages.originalTextHint')</p>
-            <a href="#" id="go-back-link">@lang('messages.goBack')</a>
+            <x-TextButton id="go-back-link">@lang('messages.goBack')</x-TextButton>
         </div>
 </div>
 
@@ -651,16 +651,17 @@
 
     document.querySelector('#show-all-hexagrams-link').addEventListener('click', () =>{
         document.querySelector('.hexagramsArea').style.display="block";
-        // document.querySelector('.learnMenu').style.display="none";
+        document.querySelector('.learnMenu').style.display="none";
         document.querySelector('.learnText').style.display="none";
         document.querySelector('#show-all-hexagrams-link').style. display="none";
     })
     document.querySelector('#go-back-link').addEventListener('click', () =>{
-        document.querySelector('.hexagramsArea').style.display="none";
-        // document.querySelector('.learnMenu').style.display="flex";
-        document.querySelector('.learnText').style.display="block";
-        document.querySelector('#show-all-hexagrams-link').style. display="block";
-
+        if(document.querySelector(".learnMenu").style.display == "none" && document.querySelector(".learnMenu").style.position != "absolute") {
+            document.querySelector('.hexagramsArea').style.display="none";
+            document.querySelector('.learnMenu').style.display="flex";
+            document.querySelector('.learnText').style.display="block";
+            document.querySelector('#show-all-hexagrams-link').style. display="inline";
+        }
     })
 
 </script>
