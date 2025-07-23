@@ -279,7 +279,7 @@ footer {
     height: 100%;
     background: #c3c0c0;
     padding: 1.5rem;
-    z-index: 1;
+    z-index: 4;
 }
 .originalTextHeader {
     display: flex;
@@ -506,13 +506,30 @@ section#signup {
     background-color: rgba(0, 0, 0, 0.4);
     border-bottom: .6rem solid var(--red);
 }
-.learnMenu ul li:hover{
-    border-bottom: .6rem solid var(--red);
+.learnMenu ul li:not(.active):hover{
+    border-bottom: .6rem solid rgb(160, 16, 16);
 }
 .learnMenu ul a{
     color: #fff;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.hamburguerButton {
+    display: none;
+    position: absolute;
+    text-decoration: none;
+    font-size: 2.1rem;
+    z-index: 3;
+    padding: .1rem;
+    margin-top: -4rem;
+    margin-bottom: 4rem;
+    margin-left: 4rem;
+    font-weight: bold;
+    width: 6rem;
+    background-color: rgba(117, 117, 117, 0.3);
+    /* border: .6rem solid rgba(0, 0, 0, 0.3); */
+    list-style-type: none;
 }
 
 .learnContainer {
@@ -531,7 +548,7 @@ section#signup {
     width: 30rem;
 }
 .learnContainer p {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(255, 246, 246);
 }
@@ -539,7 +556,7 @@ section#signup {
 #trigramsTable {
     /* border-spacing: 0px; */
     margin: auto;
-    margin-top: 4rem;
+    margin-top: 2rem;
     border: .2rem solid #000;
     font-size: 1.4rem;
     padding-left: 1rem;
@@ -1799,10 +1816,32 @@ input {
         padding-left: 0;
     }
 
+    .hamburguerButton {
+        display: block;
+    }
+
+    .learnMenu {
+        display: none;
+        position:absolute;
+        z-index: 2;
+        background-color: rgba(54, 49, 49, 0.99);
+        top: 10rem;
+        height: 100%;
+        width: 30rem;
+        transition: left linear 2s;
+    }
+    .learnMenu.hidden{
+        left: -20rem;
+    }
+    .learnMenu ul {
+        flex-direction: column;
+        margin-top: 10rem;
+        justify-content: flex-start;
+    }
+
     .learnMenu ul li{
-
         font-size: 1.4rem;
-
+        margin-left: -6rem;
     }
 
     .learnContainer p {
@@ -1862,6 +1901,13 @@ input {
         line-height: .9rem;
         font-weight: bold;
     }
+    .hexagramItem.repeated:hover {
+    background: moccasin;
+    }
+    .hexagramItem:hover {
+        background: blanchedalmond;
+    }
+
     .hexagramSymbol {
         font-size: 2.45rem;
         line-height: 2.3rem;

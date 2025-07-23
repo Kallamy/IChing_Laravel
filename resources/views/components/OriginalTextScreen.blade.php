@@ -160,8 +160,10 @@
             if( loaded ) {
                 hexagramNumber = e.currentTarget.getAttribute("data-number");
 
-                OriginalTextScreen.open("learn");
-                OriginalTextScreen.write(hexagramNumber);
+                if( document.querySelector(".learnMenu").style.display == "none" ) {
+                    OriginalTextScreen.open("learn");
+                    OriginalTextScreen.write(hexagramNumber);
+                }
             }
         })
     })
