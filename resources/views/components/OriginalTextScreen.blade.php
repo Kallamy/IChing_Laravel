@@ -159,8 +159,7 @@
         item.addEventListener('click', (e) => {
             if( loaded ) {
                 hexagramNumber = e.currentTarget.getAttribute("data-number");
-
-                if( document.querySelector(".learnMenu").style.display == "none" ) {
+                if(document.querySelector(".learnMenu").style.display == "none" || document.querySelector(".learnMenu").style.position != "absolute") {
                     OriginalTextScreen.open("learn");
                     OriginalTextScreen.write(hexagramNumber);
                 }

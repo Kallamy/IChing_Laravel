@@ -29,7 +29,9 @@
         }
 
         document.querySelector(".learnContainer").addEventListener("click", () => {
-            document.querySelector(".learnMenu").style.display = "none";
+            if( document.querySelector(".learnMenu").style.display == "block" ) {
+                document.querySelector(".learnMenu").style.display = "none";
+            }
         });
     </script>
 </x-layout>
