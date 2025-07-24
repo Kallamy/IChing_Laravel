@@ -651,16 +651,19 @@
 
     document.querySelector('#show-all-hexagrams-link').addEventListener('click', () =>{
         document.querySelector('.hexagramsArea').style.display="block";
-        document.querySelector('.learnMenu').style.display="none";
         document.querySelector('.learnText').style.display="none";
         document.querySelector('#show-all-hexagrams-link').style. display="none";
+        document.querySelector('.learnMenu').style.display="none";
     })
     document.querySelector('#go-back-link').addEventListener('click', () =>{
-        if(document.querySelector(".learnMenu").style.display == "none" && document.querySelector(".learnMenu").style.position != "absolute") {
-            document.querySelector('.hexagramsArea').style.display="none";
-            document.querySelector('.learnMenu').style.display="flex";
-            document.querySelector('.learnText').style.display="block";
-            document.querySelector('#show-all-hexagrams-link').style. display="inline";
+        document.querySelector('.learnText').style.display ="block";
+        if(document.querySelector('.hamburguerButton').style.position != "absolute") {
+            if(document.querySelector(".learnMenu").style.display == "none" || document.querySelector(".learnMenu").style.position != "absolute") {
+                document.querySelector('.hexagramsArea').style.display ="none";
+                document.querySelector('.learnMenu').style.display ="flex";
+                document.querySelector('#show-all-hexagrams-link').style. display="inline";
+                console.log(document.querySelector('.learnMenu').style.display);
+            }
         }
     })
 

@@ -29,7 +29,7 @@
         }
 
         document.querySelector(".learnContainer").addEventListener("click", () => {
-            if( document.querySelector(".learnMenu").style.display == "flex" ) {
+            if(document.querySelector('.hamburguerButton').style.position == "absolute") {
                 document.querySelector(".learnMenu").style.display = "none";
             }
         });
