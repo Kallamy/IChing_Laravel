@@ -657,14 +657,17 @@
     })
     document.querySelector('#go-back-link').addEventListener('click', () =>{
         document.querySelector('.learnText').style.display ="block";
-        if(document.querySelector('.hamburguerButton').style.position != "absolute") {
+
             if(document.querySelector(".learnMenu").style.display == "none" || document.querySelector(".learnMenu").style.position != "absolute") {
                 document.querySelector('.hexagramsArea').style.display ="none";
                 document.querySelector('.learnMenu').style.display ="flex";
                 document.querySelector('#show-all-hexagrams-link').style. display="inline";
-                console.log(document.querySelector('.learnMenu').style.display);
+
+                if(document.querySelector('.hamburguerButton').style.display != "none") {
+                    // document.querySelector('.learnMenu').style.display ="none";
+                }
             }
-        }
+
     })
 
 </script>

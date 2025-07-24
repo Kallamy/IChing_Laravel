@@ -29,8 +29,11 @@
         }
 
         document.querySelector(".learnContainer").addEventListener("click", () => {
-            if(document.querySelector('.hamburguerButton').style.position == "absolute") {
-                document.querySelector(".learnMenu").style.display = "none";
+            // && document.querySelector('.hamburguerButton').style.display != "hidden")
+            if(document.querySelector('.learnMenu').style.display == "flex") {
+                if(document.querySelector('.hamburguerButton').style.display != "none") {
+                    document.querySelector(".learnMenu").style.display = "none";
+                }
             }
         });
     </script>
