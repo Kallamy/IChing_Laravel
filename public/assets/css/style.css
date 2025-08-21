@@ -2063,3 +2063,11 @@ input {
 }
 }
 
+/* Mobile small */
+@media only screen and (max-width: 360px) {
+    :root {
+        font-size: 40%;
+    }
+}
+
+
